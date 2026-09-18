@@ -369,22 +369,23 @@ plotinkofficial@gmail.com
 <!-- ===== QUICK ACTION END ===== -->
 
 <!-- ===== STAY SECTION START ===== -->
+
 <section class="container py-5" id="stay-section">
     <div class="text-center mb-4">
         <span class="badge bg-primary bg-opacity-10 text-primary fw-bold px-3 py-2 rounded-pill mb-2">
-            <i class="bi bi-house-door-fill"></i> Easy Booking
+            <i class="bi bi-house-door-fill me-1"></i> Quick Booking
         </span>
-        <h2 class="fw-bold">Book Available Stays</h2>
-        <p class="text-muted">Select location & choose your preferred accommodation</p>
+        <h2 class="fw-bold display-6">Mountain Escapes & Stays</h2>
+        <p class="text-muted">Choose your location & explore verified accommodations</p>
     </div>
 
     <!-- Location Selector Dropdown -->
-    <div class="row justify-content-center mb-4">
-        <div class="col-md-6 col-lg-4 text-center">
-            <label for="stayLocation" class="form-label fw-bold text-secondary">
-                <i class="bi bi-geo-alt-fill text-danger"></i> Select Your Location:
+    <div class="row justify-content-center mb-5">
+        <div class="col-11 col-sm-8 col-md-5 text-center">
+            <label for="stayLocation" class="form-label fw-bold text-secondary mb-2">
+                <i class="bi bi-geo-alt-fill text-danger me-1"></i> Select Destination:
             </label>
-            <select class="form-select form-select-lg shadow-sm rounded-pill text-center fw-bold" id="stayLocation" onchange="updateStayLinks()">
+            <select class="form-select form-select-lg shadow-sm rounded-pill text-center fw-bold border-2" id="stayLocation" onchange="updateStayLinks()">
                 <option value="Dehradun" selected>📍 Dehradun</option>
                 <option value="Mussoorie">📍 Mussoorie</option>
                 <option value="Rishikesh">📍 Rishikesh</option>
@@ -394,51 +395,59 @@ plotinkofficial@gmail.com
     </div>
 
     <!-- Stay Options Cards -->
-    <div class="row g-4 text-center">
+    <div class="row g-3 g-md-4 justify-content-center">
         <!-- Hotels & Rooms -->
-        <div class="col-6 col-md-3">
-            <div class="stay-card p-4 shadow-sm rounded-4 bg-white border">
-                <div class="fs-1 text-primary mb-2"><i class="bi bi-buildings"></i></div>
-                <h5 class="fw-bold mb-2">Hotels & Rooms</h5>
-                <p class="text-muted small">Comfortable stay with top amenities</p>
-                <a id="btn-hotel" href="#" target="_blank" class="btn btn-outline-primary rounded-pill w-100 fw-bold">
-                    <i class="bi bi-whatsapp"></i> Inquire
+        <div class="col-12 col-sm-6 col-lg-3 d-flex">
+            <div class="stay-card w-100 p-4 shadow-sm rounded-4 bg-white border text-center d-flex flex-column justify-content-between">
+                <div>
+                    <div class="stay-icon text-primary mb-3"><i class="bi bi-buildings fs-1"></i></div>
+                    <h5 class="fw-bold mb-2">Hotels & Rooms</h5>
+                    <p class="text-muted small mb-4">Comfortable stays with prime amenities</p>
+                </div>
+                <a id="btn-hotel" href="#" target="_blank" class="btn btn-outline-primary rounded-pill w-100 fw-bold py-2">
+                    <i class="bi bi-whatsapp me-1"></i> Inquire
                 </a>
             </div>
         </div>
 
         <!-- Homestays -->
-        <div class="col-6 col-md-3">
-            <div class="stay-card p-4 shadow-sm rounded-4 bg-white border">
-                <div class="fs-1 text-success mb-2"><i class="bi bi-house-heart"></i></div>
-                <h5 class="fw-bold mb-2">Homestays</h5>
-                <p class="text-muted small">Local experience & mountain views</p>
-                <a id="btn-homestay" href="#" target="_blank" class="btn btn-outline-success rounded-pill w-100 fw-bold">
-                    <i class="bi bi-whatsapp"></i> Inquire
+        <div class="col-12 col-sm-6 col-lg-3 d-flex">
+            <div class="stay-card w-100 p-4 shadow-sm rounded-4 bg-white border text-center d-flex flex-column justify-content-between">
+                <div>
+                    <div class="stay-icon text-success mb-3"><i class="bi bi-house-heart fs-1"></i></div>
+                    <h5 class="fw-bold mb-2">Homestays</h5>
+                    <p class="text-muted small mb-4">Authentic local vibe & hill views</p>
+                </div>
+                <a id="btn-homestay" href="#" target="_blank" class="btn btn-outline-success rounded-pill w-100 fw-bold py-2">
+                    <i class="bi bi-whatsapp me-1"></i> Inquire
                 </a>
             </div>
         </div>
 
         <!-- Resorts & Villas -->
-        <div class="col-6 col-md-3">
-            <div class="stay-card p-4 shadow-sm rounded-4 bg-white border">
-                <div class="fs-1 text-warning mb-2"><i class="bi bi-tsunami"></i></div>
-                <h5 class="fw-bold mb-2">Resorts & Villas</h5>
-                <p class="text-muted small">Luxury stay for family & friends</p>
-                <a id="btn-resort" href="#" target="_blank" class="btn btn-outline-warning rounded-pill w-100 fw-bold">
-                    <i class="bi bi-whatsapp"></i> Inquire
+        <div class="col-12 col-sm-6 col-lg-3 d-flex">
+            <div class="stay-card w-100 p-4 shadow-sm rounded-4 bg-white border text-center d-flex flex-column justify-content-between">
+                <div>
+                    <div class="stay-icon text-warning mb-3"><i class="bi bi-tsunami fs-1"></i></div>
+                    <h5 class="fw-bold mb-2">Resorts & Villas</h5>
+                    <p class="text-muted small mb-4">Luxury stays for group & family trips</p>
+                </div>
+                <a id="btn-resort" href="#" target="_blank" class="btn btn-outline-warning rounded-pill w-100 fw-bold py-2">
+                    <i class="bi bi-whatsapp me-1"></i> Inquire
                 </a>
             </div>
         </div>
 
         <!-- Camps & Glamping -->
-        <div class="col-6 col-md-3">
-            <div class="stay-card p-4 shadow-sm rounded-4 bg-white border">
-                <div class="fs-1 text-danger mb-2"><i class="bi bi-tent"></i></div>
-                <h5 class="fw-bold mb-2">Camps & Glamping</h5>
-                <p class="text-muted small">Adventure stay in nature</p>
-                <a id="btn-camp" href="#" target="_blank" class="btn btn-outline-danger rounded-pill w-100 fw-bold">
-                    <i class="bi bi-whatsapp"></i> Inquire
+        <div class="col-12 col-sm-6 col-lg-3 d-flex">
+            <div class="stay-card w-100 p-4 shadow-sm rounded-4 bg-white border text-center d-flex flex-column justify-content-between">
+                <div>
+                    <div class="stay-icon text-danger mb-3"><i class="bi bi-tent fs-1"></i></div>
+                    <h5 class="fw-bold mb-2">Camps & Glamping</h5>
+                    <p class="text-muted small mb-4">Nature & adventure stays in hills</p>
+                </div>
+                <a id="btn-camp" href="#" target="_blank" class="btn btn-outline-danger rounded-pill w-100 fw-bold py-2">
+                    <i class="bi bi-whatsapp me-1"></i> Inquire
                 </a>
             </div>
         </div>

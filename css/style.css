@@ -763,4 +763,29 @@
 .stay-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 28px rgba(0,0,0,0.12) !important;
+}/* ===== STAY CARDS DISPLAY FIX ===== */
+.stay-card {
+    transition: all 0.3s ease-in-out;
+    min-height: 260px;
+    border: 1px solid rgba(0,0,0,0.08) !important;
+}
+
+.stay-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12) !important;
+}
+
+.stay-icon i {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.stay-card:hover .stay-icon i {
+    transform: scale(1.15);
+}
+
+@media (max-width: 576px) {
+    .stay-card {
+        min-height: auto;
+    }
 }

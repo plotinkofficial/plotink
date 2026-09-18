@@ -249,8 +249,6 @@ plotinkofficial@gmail.com
 
 <!-- ===== QUICK ACTION START ===== -->
 
-<!-- ===== QUICK ACTION START ===== -->
-
 <section class="container py-5">
 
     <div class="text-center mb-4">
@@ -363,7 +361,90 @@ plotinkofficial@gmail.com
 
 </section>
 
+<a href="stay.html" class="btn stay-btn">
+    <i class="bi bi-house-heart-fill"></i>
+    STAY
+</a>
+
 <!-- ===== QUICK ACTION END ===== -->
+
+<!-- ===== STAY SECTION START ===== -->
+<section class="container py-5" id="stay-section">
+    <div class="text-center mb-4">
+        <span class="badge bg-primary bg-opacity-10 text-primary fw-bold px-3 py-2 rounded-pill mb-2">
+            <i class="bi bi-house-door-fill"></i> Easy Booking
+        </span>
+        <h2 class="fw-bold">Book Available Stays</h2>
+        <p class="text-muted">Select location & choose your preferred accommodation</p>
+    </div>
+
+    <!-- Location Selector Dropdown -->
+    <div class="row justify-content-center mb-4">
+        <div class="col-md-6 col-lg-4 text-center">
+            <label for="stayLocation" class="form-label fw-bold text-secondary">
+                <i class="bi bi-geo-alt-fill text-danger"></i> Select Your Location:
+            </label>
+            <select class="form-select form-select-lg shadow-sm rounded-pill text-center fw-bold" id="stayLocation" onchange="updateStayLinks()">
+                <option value="Dehradun" selected>📍 Dehradun</option>
+                <option value="Mussoorie">📍 Mussoorie</option>
+                <option value="Rishikesh">📍 Rishikesh</option>
+                <option value="Dhanaulti">📍 Dhanaulti</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Stay Options Cards -->
+    <div class="row g-4 text-center">
+        <!-- Hotels & Rooms -->
+        <div class="col-6 col-md-3">
+            <div class="stay-card p-4 shadow-sm rounded-4 bg-white border">
+                <div class="fs-1 text-primary mb-2"><i class="bi bi-buildings"></i></div>
+                <h5 class="fw-bold mb-2">Hotels & Rooms</h5>
+                <p class="text-muted small">Comfortable stay with top amenities</p>
+                <a id="btn-hotel" href="#" target="_blank" class="btn btn-outline-primary rounded-pill w-100 fw-bold">
+                    <i class="bi bi-whatsapp"></i> Inquire
+                </a>
+            </div>
+        </div>
+
+        <!-- Homestays -->
+        <div class="col-6 col-md-3">
+            <div class="stay-card p-4 shadow-sm rounded-4 bg-white border">
+                <div class="fs-1 text-success mb-2"><i class="bi bi-house-heart"></i></div>
+                <h5 class="fw-bold mb-2">Homestays</h5>
+                <p class="text-muted small">Local experience & mountain views</p>
+                <a id="btn-homestay" href="#" target="_blank" class="btn btn-outline-success rounded-pill w-100 fw-bold">
+                    <i class="bi bi-whatsapp"></i> Inquire
+                </a>
+            </div>
+        </div>
+
+        <!-- Resorts & Villas -->
+        <div class="col-6 col-md-3">
+            <div class="stay-card p-4 shadow-sm rounded-4 bg-white border">
+                <div class="fs-1 text-warning mb-2"><i class="bi bi-tsunami"></i></div>
+                <h5 class="fw-bold mb-2">Resorts & Villas</h5>
+                <p class="text-muted small">Luxury stay for family & friends</p>
+                <a id="btn-resort" href="#" target="_blank" class="btn btn-outline-warning rounded-pill w-100 fw-bold">
+                    <i class="bi bi-whatsapp"></i> Inquire
+                </a>
+            </div>
+        </div>
+
+        <!-- Camps & Glamping -->
+        <div class="col-6 col-md-3">
+            <div class="stay-card p-4 shadow-sm rounded-4 bg-white border">
+                <div class="fs-1 text-danger mb-2"><i class="bi bi-tent"></i></div>
+                <h5 class="fw-bold mb-2">Camps & Glamping</h5>
+                <p class="text-muted small">Adventure stay in nature</p>
+                <a id="btn-camp" href="#" target="_blank" class="btn btn-outline-danger rounded-pill w-100 fw-bold">
+                    <i class="bi bi-whatsapp"></i> Inquire
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ===== STAY SECTION END ===== -->
 
 <!-- ===== STATISTICS START ===== -->
 
@@ -679,26 +760,34 @@ updateVisitorCount();
 
                 <h5>Follow Us</h5>
 
-                <p>
-                    Instagram : @plotinkofficial
+                <p class="mb-2">
+                    <a href="https://www.instagram.com/plotinkofficial" 
+                       target="_blank" 
+                       class="text-white text-decoration-none">
+                        <i class="bi bi-instagram me-2 fs-5" style="color: #E1306C;"></i>
+                        Instagram: @plotinkofficial
+                    </a>
                 </p>
 
-                <p>
-                    <i class="bi bi-whatsapp"></i>
-                    WhatsApp : 7500030061
+                <p class="mb-2">
+                    <a href="https://www.facebook.com/plotinkofficial" 
+                       target="_blank" 
+                       class="text-white text-decoration-none">
+                        <i class="bi bi-facebook me-2 fs-5" style="color: #1877F2;"></i>
+                        Facebook: @plotinkofficial
+                    </a>
+                </p>
+
+                <p class="mb-2">
+                    <a href="https://wa.me/917500030061" 
+                       target="_blank" 
+                       class="text-white text-decoration-none">
+                        <i class="bi bi-whatsapp me-2 fs-5" style="color: #25D366;"></i>
+                        WhatsApp: 7500030061
+                    </a>
                 </p>
 
             </div>
-
-        </div>
-
-        <hr>
-
-        <p class="text-center mb-0">
-            © 2025 Plotink. All Rights Reserved.
-        </p>
-
-    </div>
 
 </footer>
 

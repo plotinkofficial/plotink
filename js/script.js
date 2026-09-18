@@ -1,51 +1,46 @@
-function searchStay() {
+// 1. DUAL LANGUAGE TOGGLE LOGIC (ENGLISH <-> HINDI)
+let currentLang = 'en';
 
-    const location = document.getElementById("stayLocation").value.trim();
-    const checkIn = document.getElementById("checkIn").value;
-    const checkOut = document.getElementById("checkOut").value;
+function toggleLanguage() {
+    const langBtn = document.getElementById('langToggleBtn');
+    currentLang = currentLang === 'en' ? 'hi' : 'en';
 
-    if (location === "") {
-        alert("Please enter your location.");
-        return;
+    if (langBtn) {
+        langBtn.innerText = currentLang === 'en' ? '🌐 हिन्दी' : '🌐 English';
     }
 
-    if (checkIn === "") {
-        alert("Please select check-in date.");
-        return;
-    }
-
-    if (checkOut === "") {
-        alert("Please select check-out date.");
-        return;
-    }
-
-    if (checkOut <= checkIn) {
-        alert("Check-out date must be after check-in date.");
-        return;
-    }
-
-    document.getElementById("properties").scrollIntoView({
-        behavior: "smooth"
+    // Switch Text Elements
+    const elementsToTranslate = document.querySelectorAll('[data-lang-en]');
+    elementsToTranslate.forEach(el => {
+        if (currentLang === 'hi') {
+            el.innerText = el.getAttribute('data-lang-hi');
+        } else {
+            el.innerText = el.getAttribute('data-lang-en');
+        }
     });
-}// Stay links auto-update based on location selector
-function updateStayLinks() {
-    const locationSelect = document.getElementById("stayLocation");
-    if (!locationSelect) return;
-    
-    const location = locationSelect.value;
-    const phone = "917500030061";
-
-    document.getElementById("btn-hotel").href = 
-        `https://wa.me/${phone}?text=Hi%20Plotink,%20I%20am%20looking%20for%20a%20*Hotel%20/%20Room*%20stay%20in%20*${location}*.%20Please%20share%20details.`;
-
-    document.getElementById("btn-homestay").href = 
-        `https://wa.me/${phone}?text=Hi%20Plotink,%20I%20am%20looking%20for%20a%20*Homestay*%20in%20*${location}*.%20Please%20share%20details.`;
-
-    document.getElementById("btn-resort").href = 
-        `https://wa.me/${phone}?text=Hi%20Plotink,%20I%20am%20looking%20for%20a%20*Resort%20/%20Villa*%20stay%20in%20*${location}*.%20Please%20share%20details.`;
-
-    document.getElementById("btn-camp").href = 
-        `https://wa.me/${phone}?text=Hi%20Plotink,%20I%20am%20looking%20for%20a%20*Camp%20/%20Glamping*%20stay%20in%20*${location}*.%20Please%20share%20details.`;
 }
 
-document.addEventListener("DOMContentLoaded", updateStayLinks);
+// 2. SECURITY PROTECTION CODE (DISABLE RIGHT CLICK & KEYBOARD SHORTCUTS)
+document.addEventListener('contextmenu', (e) => e.preventDefault());
+
+document.addEventListener('keydown', (e) => {
+    if (
+        e.keyCode === 123 || // F12 Key
+        (e.ctrlKey && e.shiftKey && e.keyCode === 73) || // Ctrl+Shift+I
+        (e.ctrlKey && e.shiftKey && e.keyCode === 74) || // Ctrl+Shift+J
+        (e.ctrlKey && e.keyCode === 85) || // Ctrl+U (View Source)
+        (e.ctrlKey && e.keyCode === 83) || // Ctrl+S (Save)
+        (e.ctrlKey && e.keyCode === 67)    // Ctrl+C (Copy)
+    ) {
+        e.preventDefault();
+        return false;
+    }
+});
+
+// 3. BOOTSTRAP TOOLTIPS FOR MAP PINS
+document.addEventListener("DOMContentLoaded", function () {
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+});

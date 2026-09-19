@@ -1,66 +1,217 @@
-// ===== MULTI-LANGUAGE TOGGLE LOGIC =====
+// ===== PLOTINK LANGUAGE TOGGLE =====
+
 document.addEventListener("DOMContentLoaded", () => {
+
     const langBtn = document.getElementById("langToggleBtn");
-    let currentLang = localStorage.getItem("plotink_lang") || "en";
+
+    let currentLang =
+        localStorage.getItem("plotink_lang") || "en";
+
 
     function updateLanguage(lang) {
-        const elements = document.querySelectorAll("[data-lang-en]");
-        
-        elements.forEach(el => {
+
+        const elements =
+            document.querySelectorAll("[data-lang-en]");
+
+
+        elements.forEach((el) => {
+
             if (lang === "hi") {
-                el.innerText = el.getAttribute("data-lang-hi") || el.innerText;
+
+                const hindiText =
+                    el.getAttribute("data-lang-hi");
+
+                if (hindiText) {
+                    el.innerText = hindiText;
+                }
+
             } else {
-                el.innerText = el.getAttribute("data-lang-en") || el.innerText;
+
+                const englishText =
+                    el.getAttribute("data-lang-en");
+
+                if (englishText) {
+                    el.innerText = englishText;
+                }
+
             }
+
         });
+
+
+        // Update language button
 
         if (langBtn) {
-            langBtn.innerText = lang === "en" ? "🌐 हिन्दी" : "🌐 English";
+
+            langBtn.innerText =
+                lang === "en"
+                    ? "🌐 हिन्दी"
+                    : "🌐 English";
+
         }
-        
-        localStorage.setItem("plotink_lang", lang);
+
+
+        // Save selected language
+
+        localStorage.setItem(
+            "plotink_lang",
+            lang
+        );
+
     }
 
-    // Initial load setup
+
+    // ===== INITIAL LANGUAGE =====
+
     updateLanguage(currentLang);
 
-    // Click event for Language Button
+
+    // ===== LANGUAGE BUTTON =====
+
     if (langBtn) {
+
         langBtn.addEventListener("click", () => {
-            currentLang = currentLang === "en" ? "hi" : "en";
+
+            currentLang =
+                currentLang === "en"
+                    ? "hi"
+                    : "en";
+
+
             updateLanguage(currentLang);
+
         });
+
     }
 
-    // Initialize Stay booking links if present on page
-    updateStayLinks();
+
+    // ===== STAY LOCATION =====
+
+    const locationSelect =
+        document.getElementById("stayLocation");
+
+
+    if (locationSelect) {
+
+        // Update links on location change
+
+        locationSelect.addEventListener(
+            "change",
+            updateStayLinks
+        );
+
+
+        // Set initial links
+
+        updateStayLinks();
+
+    }
+
 });
 
-// ===== DYNAMIC STAY / HOTEL BOOKING WHATSAPP LINKS =====
+
+// =====================================================
+// ===== DYNAMIC STAY / HOTEL WHATSAPP LINKS ===========
+// =====================================================
+
 function updateStayLinks() {
-    const locationSelect = document.getElementById("stayLocation");
-    if (!locationSelect) return;
-    
-    const location = locationSelect.value;
-    const phone = "919193339398";
 
-    const btnHotel = document.getElementById("btn-hotel");
+    const locationSelect =
+        document.getElementById("stayLocation");
+
+
+    // Stay section not present on this page
+
+    if (!locationSelect) {
+        return;
+    }
+
+
+    const location =
+        locationSelect.value || "your preferred location";
+
+
+    const phone =
+        "919193339398";
+
+
+    // =================================================
+    // HOTEL
+    // =================================================
+
+    const btnHotel =
+        document.getElementById("btn-hotel");
+
+
     if (btnHotel) {
-        btnHotel.href = `https://wa.me/${phone}?text=Hi%20Plotink,%20I%20am%20looking%20for%20a%20*Hotel%20/%20Room*%20stay%20in%20*${encodeURIComponent(location)}*.%20Please%20share%20details.`;
+
+        const message =
+            `Hi Plotink, I am looking for a *Hotel / Room* stay in *${location}*. Please share details.`;
+
+
+        btnHotel.href =
+            `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
     }
 
-    const btnHomestay = document.getElementById("btn-homestay");
+
+    // =================================================
+    // HOMESTAY
+    // =================================================
+
+    const btnHomestay =
+        document.getElementById("btn-homestay");
+
+
     if (btnHomestay) {
-        btnHomestay.href = `https://wa.me/${phone}?text=Hi%20Plotink,%20I%20am%20looking%20for%20a%20*Homestay*%20in%20*${encodeURIComponent(location)}*.%20Please%20share%20details.`;
+
+        const message =
+            `Hi Plotink, I am looking for a *Homestay* in *${location}*. Please share details.`;
+
+
+        btnHomestay.href =
+            `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
     }
 
-    const btnResort = document.getElementById("btn-resort");
+
+    // =================================================
+    // RESORT / VILLA
+    // =================================================
+
+    const btnResort =
+        document.getElementById("btn-resort");
+
+
     if (btnResort) {
-        btnResort.href = `https://wa.me/${phone}?text=Hi%20Plotink,%20I%20am%20looking%20for%20a%20*Resort%20/%20Villa*%20stay%20in%20*${encodeURIComponent(location)}*.%20Please%20share%20details.`;
+
+        const message =
+            `Hi Plotink, I am looking for a *Resort / Villa* stay in *${location}*. Please share details.`;
+
+
+        btnResort.href =
+            `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
     }
 
-    const btnCamp = document.getElementById("btn-camp");
+
+    // =================================================
+    // CAMP / GLAMPING
+    // =================================================
+
+    const btnCamp =
+        document.getElementById("btn-camp");
+
+
     if (btnCamp) {
-        btnCamp.href = `https://wa.me/${phone}?text=Hi%20Plotink,%20I%20am%20looking%20for%20a%20*Camp%20/%20Glamping*%20stay%20in%20*${encodeURIComponent(location)}*.%20Please%20share%20details.`;
+
+        const message =
+            `Hi Plotink, I am looking for a *Camp / Glamping* stay in *${location}*. Please share details.`;
+
+
+        btnCamp.href =
+            `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
     }
+
 }

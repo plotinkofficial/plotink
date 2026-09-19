@@ -2,34 +2,60 @@
 <html lang="en">
 
 <head>
+    <!-- Basic SEO -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plotink – Pan-India AI Property & Partner Network | Buy, Sell, Rent, Stay & Connect</title>
-    <meta name="description" content="Plotink is an AI-powered property network connecting buyers, sellers, tenants, short-stay seekers, and local partners across India.">
-    <meta name="keywords" content="Plotink, property in Uttarakhand, property network, buy property, sell property, rent property, homestays, local property partner">
+
+    <title>Plotink – Your Property Partner | Buy, Sell & Rent Properties</title>
+
+    <meta name="description"
+        content="Find residential, commercial and hill properties in Uttarakhand. Plotink helps you buy, sell or rent property with simple, direct assistance.">
+
+    <meta name="keywords"
+        content="Plotink, property in Uttarakhand, property for sale Uttarakhand, plots in Uttarakhand, residential property, commercial property, hill property, buy property, sell property, rent property">
+
     <meta name="author" content="Plotink">
     <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://plotink.online/">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/logo.png">
 
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content="Plotink – Your Property Partner">
+    <meta property="og:description" content="Buy, sell or rent residential, commercial and hill properties with Plotink.">
+    <meta property="og:url" content="https://plotink.online/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Plotink">
+    <meta property="og:image" content="https://plotink.online/images/hero-bg.jpg">
+
+    <!-- Website Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Plotink",
+        "alternateName": "PLOTINK",
+        "url": "https://plotink.online/"
+    }
+    </script>
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-<!-- 🔥 LIVE TICKER BAR -->
-<div id="plotink-offer-bar" class="plotink-offer-bar">
-    <div class="ticker-content" id="tickerContent">
-        <span class="badge bg-light text-danger me-2">LIVE</span>
-        <span>🔥 New Property Verified in Dehradun • 🏠 Mussoorie Homestay Available • 🤝 New Local Partner Joined in Rishikesh</span>
-    </div>
-</div>
+<!-- ===== PLOTINK HINDI OFFER BAR ===== -->
+<div id="plotink-offer-bar"></div>
 
 <!-- ===== HEADER START ===== -->
 <nav class="navbar navbar-expand-lg sticky-top">
@@ -44,16 +70,24 @@
 
         <div class="collapse navbar-collapse justify-content-end" id="menu">
             <ul class="navbar-nav align-items-lg-center">
-                <li class="nav-item"><a class="nav-link active" href="index.html" data-lang-en="Home" data-lang-hi="होम">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="https://forms.gle/jqR6sz7pMVvX7V5Z9" target="_blank" data-lang-en="Buy" data-lang-hi="खरीदें">Buy</a></li>
-                <li class="nav-item"><a class="nav-link" href="https://forms.gle/jqR6sz7pMVvX7V5Z9" target="_blank" data-lang-en="Sell" data-lang-hi="बेचें">Sell</a></li>
-                <li class="nav-item"><a class="nav-link" href="https://forms.gle/jqR6sz7pMVvX7V5Z9" target="_blank" data-lang-en="Rent/Lease" data-lang-hi="किराया/लीज">Rent/Lease</a></li>
-                <li class="nav-item"><a class="nav-link" href="https://forms.gle/jqR6sz7pMVvX7V5Z9" target="_blank" data-lang-en="Stay" data-lang-hi="स्टे/होमस्टे">Stay</a></li>
-                <li class="nav-item"><a class="nav-link" href="https://forms.gle/jqR6sz7pMVvX7V5Z9" target="_blank" data-lang-en="Connect Partner" data-lang-hi="पार्टनर बनें">Connect</a></li>
-                
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html" data-lang-en="Home" data-lang-hi="होम">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="buy.html" data-lang-en="Buy" data-lang-hi="खरीदें">Buy</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="sell.html" data-lang-en="Sell" data-lang-hi="बेचें">Sell</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="rent.html" data-lang-en="Rent" data-lang-hi="किराया">Rent</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html" data-lang-en="Contact" data-lang-hi="संपर्क करें">Contact</a>
+                </li>
                 <!-- Language Switcher Button -->
                 <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
-                    <button class="btn btn-outline-success btn-sm rounded-pill px-3 fw-bold" id="langToggleBtn" onclick="toggleLanguage()">
+                    <button id="langToggleBtn" class="btn btn-outline-dark btn-sm rounded-pill px-3">
                         🌐 हिन्दी
                     </button>
                 </li>
@@ -63,6 +97,7 @@
 </nav>
 <!-- ===== HEADER END ===== -->
 
+
 <!-- ===== HERO START ===== -->
 <section class="hero">
     <div class="overlay">
@@ -70,29 +105,21 @@
             <div class="row align-items-center" style="min-height:85vh;">
                 <div class="col-lg-8">
                     <div class="ai-badge mb-3">
-                        <i class="bi bi-cpu-fill"></i> AI-Powered Property Network
+                        <i class="bi bi-stars"></i> Smart Property Matchmaker
                     </div>
 
-                    <h5 class="welcome" data-lang-en="WELCOME TO PLOTINK" data-lang-hi="प्लाटइंक में आपका स्वागत है">
-                        WELCOME TO PLOTINK
-                    </h5>
-                    
-                    <h1 class="hero-title" data-lang-en="Your Connected Property Partner" data-lang-hi="आपका भरोसेमंद प्रॉपर्टी पार्टनर">
-                        Your Connected Property Partner
-                    </h1>
-                    
-                    <p class="hero-text" data-lang-en="Buy • Sell • Rent/Lease • Stay • Connect" data-lang-hi="खरीदें • बेचें • किराया/लीज • स्टे • कनेक्ट">
-                        Buy • Sell • Rent/Lease • Stay • Connect
-                    </p>
+                    <h5 class="welcome" data-lang-en="WELCOME TO PLOTINK" data-lang-hi="प्लॉटइंक में आपका स्वागत है">WELCOME TO PLOTINK</h5>
+                    <h1 class="hero-title" data-lang-en="Your Property Partner" data-lang-hi="आपका अपना प्रॉपर्टी पार्टनर">Your Property Partner</h1>
+                    <p class="hero-text" data-lang-en="Residential • Commercial • Hill Properties" data-lang-hi="आवासीय • व्यावसायिक • पहाड़ी संपत्तियां">Residential • Commercial • Hill Properties</p>
 
-                    <div class="hero-buttons d-flex flex-wrap gap-2">
-                        <a href="https://forms.gle/jqR6sz7pMVvX7V5Z9" target="_blank" class="btn buy-btn">
+                    <div class="hero-buttons">
+                        <a href="https://wa.me/919193339398?text=Hi%20Plotink,%20I%20am%20interested%20in%20Buying%20a%20property." target="_blank" class="btn buy-btn">
                             <i class="bi bi-house-door-fill"></i> <span data-lang-en="BUY" data-lang-hi="खरीदें">BUY</span>
                         </a>
-                        <a href="https://forms.gle/jqR6sz7pMVvX7V5Z9" target="_blank" class="btn sell-btn">
+                        <a href="https://wa.me/919193339398?text=Hi%20Plotink,%20I%20want%20to%20Sell%20my%20property." target="_blank" class="btn sell-btn">
                             <i class="bi bi-building-fill"></i> <span data-lang-en="SELL" data-lang-hi="बेचें">SELL</span>
                         </a>
-                        <a href="https://forms.gle/jqR6sz7pMVvX7V5Z9" target="_blank" class="btn rent-btn">
+                        <a href="https://wa.me/919193339398?text=Hi%20Plotink,%20I%20am%20looking%20for%20Rent%20or%20Lease%20options." target="_blank" class="btn rent-btn">
                             <i class="bi bi-key-fill"></i> <span data-lang-en="RENT" data-lang-hi="किराया">RENT</span>
                         </a>
                     </div>
@@ -103,31 +130,34 @@
 </section>
 <!-- ===== HERO END ===== -->
 
-<!-- ===== QUICK CONTACT STRIP ===== -->
+
+<!-- ===== QUICK CONTACT STRIP START ===== -->
 <section class="py-3" style="background:#123C69;">
     <div class="container">
         <div class="row text-center text-white">
             <div class="col-md-4 mb-2">
-                <i class="bi bi-telephone-fill"></i> <strong>Call</strong><br>
-                <a href="tel:9193339398" class="text-white text-decoration-none">+91 91933 39398</a>
+                <i class="bi bi-telephone-fill"></i> <strong data-lang-en="Call" data-lang-hi="कॉल करें">Call</strong><br>
+                <a href="tel:7500030061" class="text-white text-decoration-none">+91 7500030061</a>
             </div>
             <div class="col-md-4 mb-2">
                 <i class="bi bi-whatsapp"></i> <strong>WhatsApp</strong><br>
-                <a href="https://wa.me/919193339398?text=Hi%20Plotink,%20I%20have%20a%20property%20requirement" class="text-white text-decoration-none" target="_blank">Chat Now</a>
+                <a href="https://wa.me/917500030061" class="text-white text-decoration-none" target="_blank" data-lang-en="Chat Now" data-lang-hi="चैट करें">Chat Now</a>
             </div>
             <div class="col-md-4 mb-2">
-                <i class="bi bi-envelope-fill"></i> <strong>Email</strong><br>
+                <i class="bi bi-envelope-fill"></i> <strong data-lang-en="Email" data-lang-hi="ईमेल">Email</strong><br>
                 <a href="mailto:plotinkofficial@gmail.com" class="text-white text-decoration-none">plotinkofficial@gmail.com</a>
             </div>
         </div>
     </div>
 </section>
+<!-- ===== QUICK CONTACT STRIP END ===== -->
 
-<!-- ===== 5 CORE OPTIONS ===== -->
+
+<!-- ===== QUICK ACTION START ===== -->
 <section class="container py-5">
-    <div class="text-center mb-5">
+    <div class="text-center mb-4">
         <h2 class="fw-bold" data-lang-en="What do you want to do?" data-lang-hi="आप क्या करना चाहते हैं?">What do you want to do?</h2>
-        <p class="text-muted" data-lang-en="Choose an option below for smart matchmaking" data-lang-hi="नीचे दिए गए विकल्पों में से चुनें">Choose an option below for smart matchmaking</p>
+        <p class="text-muted" data-lang-en="Choose an option below for direct assistance" data-lang-hi="सहायता के लिए नीचे दिए गए विकल्पों में से चुनें">Choose an option below for direct assistance</p>
     </div>
 
     <div class="row g-4 justify-content-center">
@@ -138,95 +168,146 @@
                 <div class="icon">🏡</div>
                 <h4 data-lang-en="Buy" data-lang-hi="खरीदें">Buy</h4>
                 <p data-lang-en="Find residential, commercial or hill land." data-lang-hi="अपनी पसंद की जमीन या घर खरीदें।">Find residential, commercial or hill land.</p>
-                <a href="https://forms.gle/jqR6sz7pMVvX7V5Z9" target="_blank" class="btn btn-success w-100">Buy Now</a>
+                <a href="https://wa.me/919193339398?text=Hi%20Plotink,%20I%20am%20interested%20in%20Buying%20a%20property." target="_blank" class="btn btn-success w-100" data-lang-en="Buy Now" data-lang-hi="अभी खरीदें">Buy Now</a>
             </div>
         </div>
 
         <!-- 2. SELL -->
         <div class="col-md-4 col-lg-2-4">
             <div class="action-card">
-                <span class="smart-tag">Fast Buyers</span>
-                <div class="icon">🏠</div>
+                <span class="smart-tag">Fast Deal</span>
+                <div class="icon">🏷️</div>
                 <h4 data-lang-en="Sell" data-lang-hi="बेचें">Sell</h4>
-                <p data-lang-en="List property to get verified direct buyers." data-lang-hi="अपनी प्रॉपर्टी आसानी से बेचें।">List property to get verified direct buyers.</p>
-                <a href="https://forms.gle/jqR6sz7pMVvX7V5Z9" target="_blank" class="btn btn-primary w-100">Sell Now</a>
+                <p data-lang-en="List your land, plot or house for genuine buyers." data-lang-hi="अपनी जमीन, प्लॉट या घर सही खरीदारों को बेचें।">List your land, plot or house for genuine buyers.</p>
+                <a href="https://wa.me/919193339398?text=Hi%20Plotink,%20I%20want%20to%20Sell%20my%20property." target="_blank" class="btn btn-primary w-100" data-lang-en="Sell Property" data-lang-hi="प्रॉपर्टी बेचें">Sell Property</a>
             </div>
         </div>
 
         <!-- 3. RENT / LEASE -->
         <div class="col-md-4 col-lg-2-4">
             <div class="action-card">
-                <span class="smart-tag">Instant Match</span>
+                <span class="smart-tag">Verified</span>
                 <div class="icon">🔑</div>
                 <h4 data-lang-en="Rent / Lease" data-lang-hi="किराया / लीज">Rent / Lease</h4>
-                <p data-lang-en="Rent houses, shops or lease commercial space." data-lang-hi="घर, दुकान या जमीन किराए पर लें/दें।">Rent houses, shops or lease commercial space.</p>
-                <a href="https://forms.gle/jqR6sz7pMVvX7V5Z9" target="_blank" class="btn btn-warning text-white w-100">Rent Now</a>
+                <p data-lang-en="Rent or lease residential and commercial spaces." data-lang-hi="आवासीय और व्यावसायिक स्थान किराए पर लें या दें।">Rent or lease residential and commercial spaces.</p>
+                <a href="https://wa.me/919193339398?text=Hi%20Plotink,%20I%20am%20looking%20for%20Rent%20or%20Lease%20options." target="_blank" class="btn btn-warning w-100" data-lang-en="Rent Options" data-lang-hi="किराए के विकल्प">Rent Options</a>
             </div>
         </div>
 
         <!-- 4. STAY -->
         <div class="col-md-4 col-lg-2-4">
             <div class="action-card">
-                <span class="smart-tag">Short Stays</span>
-                <div class="icon">🏨</div>
-                <h4 data-lang-en="Stay" data-lang-hi="स्टे / होमस्टे">Stay</h4>
-                <p data-lang-en="Book homestays, villas, rooms & hill resorts." data-lang-hi="होमस्टे, विला या रूम बुक करें।">Book homestays, villas, rooms & hill resorts.</p>
-                <a href="https://forms.gle/jqR6sz7pMVvX7V5Z9" target="_blank" class="btn btn-info text-white w-100">Book Stay</a>
+                <span class="smart-tag">Trending</span>
+                <div class="icon">🏕️</div>
+                <h4 data-lang-en="Stay" data-lang-hi="स्टे (Stay)">Stay</h4>
+                <p data-lang-en="Explore hotels, homestays, resorts, camps and villas." data-lang-hi="होटल, होमस्टे, रिसॉर्ट, कैंप और विला खोजें।">Explore hotels, homestays, resorts, camps and villas.</p>
+                <a href="https://wa.me/919193339398?text=Hi%20Plotink,%20I%20want%20to%20book%20a%20Stay%20(Hotel/Homestay/Camp)." target="_blank" class="btn btn-info text-white w-100" data-lang-en="Book Stay" data-lang-hi="स्टे बुक करें">Book Stay</a>
             </div>
         </div>
 
         <!-- 5. CONNECT -->
         <div class="col-md-4 col-lg-2-4">
-            <div class="action-card highlight-card">
-                <span class="smart-tag bg-danger">Earn Money</span>
+            <div class="action-card">
+                <span class="smart-tag">Partner</span>
                 <div class="icon">🤝</div>
-                <h4 data-lang-en="Connect" data-lang-hi="पार्टनर बनें">Connect</h4>
-                <p data-lang-en="Join as Plotink Local Partner & earn commission." data-lang-hi="लोकल पार्टनर बनें और कमीशन कमाएं।">Join as Plotink Local Partner & earn commission.</p>
-                <a href="https://forms.gle/jqR6sz7pMVvX7V5Z9" target="_blank" class="btn btn-dark w-100">Join Partner</a>
+                <h4 data-lang-en="Connect" data-lang-hi="कनेक्ट करें">Connect</h4>
+                <p data-lang-en="Join as a Local Partner or connect directly with owners." data-lang-hi="लोकल पार्टनर बनें या सीधे ओनर से जुड़ें।">Join as a Local Partner or connect directly with owners.</p>
+                <a href="https://wa.me/919193339398?text=Hi%20Plotink,%20I%20want%20to%20Connect%20as%20a%20Local%20Partner/Owner." target="_blank" class="btn btn-dark w-100" data-lang-en="Connect Now" data-lang-hi="जुड़ें">Connect Now</a>
             </div>
         </div>
     </div>
 </section>
+<!-- ===== QUICK ACTION END ===== -->
 
-<!-- ===== LIVE DEMAND MAP SECTION ===== -->
-<section class="py-5 bg-light position-relative" id="our-sites-map">
+
+<!-- ===== STATISTICS START ===== -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-6 col-lg-3">
+                <div class="stat-card">
+                    <h2>500+</h2>
+                    <p data-lang-en="Happy Clients" data-lang-hi="संतुष्ट ग्राहक">Happy Clients</p>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3">
+                <div class="stat-card">
+                    <h2>150+</h2>
+                    <p data-lang-en="Properties Sold" data-lang-hi="प्रॉपर्टी बेची गईं">Properties Sold</p>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3">
+                <div class="stat-card">
+                    <h2>100+</h2>
+                    <p data-lang-en="Verified Listings" data-lang-hi="सत्यापित लिस्टिंग्स">Verified Listings</p>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3">
+                <div class="stat-card">
+                    <h2 id="visitorCount">0</h2>
+                    <p data-lang-en="Total Visitors" data-lang-hi="कुल विजिटर्स">Total Visitors</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ===== STATISTICS END ===== -->
+
+
+<!-- ===== FEATURED PROPERTIES START ===== -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="badge bg-success bg-opacity-10 text-success fw-bold px-3 py-2 rounded-pill mb-2">
+                <i class="bi bi-stars"></i> Curated Selection
+            </span>
+            <h2 class="fw-bold" data-lang-en="Featured Properties" data-lang-hi="खास संपत्तियां">Featured Properties</h2>
+            <p class="text-muted" data-lang-en="Explore our latest residential, commercial & hill properties" data-lang-hi="हमारी नवीनतम आवासीय, व्यावसायिक और पहाड़ी संपत्तियों को देखें">Explore our latest residential, commercial & hill properties</p>
+        </div>
+
+        <div id="propertySlider" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3500">
+            <div class="carousel-inner rounded-4 shadow">
+                <div class="carousel-item active">
+                    <img src="images/property1.jpg" class="d-block w-100 slider-img" alt="Property 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/property2.jpg" class="d-block w-100 slider-img" alt="Property 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/property3.jpg" class="d-block w-100 slider-img" alt="Property 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/property4.jpg" class="d-block w-100 slider-img" alt="Property 4">
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#propertySlider" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#propertySlider" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </div>
+</section>
+<!-- ===== FEATURED PROPERTIES END ===== -->
+
+
+<!-- ===== GOOGLE MAP START ===== -->
+<section class="py-5 bg-light">
     <div class="container">
         <div class="text-center mb-4">
-            <span class="badge bg-danger bg-opacity-10 text-danger fw-bold px-3 py-2 rounded-pill mb-2">
-                <i class="bi bi-geo-alt-fill me-1"></i> Pan-India Active Network
-            </span>
-            <h2 class="fw-bold" data-lang-en="Plotink Sites & Demand Map" data-lang-hi="प्लाटइंक एक्टिव साइट्स और डिमांड मैप">Plotink Sites & Demand Map</h2>
-            <p class="text-muted" data-lang-en="Explore verified sites & active local partners in real-time" data-lang-hi="रियल-टाइम में एक्टिव साइट्स और लोकल पार्टनर नेटवर्क देखें">Explore verified sites & active local partners in real-time</p>
+            <h2 class="fw-bold" data-lang-en="Our Location" data-lang-hi="हमारा स्थान">Our Location</h2>
+            <p class="text-muted" data-lang-en="Serving Uttarakhand & Hill Properties" data-lang-hi="उत्तराखंड और पहाड़ी संपत्तियों की सेवा में">Serving Uttarakhand & Hill Properties</p>
         </div>
 
-        <div class="map-wrapper shadow-lg rounded-4 overflow-hidden position-relative">
-            <div class="map-overlay-badge bg-white shadow-sm rounded-pill px-3 py-2 position-absolute top-0 start-0 m-3 z-3">
-                <span class="pulse-dot green me-2"></span> <strong>Live Network:</strong> Uttarakhand & Expanding Pan-India
-            </div>
-
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110204.74617188725!2d77.94723048598774!3d30.32556277156947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390929c3569e4c83%3A0x40cce339c323f501!2sDehradun%2C%20Uttarakhand!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
-                width="100%" height="420" style="border:0;" allowfullscreen="" loading="lazy">
-            </iframe>
-
-            <!-- Blinking Pins Overlay -->
-            <div class="map-marker-overlay">
-                <div class="blinking-pin" style="top: 42%; left: 48%;" data-bs-toggle="tooltip" title="Dehradun - 15+ Verified Plots & Partner Active">
-                    <span class="pin-pulse"></span>
-                    <i class="bi bi-geo-alt-fill pin-icon"></i>
-                </div>
-                <div class="blinking-pin" style="top: 28%; left: 52%;" data-bs-toggle="tooltip" title="Mussoorie - Premium Hill Stays">
-                    <span class="pin-pulse"></span>
-                    <i class="bi bi-geo-alt-fill pin-icon"></i>
-                </div>
-                <div class="blinking-pin" style="top: 60%; left: 58%;" data-bs-toggle="tooltip" title="Rishikesh - River View Land & Homestays">
-                    <span class="pin-pulse"></span>
-                    <i class="bi bi-geo-alt-fill pin-icon"></i>
-                </div>
-            </div>
-        </div>
+        <iframe src="https://www.google.com/maps?q=Dehradun,Uttarakhand&output=embed"
+            width="100%" height="400" style="border:0;border-radius:20px;" loading="lazy">
+        </iframe>
     </div>
 </section>
+<!-- ===== GOOGLE MAP END ===== -->
+
 
 <!-- ===== FOOTER START ===== -->
 <footer class="footer">
@@ -234,33 +315,100 @@
         <div class="row">
             <div class="col-lg-4 mb-4">
                 <img src="images/logo.png" height="55" alt="Plotink Logo">
-                <p class="mt-3">Pan-India AI-Powered Mobile-First Property Network</p>
+                <p class="mt-3" data-lang-en="Your Trusted Property Partner" data-lang-hi="आपका भरोसेमंद प्रॉपर्टी पार्टनर">Your Trusted Property Partner</p>
             </div>
 
             <div class="col-lg-4 mb-4">
-                <h5>Contact Us</h5>
-                <p><i class="bi bi-telephone-fill"></i> +91 91933 39398</p>
+                <h5 data-lang-en="Contact" data-lang-hi="संपर्क करें">Contact</h5>
+                <p><i class="bi bi-telephone-fill"></i> +91 7500030061</p>
                 <p><i class="bi bi-envelope-fill"></i> plotinkofficial@gmail.com</p>
-                <p><i class="bi bi-geo-alt-fill"></i> Uttarakhand, India (Pan-India Service)</p>
+                <p><i class="bi bi-geo-alt-fill"></i> Uttarakhand, India</p>
             </div>
 
             <div class="col-lg-4 mb-4">
-                <h5>Follow & Connect</h5>
-                <p>Instagram: @plotinkofficial</p>
-                <p><i class="bi bi-whatsapp"></i> WhatsApp: +91 91933 39398</p>
+                <h5 data-lang-en="Follow Us" data-lang-hi="हमसे जुड़ें">Follow Us</h5>
+                <p class="mb-2">
+                    <a href="https://www.instagram.com/plotinkofficial" target="_blank" class="text-white text-decoration-none">
+                        <i class="bi bi-instagram me-2 fs-5" style="color: #E1306C;"></i> Instagram: @plotinkofficial
+                    </a>
+                </p>
+                <p class="mb-2">
+                    <a href="https://www.facebook.com/plotinkofficial" target="_blank" class="text-white text-decoration-none">
+                        <i class="bi bi-facebook me-2 fs-5" style="color: #1877F2;"></i> Facebook: @plotinkofficial
+                    </a>
+                </p>
+                <p class="mb-2">
+                    <a href="https://wa.me/917500030061" target="_blank" class="text-white text-decoration-none">
+                        <i class="bi bi-whatsapp me-2 fs-5" style="color: #25D366;"></i> WhatsApp: 7500030061
+                    </a>
+                </p>
             </div>
         </div>
         <hr>
-        <p class="text-center mb-0">© 2026 Plotink. All Rights Reserved.</p>
+        <p class="text-center mb-0">© 2025 Plotink. All Rights Reserved.</p>
     </div>
 </footer>
+<!-- ===== FOOTER END ===== -->
 
-<!-- Floating Call & WhatsApp Buttons -->
-<a href="tel:9193339398" class="float-call" title="Call Plotink"><i class="bi bi-telephone-fill"></i></a>
-<a href="https://wa.me/919193339398" target="_blank" class="float-whatsapp" title="WhatsApp Plotink"><i class="bi bi-whatsapp"></i></a>
 
+<!-- ===== FLOATING BUTTONS ===== -->
+<a href="tel:7500030061" class="float-call" title="Call Plotink">
+    <i class="bi bi-telephone-fill"></i>
+</a>
+
+<a href="https://wa.me/917500030061" target="_blank" class="float-whatsapp" title="WhatsApp Plotink">
+    <i class="bi bi-whatsapp"></i>
+</a>
+
+
+<!-- JavaScript Resources -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/script.js"></script>
+<script src="js/offers.js"></script>
+
+<!-- Firebase Visitor Tracker -->
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.17.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.17.0/firebase-analytics.js";
+    import {
+        getFirestore,
+        doc,
+        getDoc,
+        setDoc,
+        updateDoc,
+        increment
+    } from "https://www.gstatic.com/firebasejs/12.17.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyDNlOgG7qBypTVWZZC6nr_5l6TX-A8159o",
+        authDomain: "plotink-57cb0.firebaseapp.com",
+        projectId: "plotink-57cb0",
+        storageBucket: "plotink-57cb0.firebasestorage.app",
+        messagingSenderId: "731648916753",
+        appId: "1:731648916753:web:892f21a929ff92f606a0b0",
+        measurementId: "G-DGHC2K71V7"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const db = getFirestore(app);
+
+    async function updateVisitorCount() {
+        const ref = doc(db, "visitors", "counter");
+        const snap = await getDoc(ref);
+
+        if (!snap.exists()) {
+            await setDoc(ref, { count: 1 });
+            document.getElementById("visitorCount").innerText = 1;
+        } else {
+            await updateDoc(ref, { count: increment(1) });
+            const updated = await getDoc(ref);
+            document.getElementById("visitorCount").innerText = updated.data().count;
+        }
+    }
+
+    updateVisitorCount();
+</script>
 
 </body>
 </html>

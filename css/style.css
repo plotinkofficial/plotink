@@ -140,3 +140,354 @@ img {
 }
 .float-call { bottom: 85px; background: #28a745; }
 .float-whatsapp { bottom: 22px; background: #25D366; }
+
+/* =========================================================
+   PLOTINK INSTAGRAM LEAD GENERATION
+   ========================================================= */
+
+.instagram-nav {
+    color: #c13584 !important;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.instagram-nav:hover {
+    color: #e1306c !important;
+    transform: translateY(-2px);
+}
+
+.instagram-nav i {
+    margin-right: 5px;
+}
+
+
+/* Instagram icon in contact strip */
+
+.instagram-strip-icon {
+    color: #E1306C;
+    margin-right: 4px;
+}
+
+
+/* Instagram Lead Section */
+
+.plotink-instagram-lead {
+    background:
+        radial-gradient(circle at 10% 20%, rgba(225, 48, 108, 0.12), transparent 30%),
+        radial-gradient(circle at 90% 80%, rgba(18, 60, 105, 0.12), transparent 30%),
+        #f8fafc;
+}
+
+
+/* Main Instagram Card */
+
+.instagram-lead-card {
+    position: relative;
+    overflow: hidden;
+    padding: 42px;
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.96),
+            rgba(248,250,252,0.92)
+        );
+
+    border: 1px solid rgba(225, 48, 108, 0.18);
+
+    box-shadow:
+        0 20px 55px rgba(18, 60, 105, 0.12);
+
+    backdrop-filter: blur(12px);
+
+    transition: all 0.35s ease;
+}
+
+
+/* Decorative glow */
+
+.instagram-lead-card::before {
+    content: "";
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    right: -80px;
+    top: -90px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(131,58,180,0.18),
+        rgba(225,48,108,0.18),
+        rgba(252,176,69,0.16)
+    );
+
+    border-radius: 50%;
+
+    filter: blur(10px);
+
+    pointer-events: none;
+}
+
+
+/* Second decorative glow */
+
+.instagram-lead-card::after {
+    content: "";
+    position: absolute;
+
+    width: 160px;
+    height: 160px;
+
+    left: -70px;
+    bottom: -80px;
+
+    background: rgba(46,125,50,0.10);
+
+    border-radius: 50%;
+
+    filter: blur(20px);
+
+    pointer-events: none;
+}
+
+
+/* Instagram Icon */
+
+.instagram-lead-icon {
+    width: 58px;
+    height: 58px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background: linear-gradient(
+        135deg,
+        #833ab4,
+        #e1306c,
+        #fd1d1d,
+        #fcb045
+    );
+
+    color: #fff;
+
+    font-size: 30px;
+
+    box-shadow:
+        0 10px 25px rgba(225, 48, 108, 0.25);
+}
+
+
+/* Small heading */
+
+.instagram-lead-label {
+    display: inline-block;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    color: #c13584;
+}
+
+
+/* Heading */
+
+.instagram-lead-card h2 {
+    color: #123C69;
+    font-size: 32px;
+}
+
+
+/* Description */
+
+.instagram-lead-card p {
+    color: #5f6b76;
+    max-width: 720px;
+    line-height: 1.7;
+}
+
+
+/* Instagram CTA Button */
+
+.instagram-lead-btn {
+    position: relative;
+    z-index: 2;
+
+    padding: 13px 20px;
+
+    border: none;
+    border-radius: 14px;
+
+    color: #fff !important;
+
+    font-weight: 700;
+
+    background: linear-gradient(
+        135deg,
+        #833ab4,
+        #e1306c,
+        #fd1d1d
+    );
+
+    box-shadow:
+        0 8px 22px rgba(225, 48, 108, 0.22);
+
+    transition: all 0.3s ease;
+}
+
+
+.instagram-lead-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 14px 30px rgba(225, 48, 108, 0.30);
+
+    color: #fff !important;
+}
+
+
+/* WhatsApp CTA */
+
+.whatsapp-lead-btn {
+    position: relative;
+    z-index: 2;
+
+    padding: 13px 20px;
+
+    border-radius: 14px;
+
+    background: #25D366;
+
+    border: 1px solid #25D366;
+
+    color: #fff !important;
+
+    font-weight: 700;
+
+    transition: all 0.3s ease;
+}
+
+
+.whatsapp-lead-btn:hover {
+    background: #1ebe5d;
+
+    border-color: #1ebe5d;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(37, 211, 102, 0.25);
+}
+
+
+/* Footer Instagram Button */
+
+.footer-instagram {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 10px;
+
+    padding: 10px 17px;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    color: #fff !important;
+
+    background: linear-gradient(
+        135deg,
+        #833ab4,
+        #e1306c,
+        #fd1d1d,
+        #fcb045
+    );
+
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+
+.footer-instagram:hover {
+    transform: translateY(-3px);
+
+    color: #fff !important;
+
+    box-shadow:
+        0 8px 22px rgba(225, 48, 108, 0.30);
+}
+
+
+/* Footer social links */
+
+.footer-social-link {
+    transition: all 0.25s ease;
+}
+
+.footer-social-link:hover {
+    opacity: 0.85;
+}
+
+
+/* =========================================================
+   MOBILE INSTAGRAM DESIGN
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    .instagram-lead-card {
+        padding: 28px 20px;
+
+        border-radius: 22px;
+
+        text-align: center;
+    }
+
+    .instagram-lead-icon {
+        width: 52px;
+        height: 52px;
+
+        font-size: 27px;
+
+        border-radius: 16px;
+    }
+
+    .instagram-lead-label {
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+
+    .instagram-lead-card h2 {
+        font-size: 25px;
+
+        line-height: 1.25;
+    }
+
+    .instagram-lead-card p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .instagram-lead-btn,
+    .whatsapp-lead-btn {
+        width: 100%;
+    }
+
+    .instagram-nav {
+        display: inline-block;
+        margin-top: 5px;
+    }
+}

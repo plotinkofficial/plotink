@@ -611,14 +611,16 @@
 
             loginMessage.innerHTML = "";
 
-        } catch (error) {
+                } catch (error) {
 
-            console.error(error);
+            console.error("Firebase Login Error:", error);
 
             loginMessage.innerHTML =
                 `<div class="alert alert-danger">
-                    Login failed. Please check your email and password.
-                 </div>`;
+                    <strong>Login Error:</strong><br>
+                    ${error.code}<br>
+                    ${error.message}
+                </div>`;
 
         }
 

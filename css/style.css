@@ -1,394 +1,1480 @@
-/* ===== GENERAL SECURITY & SELECTION PREVENTION ===== */
-body {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+/* =========================================================
+   PLOTINK - CLEAN MAIN STYLESHEET
+   ========================================================= */
+
+
+/* =========================================================
+   ROOT / GLOBAL
+   ========================================================= */
+
+:root {
+    --plotink-blue: #123c69;
+    --plotink-blue-dark: #092b4d;
+    --plotink-green: #198754;
+    --plotink-green-dark: #146c43;
+    --plotink-red: #b52b24;
+    --plotink-gold: #ffb800;
+    --plotink-cyan: #12bfe0;
+    --plotink-dark: #17202a;
+    --plotink-muted: #667085;
+    --plotink-light: #f5f8fa;
+    --plotink-border: #dce4ea;
+    --plotink-white: #ffffff;
+    --plotink-shadow: 0 8px 30px rgba(20, 40, 60, 0.10);
+    --plotink-radius: 18px;
 }
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    margin: 0;
+    font-family:
+        "Inter",
+        "Segoe UI",
+        Arial,
+        sans-serif;
+    color: var(--plotink-dark);
+    background: #ffffff;
+    overflow-x: hidden;
+}
+
 
 img {
-    -webkit-user-drag: none;
-    user-drag: none;
-    pointer-events: none;
+    max-width: 100%;
 }
 
-/* ===== HERO SECTION ===== */
-.hero {
-    background-image: url("../images/hero-bg.jpg");
-    background-size: cover;
-    background-position: center;
-    min-height: 85vh;
-    position: relative;
+
+a {
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
-.overlay {
-    background: linear-gradient(135deg, rgba(18, 60, 105, 0.8), rgba(0, 0, 0, 0.6));
-    min-height: 85vh;
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.navbar {
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(18, 60, 105, 0.08);
+    box-shadow: 0 4px 18px rgba(20, 40, 60, 0.06);
+    z-index: 1040;
+}
+
+
+.navbar .container {
+    min-height: 72px;
+}
+
+
+.navbar-brand {
     display: flex;
     align-items: center;
 }
 
+
+.navbar .logo {
+    width: auto;
+    max-height: 58px;
+    object-fit: contain;
+}
+
+
+.navbar-nav {
+    gap: 4px;
+}
+
+
+.navbar .nav-link {
+    color: #24364b;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 9px 13px !important;
+    border-radius: 999px;
+}
+
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: var(--plotink-blue);
+    background: #eef5fb;
+}
+
+
+.navbar .instagram-nav {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+
+.navbar .instagram-nav i {
+    color: #e1306c;
+    font-size: 16px;
+}
+
+
+.navbar-toggler {
+    border: 1px solid #d5dde5;
+    border-radius: 10px;
+    padding: 6px 9px;
+}
+
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(18, 60, 105, 0.12);
+}
+
+
+/* =========================================================
+   TOP TICKER
+   ========================================================= */
+
+.plotink-top-ticker {
+    width: 100%;
+    overflow: hidden;
+    background: var(--plotink-red);
+    color: #ffffff;
+    white-space: nowrap;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 34px;
+    position: relative;
+    z-index: 1050;
+}
+
+
+.plotink-ticker-track {
+    display: inline-flex;
+    width: max-content;
+    animation:
+        plotinkTicker
+        38s linear infinite;
+}
+
+
+.plotink-ticker-track span {
+    display: inline-block;
+    padding-right: 70px;
+}
+
+
+.plotink-top-ticker:hover
+.plotink-ticker-track {
+    animation-play-state: paused;
+}
+
+
+@keyframes plotinkTicker {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    position: relative;
+    min-height: 78vh;
+    background-image:
+        url("../images/hero-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            120deg,
+            rgba(3, 25, 47, 0.90),
+            rgba(9, 48, 79, 0.68),
+            rgba(0, 0, 0, 0.38)
+        );
+    z-index: 0;
+}
+
+
+.hero .overlay {
+    position: relative;
+    min-height: 78vh;
+    z-index: 1;
+}
+
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+
+.hero .row {
+    min-height: 78vh;
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+
+
 .ai-badge {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: #00f2fe;
-    padding: 6px 16px;
-    border-radius: 30px;
-    font-size: 14px;
+    gap: 7px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+
+.ai-badge i {
+    color: #ffd45a;
+}
+
+
+.welcome {
+    margin: 0 0 8px;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+
+.hero-title {
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(42px, 6vw, 76px);
+    line-height: 0.98;
+    font-weight: 900;
+    letter-spacing: -2px;
+    text-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.28);
+}
+
+
+.hero-text {
+    margin: 15px 0 0;
+    color: rgba(255, 255, 255, 0.90);
+    font-size: 18px;
     font-weight: 600;
 }
 
-.welcome { color: #ffffff; font-size: 18px; font-weight: 700; letter-spacing: 2px; }
-.hero-title { color: #ffffff; font-size: 52px; font-weight: 800; line-height: 1.15; margin: 15px 0; }
-.hero-text { color: #ffffff; font-size: 22px; font-weight: 500; margin-bottom: 30px; }
-
-.hero-buttons .btn {
-    padding: 14px 28px;
-    border-radius: 50px;
-    color: #fff;
-    font-weight: 700;
-    transition: 0.35s;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-.buy-btn { background: #28a745 !important; border: none; }
-.sell-btn { background: #0d6efd !important; border: none; }
-.rent-btn { background: #fd7e14 !important; border: none; }
-
-/* ===== NAVBAR ===== */
-.navbar {
-    background: rgba(255, 255, 255, 0.95) !important;
-    backdrop-filter: blur(12px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    margin-top: 38px !important;
-    z-index: 1000 !important;
-}
-
-.logo { height: 65px; width: auto; }
-.navbar-nav .nav-link { color: #123C69 !important; font-weight: 600; font-size: 16px; margin-left: 15px; }
-.navbar-nav .nav-link:hover, .navbar-nav .active { color: #2E7D32 !important; }
-
-/* ===== 5 CORE ACTION CARDS ===== */
-@media (min-width: 992px) {
-    .col-lg-2-4 { flex: 0 0 auto; width: 20%; }
-}
-
-.action-card {
-    position: relative;
-    background: #fff;
-    padding: 30px 18px;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    transition: all 0.35s ease;
-    height: 100%;
-    border: 1px solid rgba(0,0,0,0.05);
-}
-
-.action-card:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12); }
-.smart-tag {
-    position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
-    background: #123C69; color: #fff; font-size: 10px; font-weight: 700;
-    padding: 3px 10px; border-radius: 20px; text-transform: uppercase;
-}
-.action-card .icon { font-size: 45px; margin-bottom: 12px; }
-.action-card h4 { font-weight: 700; color: #123C69; font-size: 20px; }
-.action-card p { color: #666; font-size: 13px; min-height: 40px; }
-
-/* ===== BLINKING MAP PIN ANIMATION ===== */
-.map-wrapper { position: relative; border: 3px solid #ffffff; }
-.map-marker-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2; }
-.blinking-pin { position: absolute; pointer-events: auto; cursor: pointer; transform: translate(-50%, -50%); display: flex; align-items: center; justify-content: center; }
-.pin-icon { font-size: 28px; color: #ff1744; filter: drop-shadow(0 3px 6px rgba(0,0,0,0.4)); position: relative; z-index: 2; }
-.pin-pulse {
-    position: absolute; width: 20px; height: 20px; background-color: rgba(255, 23, 68, 0.6);
-    border-radius: 50%; z-index: 1; animation: locationPulse 1.8s infinite ease-out;
-}
-@keyframes locationPulse {
-    0% { transform: scale(0.5); opacity: 1; }
-    100% { transform: scale(3.2); opacity: 0; }
-}
-
-.pulse-dot.green {
-    display: inline-block; width: 10px; height: 10px; background-color: #28a745;
-    border-radius: 50%; animation: dotPulse 1.5s infinite;
-}
-@keyframes dotPulse {
-    0% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7); }
-    70% { box-shadow: 0 0 0 8px rgba(40, 167, 69, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0); }
-}
-
-/* ===== OFFER & TICKER BAR ===== */
-.plotink-offer-bar {
-    position: fixed !important; top: 0 !important; left: 0 !important; width: 100% !important;
-    height: 38px !important; background: linear-gradient(90deg, #123C69, #ff1744, #2E7D32);
-    color: #ffffff; font-weight: 600; font-size: 14px; z-index: 999999 !important;
-    display: flex; align-items: center; padding: 0 15px; overflow: hidden;
-}
-
-/* ===== FOOTER & FLOATING BUTTONS ===== */
-.footer { background: #123C69; color: #fff; padding: 50px 0 20px; }
-.float-call, .float-whatsapp {
-    position: fixed; right: 22px; width: 52px; height: 52px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center; color: #fff;
-    font-size: 22px; z-index: 9999; box-shadow: 0 8px 22px rgba(0,0,0,0.22);
-}
-.float-call { bottom: 85px; background: #28a745; }
-.float-whatsapp { bottom: 22px; background: #25D366; }
 
 /* =========================================================
-   PLOTINK INSTAGRAM LEAD GENERATION
+   HERO ACTION AREA
    ========================================================= */
 
-.instagram-nav {
-    color: #c13584 !important;
-    font-weight: 600;
-    transition: all 0.3s ease;
+.plotink-hero-actions {
+    margin-top: 25px;
 }
 
-.instagram-nav:hover {
-    color: #e1306c !important;
+
+.plotink-hero-actions h3 {
+    font-size: 20px;
+}
+
+
+.plotink-hero-action-wrap {
+    display: grid;
+
+    /*
+     * DESKTOP:
+     * exactly 5 cards in one row
+     */
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    gap: 12px;
+
+    width: 100%;
+}
+
+
+.plotink-hero-action {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 0;
+
+    aspect-ratio: 1 / 1;
+
+    padding: 18px 12px 13px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.98),
+            rgba(246, 250, 253, 0.95)
+        );
+
+    color: var(--plotink-blue);
+
+    text-decoration: none;
+
+    border: 1px solid
+        rgba(255, 255, 255, 0.55);
+
+    box-shadow:
+        0 12px 30px
+        rgba(0, 0, 0, 0.18);
+
+    overflow: visible;
+
+    transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease,
+        border-color 0.22s ease;
+}
+
+
+.plotink-hero-action:hover {
+    color: var(--plotink-blue);
+    transform: translateY(-6px);
+    box-shadow:
+        0 18px 38px
+        rgba(0, 0, 0, 0.24);
+    border-color: rgba(255, 255, 255, 0.9);
+}
+
+
+.plotink-hero-action:active {
     transform: translateY(-2px);
 }
 
-.instagram-nav i {
-    margin-right: 5px;
+
+.plotink-hero-action .action-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 58px;
+    height: 58px;
+
+    margin-bottom: 9px;
+
+    border-radius: 17px;
+
+    background: #eef5fb;
+
+    font-size: 30px;
+
+    line-height: 1;
+
+    box-shadow:
+        inset 0 0 0 1px
+        rgba(18, 60, 105, 0.05);
 }
 
 
-/* Instagram icon in contact strip */
+.plotink-hero-action h4 {
+    margin: 0 0 5px;
 
-.instagram-strip-icon {
-    color: #E1306C;
-    margin-right: 4px;
+    font-size: 17px;
+    line-height: 1.15;
+
+    font-weight: 900;
+
+    text-align: center;
 }
 
 
-/* Instagram Lead Section */
+.plotink-hero-action p {
+    min-height: 30px;
+
+    margin: 0 0 10px;
+
+    color: #667085;
+
+    font-size: 11px;
+    line-height: 1.35;
+
+    font-weight: 600;
+
+    text-align: center;
+}
+
+
+.plotink-hero-action .action-button {
+    display: block;
+
+    width: 100%;
+
+    border-radius: 9px;
+
+    padding: 7px 5px;
+
+    font-size: 11px;
+
+    line-height: 1.2;
+
+    font-weight: 800;
+
+    text-align: center;
+
+    color: #ffffff;
+}
+
+
+.plotink-hero-action .smart-tag {
+    position: absolute;
+
+    top: -9px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    padding: 4px 8px;
+
+    border-radius: 999px;
+
+    background: var(--plotink-blue);
+
+    color: #ffffff;
+
+    font-size: 8px;
+
+    font-weight: 900;
+
+    line-height: 1;
+
+    white-space: nowrap;
+
+    box-shadow:
+        0 4px 10px
+        rgba(0, 0, 0, 0.18);
+}
+
+
+.action-buy {
+    background: #198754;
+}
+
+
+.action-sell {
+    background: #0d6efd;
+}
+
+
+.action-rent {
+    background: #ffb800;
+    color: #111111 !important;
+}
+
+
+.action-stay {
+    background: #12bfe0;
+}
+
+
+.action-connect {
+    background: #212529;
+}
+
+
+/* =========================================================
+   FEATURED PROPERTY SECTION
+   ========================================================= */
+
+.plotink-featured-section {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+}
+
+
+.plotink-featured-heading {
+    margin-bottom: 22px !important;
+}
+
+
+.plotink-featured-heading h2 {
+    margin-top: 5px;
+    margin-bottom: 6px;
+    font-size: 34px;
+}
+
+
+.plotink-featured-heading p {
+    font-size: 14px;
+}
+
+
+.plotink-featured-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    margin-bottom: 8px;
+}
+
+
+.plotink-auto-note {
+    font-size: 10px;
+    color: #8a94a6;
+}
+
+
+.plotink-location-list {
+    display: flex;
+    gap: 8px;
+
+    overflow-x: auto;
+
+    padding: 7px 2px 12px;
+
+    scrollbar-width: none;
+}
+
+
+.plotink-location-list::-webkit-scrollbar {
+    display: none;
+}
+
+
+.plotink-location-btn {
+    flex: 0 0 auto;
+
+    border: 1px solid
+        var(--plotink-border);
+
+    background: #ffffff;
+
+    border-radius: 999px;
+
+    padding: 7px 12px;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    color: #234;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.18s ease,
+        color 0.18s ease,
+        border-color 0.18s ease,
+        transform 0.18s ease;
+}
+
+
+.plotink-location-btn:hover {
+    transform: translateY(-1px);
+    border-color: var(--plotink-blue);
+}
+
+
+.plotink-location-btn.active {
+    background: var(--plotink-blue);
+    color: #ffffff;
+    border-color: var(--plotink-blue);
+}
+
+
+/* =========================================================
+   RADAR LOCATION PIN
+   ========================================================= */
+
+.plotink-radar-pin {
+    position: relative;
+
+    width: 10px;
+    height: 10px;
+
+    display: inline-block;
+}
+
+
+.plotink-radar-pin::before {
+    content: "";
+
+    position: absolute;
+
+    width: 9px;
+    height: 9px;
+
+    left: 0;
+    top: 0;
+
+    border-radius: 50%;
+
+    background: #e53935;
+
+    z-index: 2;
+}
+
+
+.plotink-radar-pin::after {
+    content: "";
+
+    position: absolute;
+
+    width: 22px;
+    height: 22px;
+
+    left: -6px;
+    top: -6px;
+
+    border:
+        2px solid
+        rgba(229, 57, 53, 0.45);
+
+    border-radius: 50%;
+
+    animation:
+        plotinkRadar
+        1.6s ease-out infinite;
+}
+
+
+@keyframes plotinkRadar {
+
+    0% {
+        transform: scale(0.45);
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: scale(1.45);
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================================================
+   PROPERTY GRID
+   ========================================================= */
+
+.plotink-property-grid {
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+
+.plotink-property-col {
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 10px;
+}
+
+
+.plotink-property-card {
+    height: 100%;
+
+    cursor: pointer;
+
+    border: 0;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 4px 15px
+        rgba(20, 40, 60, 0.10);
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+
+.plotink-property-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 24px
+        rgba(20, 40, 60, 0.16);
+}
+
+
+.plotink-property-card:focus-visible {
+    outline: 3px solid
+        rgba(13, 110, 253, 0.25);
+
+    outline-offset: 2px;
+}
+
+
+.plotink-property-image {
+    width: 100%;
+
+    height: 160px;
+
+    object-fit: cover;
+
+    display: block;
+
+    background: #edf2f5;
+}
+
+
+.plotink-property-body {
+    padding: 10px 11px 11px;
+}
+
+
+.plotink-property-body .badge {
+    font-size: 9px;
+    padding: 4px 5px;
+    font-weight: 800;
+}
+
+
+.plotink-property-title {
+    font-size: 15px;
+
+    line-height: 1.2;
+
+    margin: 6px 0 4px;
+
+    font-weight: 800;
+
+    display: -webkit-box;
+
+    -webkit-line-clamp: 1;
+
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+}
+
+
+.plotink-property-meta {
+    margin: 2px 0;
+
+    font-size: 11px;
+
+    color: var(--plotink-muted);
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+.plotink-property-price {
+    font-size: 12px;
+
+    font-weight: 900;
+
+    line-height: 1.3;
+
+    margin-top: 4px;
+}
+
+
+.plotink-tap-hint {
+    margin-top: 6px;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    color: #16834b;
+}
+
+
+/* =========================================================
+   PROPERTY PAGINATION
+   ========================================================= */
+
+.plotink-page-nav {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 12px;
+}
+
+
+.plotink-page-nav button {
+    border:
+        1px solid
+        #d6dee6;
+
+    background: #ffffff;
+
+    border-radius: 9px;
+
+    width: 36px;
+    height: 34px;
+
+    color: #344054;
+
+    cursor: pointer;
+
+    transition:
+        background 0.18s ease,
+        color 0.18s ease,
+        transform 0.18s ease;
+}
+
+
+.plotink-page-nav button:hover {
+    background: var(--plotink-blue);
+    color: #ffffff;
+
+    transform: translateY(-1px);
+}
+
+
+.plotink-page-label {
+    min-width: 48px;
+
+    text-align: center;
+
+    font-size: 11px;
+
+    color: var(--plotink-muted);
+
+    align-self: center;
+}
+
+
+/* =========================================================
+   PROPERTY MODAL
+   ========================================================= */
+
+#plotinkPropertyModal .modal-content {
+    border: 0;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 25px 70px
+        rgba(0, 0, 0, 0.25);
+}
+
+
+#plotinkPropertyModal .modal-header {
+    border-bottom:
+        1px solid
+        #eef1f4;
+}
+
+
+#plotinkPropertyModal .detail-image {
+    width: 100%;
+
+    height: 340px;
+
+    object-fit: cover;
+
+    border-radius: 13px;
+
+    background: #edf2f5;
+}
+
+
+.plotink-detail-nav {
+    display: flex;
+
+    gap: 8px;
+}
+
+
+.plotink-detail-nav .btn {
+    flex: 1;
+}
+
+
+#plotinkDetailWhatsApp {
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   INSTAGRAM SECTION
+   ========================================================= */
 
 .plotink-instagram-lead {
     background:
-        radial-gradient(circle at 10% 20%, rgba(225, 48, 108, 0.12), transparent 30%),
-        radial-gradient(circle at 90% 80%, rgba(18, 60, 105, 0.12), transparent 30%),
-        #f8fafc;
+        linear-gradient(
+            135deg,
+            #fff7fb,
+            #f6fbff
+        );
 }
 
 
-/* Main Instagram Card */
-
 .instagram-lead-card {
     position: relative;
+
     overflow: hidden;
-    padding: 42px;
-    border-radius: 28px;
+
+    padding: 38px;
+
+    border-radius: 24px;
 
     background:
         linear-gradient(
             135deg,
-            rgba(255,255,255,0.96),
-            rgba(248,250,252,0.92)
+            #ffffff,
+            #f7fbff
         );
 
-    border: 1px solid rgba(225, 48, 108, 0.18);
+    border:
+        1px solid
+        rgba(18, 60, 105, 0.08);
 
     box-shadow:
-        0 20px 55px rgba(18, 60, 105, 0.12);
-
-    backdrop-filter: blur(12px);
-
-    transition: all 0.35s ease;
+        0 12px 40px
+        rgba(20, 40, 60, 0.10);
 }
 
-
-/* Decorative glow */
-
-.instagram-lead-card::before {
-    content: "";
-    position: absolute;
-
-    width: 220px;
-    height: 220px;
-
-    right: -80px;
-    top: -90px;
-
-    background: linear-gradient(
-        135deg,
-        rgba(131,58,180,0.18),
-        rgba(225,48,108,0.18),
-        rgba(252,176,69,0.16)
-    );
-
-    border-radius: 50%;
-
-    filter: blur(10px);
-
-    pointer-events: none;
-}
-
-
-/* Second decorative glow */
 
 .instagram-lead-card::after {
     content: "";
+
     position: absolute;
 
-    width: 160px;
-    height: 160px;
+    width: 180px;
+    height: 180px;
 
-    left: -70px;
-    bottom: -80px;
-
-    background: rgba(46,125,50,0.10);
+    right: -60px;
+    top: -60px;
 
     border-radius: 50%;
 
-    filter: blur(20px);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(225, 48, 108, 0.10),
+            rgba(131, 58, 180, 0.08)
+        );
 
     pointer-events: none;
 }
 
 
-/* Instagram Icon */
-
 .instagram-lead-icon {
-    width: 58px;
-    height: 58px;
+    width: 52px;
+    height: 52px;
 
-    display: inline-flex;
+    display: flex;
 
     align-items: center;
     justify-content: center;
 
-    border-radius: 18px;
+    border-radius: 16px;
 
-    background: linear-gradient(
-        135deg,
-        #833ab4,
-        #e1306c,
-        #fd1d1d,
-        #fcb045
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #f58529,
+            #dd2a7b,
+            #8134af
+        );
 
-    color: #fff;
+    color: #ffffff;
 
-    font-size: 30px;
+    font-size: 25px;
 
     box-shadow:
-        0 10px 25px rgba(225, 48, 108, 0.25);
+        0 8px 20px
+        rgba(221, 42, 123, 0.22);
 }
 
-
-/* Small heading */
 
 .instagram-lead-label {
-    display: inline-block;
+    color: #c12a68;
 
-    font-size: 13px;
-    font-weight: 800;
+    font-size: 11px;
 
-    letter-spacing: 1.5px;
+    font-weight: 900;
 
-    color: #c13584;
+    letter-spacing: 1.2px;
 }
 
-
-/* Heading */
 
 .instagram-lead-card h2 {
-    color: #123C69;
-    font-size: 32px;
+    font-size: 30px;
 }
 
 
-/* Description */
-
 .instagram-lead-card p {
-    color: #5f6b76;
-    max-width: 720px;
+    color: #667085;
+
     line-height: 1.7;
 }
 
 
-/* Instagram CTA Button */
-
 .instagram-lead-btn {
-    position: relative;
-    z-index: 2;
+    border: 0;
 
-    padding: 13px 20px;
+    padding: 11px 16px;
 
-    border: none;
-    border-radius: 14px;
+    border-radius: 12px;
 
-    color: #fff !important;
+    background:
+        linear-gradient(
+            135deg,
+            #f58529,
+            #dd2a7b,
+            #8134af
+        );
 
-    font-weight: 700;
+    color: #ffffff;
 
-    background: linear-gradient(
-        135deg,
-        #833ab4,
-        #e1306c,
-        #fd1d1d
-    );
-
-    box-shadow:
-        0 8px 22px rgba(225, 48, 108, 0.22);
-
-    transition: all 0.3s ease;
+    font-weight: 800;
 }
 
 
 .instagram-lead-btn:hover {
-    transform: translateY(-3px);
+    color: #ffffff;
+
+    transform: translateY(-2px);
 
     box-shadow:
-        0 14px 30px rgba(225, 48, 108, 0.30);
-
-    color: #fff !important;
+        0 8px 20px
+        rgba(221, 42, 123, 0.20);
 }
 
 
-/* WhatsApp CTA */
-
 .whatsapp-lead-btn {
-    position: relative;
-    z-index: 2;
+    border: 0;
 
-    padding: 13px 20px;
+    padding: 11px 16px;
 
-    border-radius: 14px;
+    border-radius: 12px;
 
-    background: #25D366;
+    background: #198754;
 
-    border: 1px solid #25D366;
+    color: #ffffff;
 
-    color: #fff !important;
-
-    font-weight: 700;
-
-    transition: all 0.3s ease;
+    font-weight: 800;
 }
 
 
 .whatsapp-lead-btn:hover {
-    background: #1ebe5d;
+    color: #ffffff;
 
-    border-color: #1ebe5d;
+    background: #146c43;
 
-    transform: translateY(-3px);
+    transform: translateY(-2px);
 
     box-shadow:
-        0 12px 25px rgba(37, 211, 102, 0.25);
+        0 8px 20px
+        rgba(25, 135, 84, 0.20);
 }
 
 
-/* Footer Instagram Button */
+/* =========================================================
+   STATS
+   ========================================================= */
+
+.stat-card {
+    height: 100%;
+
+    padding: 24px 15px;
+
+    text-align: center;
+
+    border-radius: 18px;
+
+    background: #ffffff;
+
+    border:
+        1px solid
+        rgba(18, 60, 105, 0.07);
+
+    box-shadow:
+        0 6px 22px
+        rgba(20, 40, 60, 0.07);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.stat-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(20, 40, 60, 0.12);
+}
+
+
+.stat-card h2 {
+    margin: 0;
+
+    color: var(--plotink-blue);
+
+    font-size: 32px;
+
+    font-weight: 900;
+}
+
+
+.stat-card p {
+    margin: 6px 0 0;
+
+    color: var(--plotink-muted);
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   MAP SECTION
+   ========================================================= */
+
+.plotink-map-badge {
+    background: #e8f7ef;
+
+    color: #198754;
+}
+
+
+.plotink-map-wrapper {
+    position: relative;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 30px
+        rgba(0, 0, 0, 0.10);
+}
+
+
+.plotink-property-map {
+    height: 430px;
+
+    width: 100%;
+
+    background: #eef5ef;
+}
+
+
+.plotink-map-status {
+    position: absolute;
+
+    bottom: 10px;
+    left: 10px;
+
+    z-index: 1000;
+
+    padding: 8px 13px;
+
+    background: #ffffff;
+
+    border-radius: 999px;
+
+    box-shadow:
+        0 4px 14px
+        rgba(0, 0, 0, 0.12);
+
+    font-size: 11px;
+
+    color: #475467;
+}
+
+
+.plotink-legend-dot {
+    display: inline-block;
+
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    margin-right: 5px;
+}
+
+
+.plotink-legend-dot.property-dot {
+    background: #198754;
+}
+
+
+.plotink-legend-dot.area-dot {
+    background: #0d6efd;
+}
+
+
+/* =========================================================
+   MAP MARKERS
+   ========================================================= */
+
+#plotinkPropertyMap
+.plotink-pulse-marker {
+
+    width: 18px;
+    height: 18px;
+
+    border-radius: 50%;
+
+    background: #198754;
+
+    border: 3px solid #ffffff;
+
+    box-shadow:
+        0 2px 10px
+        rgba(0, 0, 0, 0.28);
+
+    position: relative;
+}
+
+
+#plotinkPropertyMap
+.plotink-pulse-marker::before,
+
+#plotinkPropertyMap
+.plotink-pulse-marker::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -7px;
+
+    border:
+        2px solid
+        rgba(25, 135, 84, 0.55);
+
+    border-radius: 50%;
+
+    animation:
+        plotinkMapPulse
+        2s infinite;
+}
+
+
+#plotinkPropertyMap
+.plotink-pulse-marker::after {
+
+    animation-delay: 1s;
+
+}
+
+
+@keyframes plotinkMapPulse {
+
+    0% {
+        transform: scale(0.55);
+        opacity: 0.85;
+    }
+
+    70% {
+        transform: scale(1.65);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1.65);
+        opacity: 0;
+    }
+
+}
+
+
+#plotinkPropertyMap
+.plotink-area-marker {
+
+    width: 16px;
+    height: 16px;
+
+    border-radius: 50%;
+
+    background: #0d6efd;
+
+    border: 3px solid #ffffff;
+
+    box-shadow:
+        0 2px 10px
+        rgba(0, 0, 0, 0.25);
+
+    position: relative;
+}
+
+
+#plotinkPropertyMap
+.plotink-area-marker::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -10px;
+
+    border:
+        2px solid
+        rgba(13, 110, 253, 0.28);
+
+    border-radius: 50%;
+
+    animation:
+        plotinkAreaPulse
+        2.5s infinite;
+}
+
+
+@keyframes plotinkAreaPulse {
+
+    0% {
+        transform: scale(0.65);
+        opacity: 0.8;
+    }
+
+    75% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================================================
+   MAP POPUP
+   ========================================================= */
+
+.plotink-map-popup h6 {
+    margin: 0 0 4px;
+
+    font-weight: 800;
+}
+
+
+.plotink-map-popup p {
+    margin: 2px 0;
+
+    font-size: 13px;
+}
+
+
+.plotink-map-popup a {
+    display: inline-block;
+
+    margin-top: 6px;
+
+    font-size: 12px;
+
+    text-decoration: none;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+    padding: 50px 0 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #081f35,
+            #123c69
+        );
+
+    color: #ffffff;
+}
+
+
+.footer img {
+    object-fit: contain;
+}
+
+
+.footer h5 {
+    margin-bottom: 18px;
+
+    font-weight: 800;
+}
+
+
+.footer p {
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+.footer hr {
+    border-color:
+        rgba(255, 255, 255, 0.15);
+
+    margin: 30px 0 20px;
+}
+
+
+.footer-social-link:hover {
+    color: #ffffff !important;
+}
+
 
 .footer-instagram {
     display: inline-flex;
@@ -397,97 +1483,783 @@ img {
 
     gap: 8px;
 
-    margin-top: 10px;
+    padding: 8px 13px;
 
-    padding: 10px 17px;
+    border-radius: 999px;
 
-    border-radius: 30px;
+    background:
+        linear-gradient(
+            135deg,
+            #f58529,
+            #dd2a7b,
+            #8134af
+        );
+
+    color: #ffffff;
 
     text-decoration: none;
 
-    color: #fff !important;
+    font-size: 13px;
 
-    background: linear-gradient(
-        135deg,
-        #833ab4,
-        #e1306c,
-        #fd1d1d,
-        #fcb045
-    );
-
-    font-weight: 600;
-
-    transition: all 0.3s ease;
+    font-weight: 800;
 }
 
 
 .footer-instagram:hover {
-    transform: translateY(-3px);
+    color: #ffffff;
 
-    color: #fff !important;
+    transform: translateY(-2px);
 
     box-shadow:
-        0 8px 22px rgba(225, 48, 108, 0.30);
-}
-
-
-/* Footer social links */
-
-.footer-social-link {
-    transition: all 0.25s ease;
-}
-
-.footer-social-link:hover {
-    opacity: 0.85;
+        0 7px 18px
+        rgba(221, 42, 123, 0.22);
 }
 
 
 /* =========================================================
-   MOBILE INSTAGRAM DESIGN
+   FLOATING BUTTONS
    ========================================================= */
 
-@media (max-width: 767px) {
+.float-call,
+.float-whatsapp {
 
-    .instagram-lead-card {
-        padding: 28px 20px;
+    position: fixed;
 
-        border-radius: 22px;
+    right: 18px;
 
-        text-align: center;
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    z-index: 1030;
+
+    box-shadow:
+        0 8px 20px
+        rgba(0, 0, 0, 0.20);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.float-call:hover,
+.float-whatsapp:hover {
+
+    color: #ffffff;
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 10px 25px
+        rgba(0, 0, 0, 0.25);
+
+}
+
+
+.float-call {
+
+    bottom: 132px;
+
+    background: #0d6efd;
+
+}
+
+
+.float-whatsapp {
+
+    bottom: 70px;
+
+    background: #25d366;
+
+}
+
+
+.float-call i,
+.float-whatsapp i {
+
+    font-size: 21px;
+
+}
+
+
+/* =========================================================
+   DESKTOP PROPERTY GRID
+   ========================================================= */
+
+@media (min-width: 768px) {
+
+    .plotink-property-col {
+        width: 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
     }
 
-    .instagram-lead-icon {
-        width: 52px;
-        height: 52px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 991.98px) {
+
+    .navbar .container {
+        min-height: 66px;
+    }
+
+
+    .navbar-collapse {
+        padding: 10px 0 15px;
+    }
+
+
+    .navbar-nav {
+        align-items: stretch !important;
+    }
+
+
+    .navbar .nav-link {
+        border-radius: 10px;
+    }
+
+
+    .plotink-hero-action-wrap {
+        gap: 9px;
+    }
+
+
+    .plotink-hero-action {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+
+    .plotink-hero-action .action-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 26px;
+    }
+
+
+    .plotink-hero-action h4 {
+        font-size: 14px;
+    }
+
+
+    .plotink-hero-action p {
+        font-size: 10px;
+    }
+
+
+    .plotink-hero-action .action-button {
+        font-size: 10px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767.98px) {
+
+    body {
+        font-size: 14px;
+    }
+
+
+    /* -----------------------------------------------------
+       TOP TICKER
+       ----------------------------------------------------- */
+
+    .plotink-top-ticker {
+        font-size: 12px;
+        line-height: 29px;
+    }
+
+
+    .plotink-ticker-track {
+        animation-duration: 38s;
+    }
+
+
+    /* -----------------------------------------------------
+       NAVBAR
+       ----------------------------------------------------- */
+
+    .navbar .logo {
+        max-height: 48px;
+    }
+
+
+    .navbar .container {
+        min-height: 60px;
+    }
+
+
+    /* -----------------------------------------------------
+       HERO
+       ----------------------------------------------------- */
+
+    .hero {
+        min-height: auto;
+    }
+
+
+    .hero .overlay {
+        min-height: auto;
+    }
+
+
+    .hero .row {
+        min-height: 0;
+
+        padding-top: 32px;
+        padding-bottom: 28px;
+    }
+
+
+    .hero-title {
+        font-size: 34px;
+
+        line-height: 1.02;
+
+        letter-spacing: -1px;
+    }
+
+
+    .welcome {
+        font-size: 12px;
+
+        letter-spacing: 1.5px;
+    }
+
+
+    .hero-text {
+        font-size: 14px;
+
+        margin-top: 10px;
+    }
+
+
+    .ai-badge {
+        font-size: 10px;
+
+        padding: 7px 11px;
+    }
+
+
+    /* -----------------------------------------------------
+       HERO ACTIONS
+       
+       MOBILE:
+       3 CARDS PER ROW
+       SQUARE CARDS
+       ----------------------------------------------------- */
+
+    .plotink-hero-actions {
+        margin-top: 18px;
+    }
+
+
+    .plotink-hero-actions h3 {
+        font-size: 17px;
+    }
+
+
+    .plotink-hero-action-wrap {
+
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 8px;
+
+        width: 100%;
+
+    }
+
+
+    .plotink-hero-action {
+
+        /*
+         * Exact square cards
+         */
+        aspect-ratio: 1 / 1;
+
+        min-width: 0;
+
+        padding:
+            9px
+            6px
+            7px;
+
+        border-radius: 13px;
+
+    }
+
+
+    .plotink-hero-action .smart-tag {
+
+        top: -7px;
+
+        padding:
+            3px 5px;
+
+        font-size: 6.5px;
+
+    }
+
+
+    .plotink-hero-action .action-icon {
+
+        width: 35px;
+        height: 35px;
+
+        margin-bottom: 5px;
+
+        border-radius: 10px;
+
+        font-size: 20px;
+
+    }
+
+
+    .plotink-hero-action h4 {
+
+        margin-bottom: 3px;
+
+        font-size: 11px;
+
+        line-height: 1.05;
+
+    }
+
+
+    .plotink-hero-action p {
+
+        min-height: 22px;
+
+        margin-bottom: 5px;
+
+        font-size: 7.5px;
+
+        line-height: 1.2;
+
+    }
+
+
+    .plotink-hero-action .action-button {
+
+        padding:
+            5px 3px;
+
+        border-radius: 6px;
+
+        font-size: 7.5px;
+
+        line-height: 1.1;
+
+    }
+
+
+    /* -----------------------------------------------------
+       FEATURED
+       ----------------------------------------------------- */
+
+    .plotink-featured-section {
+
+        padding-top: 28px !important;
+
+        padding-bottom: 28px !important;
+
+    }
+
+
+    .plotink-featured-heading {
+
+        margin-bottom: 15px !important;
+
+    }
+
+
+    .plotink-featured-heading h2 {
+
+        font-size: 26px;
+
+    }
+
+
+    .plotink-featured-toolbar {
+
+        margin-bottom: 5px;
+
+    }
+
+
+    .plotink-property-col {
+
+        width: 50%;
+
+        flex: 0 0 50%;
+
+        max-width: 50%;
+
+    }
+
+
+    .plotink-property-image {
+
+        height: 112px;
+
+    }
+
+
+    .plotink-property-body {
+
+        padding:
+            7px 8px 8px;
+
+    }
+
+
+    .plotink-property-body .badge {
+
+        font-size: 7px;
+
+        padding:
+            3px 4px;
+
+    }
+
+
+    .plotink-property-title {
+
+        font-size: 13px;
+
+        margin-top: 5px;
+
+    }
+
+
+    .plotink-property-meta {
+
+        font-size: 9.5px;
+
+    }
+
+
+    .plotink-property-price {
+
+        font-size: 10px;
+
+    }
+
+
+    .plotink-tap-hint {
+
+        font-size: 8px;
+
+    }
+
+
+    /* -----------------------------------------------------
+       MODAL
+       ----------------------------------------------------- */
+
+    #plotinkPropertyModal .modal-dialog {
+
+        margin:
+            10px;
+
+    }
+
+
+    #plotinkPropertyModal .modal-content {
+
+        border-radius: 16px;
+
+    }
+
+
+    #plotinkPropertyModal .modal-body {
+
+        padding: 12px;
+
+    }
+
+
+    #plotinkPropertyModal .detail-image {
+
+        height: 220px;
+
+        border-radius: 10px;
+
+    }
+
+
+    /* -----------------------------------------------------
+       INSTAGRAM
+       ----------------------------------------------------- */
+
+    .instagram-lead-card {
+
+        padding: 25px 18px;
+
+        border-radius: 18px;
+
+    }
+
+
+    .instagram-lead-card h2 {
+
+        font-size: 25px;
+
+    }
+
+
+    .instagram-lead-card p {
+
+        font-size: 13px;
+
+        line-height: 1.6;
+
+    }
+
+
+    /* -----------------------------------------------------
+       STATS
+       ----------------------------------------------------- */
+
+    .stat-card {
+
+        padding:
+            19px 10px;
+
+        border-radius: 14px;
+
+    }
+
+
+    .stat-card h2 {
 
         font-size: 27px;
 
-        border-radius: 16px;
     }
 
-    .instagram-lead-label {
+
+    .stat-card p {
+
         font-size: 11px;
-        letter-spacing: 1px;
+
     }
 
-    .instagram-lead-card h2 {
-        font-size: 25px;
 
-        line-height: 1.25;
+    /* -----------------------------------------------------
+       MAP
+       ----------------------------------------------------- */
+
+    #plotinkMapFilters {
+
+        justify-content: flex-start !important;
+
+        overflow-x: auto;
+
+        flex-wrap: nowrap !important;
+
+        padding-bottom: 5px;
+
+        -webkit-overflow-scrolling:
+            touch;
+
+        scrollbar-width: none;
+
     }
 
-    .instagram-lead-card p {
-        font-size: 15px;
-        line-height: 1.6;
+
+    #plotinkMapFilters::-webkit-scrollbar {
+
+        display: none;
+
     }
 
-    .instagram-lead-btn,
-    .whatsapp-lead-btn {
-        width: 100%;
+
+    #plotinkMapFilters
+    .plotink-map-filter {
+
+        flex: 0 0 auto;
+
+        white-space: nowrap;
+
     }
 
-    .instagram-nav {
-        display: inline-block;
-        margin-top: 5px;
+
+    .plotink-property-map {
+
+        height: 350px !important;
+
     }
+
+
+    .plotink-map-status {
+
+        left: 7px;
+
+        bottom: 7px;
+
+        max-width:
+            calc(100% - 14px);
+
+        padding:
+            7px 10px;
+
+        font-size: 9px;
+
+    }
+
+
+    /* -----------------------------------------------------
+       FOOTER
+       ----------------------------------------------------- */
+
+    .footer {
+
+        padding-top: 38px;
+
+    }
+
+
+    /* -----------------------------------------------------
+       FLOATING BUTTONS
+       ----------------------------------------------------- */
+
+    .float-call,
+    .float-whatsapp {
+
+        right: 13px;
+
+        width: 46px;
+        height: 46px;
+
+    }
+
+
+    .float-call {
+
+        bottom: 119px;
+
+    }
+
+
+    .float-whatsapp {
+
+        bottom: 62px;
+
+    }
+
+
+    .float-call i,
+    .float-whatsapp i {
+
+        font-size: 19px;
+
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .hero-title {
+        font-size: 30px;
+    }
+
+
+    .plotink-hero-action-wrap {
+        gap: 6px;
+    }
+
+
+    .plotink-hero-action {
+        padding:
+            8px 4px 6px;
+
+        border-radius: 11px;
+    }
+
+
+    .plotink-hero-action .action-icon {
+
+        width: 31px;
+        height: 31px;
+
+        font-size: 18px;
+
+    }
+
+
+    .plotink-hero-action h4 {
+        font-size: 10px;
+    }
+
+
+    .plotink-hero-action p {
+        font-size: 6.8px;
+    }
+
+
+    .plotink-hero-action .action-button {
+        font-size: 6.8px;
+    }
+
+
+    .plotink-hero-action .smart-tag {
+        font-size: 5.8px;
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
+
+    }
+
 }

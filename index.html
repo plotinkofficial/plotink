@@ -50,13 +50,10 @@
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <!-- Leaflet Map -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-          integrity="sha256-p4NxAoJBhIINfQ3QJ0qvL9jR9H8f1v1QY2wM2G5mJ8M=" crossorigin="" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <!-- Leaflet Map CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
 
-    <!-- Main CSS -->
+<!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css">
 
 <style id="plotink-final-layout-css">
@@ -66,17 +63,28 @@
 .plotink-top-ticker:hover .plotink-ticker-track{animation-play-state:paused}
 @keyframes plotinkTicker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-.plotink-hero-actions{margin-top:22px}
-.plotink-hero-action-wrap{display:flex;gap:10px;overflow-x:auto;padding:8px 2px 10px;scrollbar-width:none}
+/* =========================================================
+   PLOTINK HERO ACTION CARDS
+   MOBILE = VIRAL INSTAGRAM THUMBNAIL STYLE
+   DESKTOP = 5 CARDS IN ONE ROW
+   ========================================================= */
+.plotink-hero-actions{margin-top:24px}
+.plotink-hero-action-wrap{display:flex;gap:12px;width:100%;padding:14px 4px 18px;overflow:hidden;scrollbar-width:none}
 .plotink-hero-action-wrap::-webkit-scrollbar{display:none}
-.plotink-hero-action{position:relative;flex:1 1 0;min-width:150px;border-radius:16px;padding:14px 12px 12px;background:rgba(255,255,255,.96);color:#123c69;text-decoration:none;box-shadow:0 8px 22px rgba(0,0,0,.14);text-align:center;transition:.18s ease}
-.plotink-hero-action:hover{transform:translateY(-3px);color:#123c69}
-.plotink-hero-action .action-icon{font-size:30px;line-height:1;margin-bottom:7px}
-.plotink-hero-action h4{margin:0 0 5px;font-size:17px;font-weight:800}
-.plotink-hero-action p{margin:0 0 9px;font-size:11px;line-height:1.35;color:#667085}
-.plotink-hero-action .action-button{display:block;border-radius:8px;padding:7px 6px;font-size:12px;font-weight:700;color:#fff}
-.plotink-hero-action .smart-tag{position:absolute;top:-8px;left:50%;transform:translateX(-50%);padding:3px 8px;border-radius:20px;background:#123c69;color:#fff;font-size:9px;font-weight:800;white-space:nowrap}
+.plotink-hero-action{position:relative;flex:1 1 0;min-width:0;min-height:225px;padding:22px 14px 16px;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:22px;text-decoration:none;text-align:center;color:#123c69;background:linear-gradient(145deg,rgba(255,255,255,.99),rgba(242,248,255,.97) 48%,rgba(232,243,255,.95));border:1px solid rgba(255,255,255,.95);box-shadow:0 14px 32px rgba(0,0,0,.16),0 2px 5px rgba(18,60,105,.08),inset 0 1px 0 #fff;overflow:visible;transition:transform .25s ease,box-shadow .25s ease}
+.plotink-hero-action::before{content:"";position:absolute;inset:-1px;border-radius:23px;padding:1.5px;background:linear-gradient(135deg,#00c6ff,#5b5bea,#00e6a8,#00c6ff);background-size:300% 300%;animation:plotinkAIborder 6s ease infinite;-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:.55;pointer-events:none}
+@keyframes plotinkAIborder{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}
+.plotink-hero-action::after{content:"";position:absolute;width:120px;height:120px;top:-40px;right:-40px;border-radius:50%;background:rgba(0,198,255,.16);filter:blur(28px);pointer-events:none}
+.plotink-hero-action:hover{transform:translateY(-7px) scale(1.015);color:#123c69;box-shadow:0 20px 40px rgba(0,0,0,.22),0 0 25px rgba(0,198,255,.18),inset 0 1px 0 #fff}
+.plotink-hero-action .action-icon{position:relative;z-index:2;width:62px;height:62px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;border-radius:18px;font-size:34px;line-height:1;background:linear-gradient(145deg,#fff,#e5f4ff);border:1px solid rgba(18,60,105,.08);box-shadow:0 9px 20px rgba(18,60,105,.15),inset 0 1px 2px #fff;transition:transform .25s ease,box-shadow .25s ease}
+.plotink-hero-action:hover .action-icon{transform:translateY(-2px) scale(1.08);box-shadow:0 12px 24px rgba(18,60,105,.2),0 0 18px rgba(0,198,255,.15)}
+.plotink-hero-action h4{position:relative;z-index:2;margin:0 0 7px;font-size:18px;line-height:1.15;font-weight:900;letter-spacing:.1px;color:#123c69}
+.plotink-hero-action p{position:relative;z-index:2;margin:0 0 14px;min-height:31px;font-size:11px;line-height:1.4;color:#667085;font-weight:600}
+.plotink-hero-action .action-button{position:relative;z-index:2;width:100%;padding:10px 7px;border-radius:10px;font-size:12px;line-height:1.1;font-weight:800;color:#fff;box-shadow:0 7px 15px rgba(0,0,0,.16);transition:transform .2s ease,box-shadow .2s ease}
+.plotink-hero-action:hover .action-button{transform:translateY(-1px);box-shadow:0 9px 19px rgba(0,0,0,.22)}
+.plotink-hero-action .smart-tag{position:absolute;z-index:5;top:-10px;left:50%;transform:translateX(-50%);padding:5px 11px;border-radius:30px;background:linear-gradient(135deg,#123c69,#1769aa);color:#fff;font-size:9px;line-height:1.1;font-weight:900;letter-spacing:.5px;white-space:nowrap;box-shadow:0 6px 14px rgba(18,60,105,.3)}
 
+/* Featured properties */
 .plotink-featured-section{padding-top:34px!important;padding-bottom:34px!important}
 .plotink-featured-heading{margin-bottom:18px!important}
 .plotink-featured-toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
@@ -88,10 +96,9 @@
 .plotink-radar-pin:before{content:"";position:absolute;width:9px;height:9px;left:0;top:0;border-radius:50%;background:#e53935;z-index:2}
 .plotink-radar-pin:after{content:"";position:absolute;width:22px;height:22px;left:-6px;top:-6px;border:2px solid rgba(229,57,53,.45);border-radius:50%;animation:plotinkRadar 1.6s ease-out infinite}
 @keyframes plotinkRadar{0%{transform:scale(.45);opacity:.9}100%{transform:scale(1.45);opacity:0}}
-
 .plotink-property-grid{margin-left:-5px;margin-right:-5px}
 .plotink-property-col{padding-left:5px;padding-right:5px;margin-bottom:10px}
-.plotink-property-card{height:100%;cursor:pointer;border:0;border-radius:13px;overflow:hidden;background:#fff;box-shadow:0 4px 15px rgba(20,40,60,.10);transition:transform .16s ease,box-shadow .16s ease}
+.plotink-property-card{height:100%;cursor:pointer;border:0;border-radius:13px;overflow:hidden;background:#fff;box-shadow:0 4px 15px rgba(20,40,60,.1);transition:transform .16s ease,box-shadow .16s ease}
 .plotink-property-card:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(20,40,60,.15)}
 .plotink-property-image{width:100%;height:150px;object-fit:cover;display:block}
 .plotink-property-body{padding:9px 10px 10px}
@@ -104,7 +111,6 @@
 .plotink-page-nav button{border:1px solid #d6dee6;background:#fff;border-radius:8px;width:35px;height:32px}
 .plotink-page-label{font-size:11px;color:#667085;align-self:center}
 .plotink-auto-note{font-size:10px;color:#8a94a6}
-
 #plotinkPropertyModal .modal-content{border:0;border-radius:18px;overflow:hidden}
 #plotinkPropertyModal .detail-image{width:100%;height:340px;object-fit:cover;border-radius:12px}
 .plotink-detail-nav{display:flex;gap:8px}
@@ -118,11 +124,25 @@
     .hero .row{min-height:0!important;padding-top:30px;padding-bottom:24px}
     .hero-title{font-size:32px!important;line-height:1.05}
     .hero-text{font-size:14px!important}
-    .plotink-hero-actions{margin-top:14px}
-    .plotink-hero-action{min-width:142px;padding:12px 9px 10px}
-    .plotink-hero-action .action-icon{font-size:26px}
-    .plotink-hero-action h4{font-size:15px}
-    .plotink-hero-action p{font-size:10px}
+
+    /* =====================================================
+       VIRAL INSTAGRAM-THUMBNAIL HERO CARDS
+       3 COLUMNS + EXACT SQUARE 1:1
+       ===================================================== */
+    .plotink-hero-actions{margin-top:17px}
+    .plotink-hero-actions h3{font-size:19px!important;line-height:1.15;margin-bottom:5px!important}
+    .plotink-hero-actions>p{font-size:10px!important;margin-bottom:5px!important}
+    .plotink-hero-action-wrap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;width:100%;padding:13px 0 17px;overflow:visible}
+    .plotink-hero-action{width:100%;min-width:0;min-height:0;aspect-ratio:1/1;padding:9px 6px 8px;border-radius:17px;background:linear-gradient(145deg,rgba(255,255,255,.99),rgba(239,248,255,.98) 48%,rgba(226,242,255,.96));box-shadow:0 10px 24px rgba(0,0,0,.2),0 0 0 1px rgba(255,255,255,.6) inset;overflow:visible}
+    .plotink-hero-action::before{border-radius:18px;opacity:.8}
+    .plotink-hero-action::after{width:70px;height:70px;top:-24px;right:-24px;filter:blur(20px);background:rgba(0,198,255,.2)}
+    .plotink-hero-action .action-icon{width:46px;height:46px;margin-bottom:6px;border-radius:13px;font-size:29px;box-shadow:0 8px 17px rgba(18,60,105,.18),inset 0 1px 2px #fff}
+    .plotink-hero-action h4{margin:0 0 4px;font-size:13px;line-height:1.05;font-weight:950;letter-spacing:-.1px}
+    .plotink-hero-action p{margin:0 0 7px;min-height:auto;font-size:8.5px;line-height:1.15;font-weight:700;color:#596579}
+    .plotink-hero-action .action-button{padding:7px 3px;border-radius:8px;font-size:9px;line-height:1.05;font-weight:900;box-shadow:0 6px 12px rgba(0,0,0,.18)}
+    .plotink-hero-action .smart-tag{top:-8px;padding:3px 6px;font-size:6.5px;line-height:1;letter-spacing:.3px}
+    .plotink-hero-action:hover{transform:translateY(-3px) scale(1.01)}
+
     .plotink-featured-section{padding-top:24px!important;padding-bottom:24px!important}
     .plotink-featured-heading h2{font-size:25px}
     .plotink-property-col{width:50%;flex:0 0 50%;max-width:50%}
@@ -136,9 +156,49 @@
     #plotinkPropertyModal .detail-image{height:220px}
     #plotinkPropertyModal .modal-body{padding:12px}
 }
+
+@media(max-width:380px){
+    .plotink-hero-action-wrap{gap:5px}
+    .plotink-hero-action{padding:8px 4px 7px;border-radius:15px}
+    .plotink-hero-action::before{border-radius:16px}
+    .plotink-hero-action .action-icon{width:41px;height:41px;font-size:26px;border-radius:12px}
+    .plotink-hero-action h4{font-size:12px}
+    .plotink-hero-action p{font-size:7.5px}
+    .plotink-hero-action .action-button{font-size:8px;padding:6px 2px}
+    .plotink-hero-action .smart-tag{font-size:6px;padding:3px 5px}
+}
+
 @media(min-width:768px){
     .plotink-property-col{width:25%;flex:0 0 25%;max-width:25%}
 }
+
+/* =========================================================
+   PLOTINK PROPERTY MAP
+   ========================================================= */
+.plotink-map-section{padding:44px 0;background:#f7f9fb}
+.plotink-map-wrap{position:relative;background:#fff;border-radius:22px;box-shadow:0 10px 35px rgba(20,40,60,.1);overflow:hidden}
+#plotinkPropertyMap{width:100%;height:480px;min-height:380px}
+.plotink-map-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.plotink-map-filters{display:flex;gap:7px;overflow-x:auto;padding:4px 1px 7px;scrollbar-width:none}
+.plotink-map-filters::-webkit-scrollbar{display:none}
+.plotink-map-filter{flex:0 0 auto;border:1px solid #d9e2ea;background:#fff;border-radius:999px;padding:7px 12px;font-size:12px;font-weight:700;color:#234;cursor:pointer}
+.plotink-map-filter.active{background:#123c69;color:#fff;border-color:#123c69}
+.plotink-map-status{font-size:12px;color:#667085}
+.plotink-map-legend{position:absolute;z-index:500;left:14px;bottom:14px;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-radius:12px;padding:8px 11px;font-size:11px;box-shadow:0 5px 18px rgba(0,0,0,.12)}
+.plotink-pulse-marker{position:relative;width:18px;height:18px}
+.plotink-pulse-marker .pulse-dot{position:absolute;width:10px;height:10px;left:4px;top:4px;border-radius:50%;background:#e53935;border:2px solid #fff;box-shadow:0 0 0 1px rgba(229,57,53,.45);z-index:3}
+.plotink-pulse-marker .pulse-ring{position:absolute;width:18px;height:18px;left:0;top:0;border:2px solid rgba(229,57,53,.65);border-radius:50%;animation:plotinkMapPulse 1.7s ease-out infinite}
+@keyframes plotinkMapPulse{0%{transform:scale(.35);opacity:.95}75%{transform:scale(1.7);opacity:.2}100%{transform:scale(2);opacity:0}}
+.plotink-map-popup h6{font-weight:800;margin:0 0 4px}
+.plotink-map-popup p{margin:2px 0;font-size:12px;color:#667085}
+.plotink-map-popup .map-price{font-weight:800;color:#123c69}
+.plotink-map-loading{padding:20px;text-align:center;color:#667085}
+@media(max-width:767.98px){
+    .plotink-map-section{padding:30px 0}
+    #plotinkPropertyMap{height:390px;min-height:340px}
+    .plotink-map-legend{left:10px;bottom:10px}
+}
+
 </style>
 
 
@@ -150,163 +210,6 @@
     .hero .row{
         min-height:0 !important;
     }
-}
-</style>
-
-
-<style id="plotink-live-map-css">
-.plotink-map-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px;flex-wrap:wrap}
-.plotink-map-region-list{display:flex;gap:7px;overflow-x:auto;padding:3px 2px 7px;scrollbar-width:none;flex:1 1 auto}
-.plotink-map-region-list::-webkit-scrollbar{display:none}
-.plotink-map-region-btn{border:1px solid #d6dee6;background:#fff;color:#234;border-radius:999px;padding:6px 10px;font-size:11px;font-weight:800;white-space:nowrap}
-.plotink-map-region-btn.active{background:#123c69;color:#fff;border-color:#123c69}
-.plotink-map-live-status{font-size:11px;font-weight:800;color:#16834b;white-space:nowrap}
-.plotink-live-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#18a957;box-shadow:0 0 0 0 rgba(24,169,87,.55);animation:plotinkLiveDot 1.7s infinite;margin-right:5px}
-@keyframes plotinkLiveDot{70%{box-shadow:0 0 0 7px rgba(24,169,87,0)}100%{box-shadow:0 0 0 0 rgba(24,169,87,0)}}
-.plotink-property-map{width:100%;height:480px;border-radius:20px;overflow:hidden;box-shadow:0 8px 24px rgba(20,40,60,.12);border:1px solid #e3e9ef;background:#eaf1f5}
-.plotink-map-marker{position:relative;width:28px;height:28px}
-.plotink-map-marker .pin-core{position:absolute;left:8px;top:8px;width:12px;height:12px;background:#e53935;border:3px solid #fff;border-radius:50%;box-shadow:0 2px 7px rgba(0,0,0,.28);z-index:3}
-.plotink-map-marker .pin-pulse{position:absolute;left:2px;top:2px;width:24px;height:24px;border:2px solid rgba(229,57,53,.65);border-radius:50%;animation:plotinkMapPulse 1.7s ease-out infinite;z-index:1}
-.plotink-map-marker .pin-pulse.two{animation-delay:.55s}
-@keyframes plotinkMapPulse{0%{transform:scale(.35);opacity:.95}80%{transform:scale(1.5);opacity:.05}100%{transform:scale(1.6);opacity:0}}
-.plotink-map-popup h6{margin:0 0 4px;font-weight:800;color:#123c69}
-.plotink-map-popup p{margin:2px 0;font-size:12px;color:#667085}
-.plotink-map-popup .popup-price{font-weight:800;color:#16834b}
-.plotink-map-legend{display:flex;justify-content:flex-end;gap:15px;flex-wrap:wrap;font-size:10px;color:#667085}
-.plotink-legend-pin{display:inline-block;width:8px;height:8px;border-radius:50%;background:#e53935;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.25);margin-right:4px}
-.plotink-legend-pulse{display:inline-block;width:11px;height:11px;border:1px solid rgba(229,57,53,.55);border-radius:50%;margin-right:4px;vertical-align:-1px}
-@media(max-width:767.98px){.plotink-property-map{height:390px;border-radius:15px}.plotink-map-toolbar{display:block}.plotink-map-live-status{margin:1px 2px 6px}.plotink-map-region-list{padding-bottom:6px}.plotink-map-legend{justify-content:flex-start}}
-</style>
-
-<style id="plotink-mobile-premium-fix">
-/* =========================================================
-   PLOTINK MOBILE PREMIUM LAYOUT
-   Optimised for 360–600px screens
-   ========================================================= */
-@media (max-width: 767.98px){
-    html,body{overflow-x:hidden}
-
-    /* Compact header */
-    .navbar{
-        min-height:82px!important;
-        padding:10px 0!important;
-        background:#fff!important;
-    }
-    .navbar .container{padding-left:16px!important;padding-right:16px!important}
-    .navbar .logo{height:54px!important;max-height:54px!important;width:auto!important;object-fit:contain}
-    .navbar-toggler{
-        width:48px;height:44px;padding:7px!important;
-        border:1px solid #d8dee6!important;border-radius:12px!important;
-        box-shadow:none!important;background:#fff!important;
-    }
-    .navbar-toggler:focus{box-shadow:0 0 0 3px rgba(18,60,105,.10)!important}
-    .navbar-collapse{background:#fff;border-radius:0 0 14px 14px}
-
-    /* Hero: shorter, cleaner, more premium */
-    .hero .overlay .container{padding-left:14px!important;padding-right:14px!important}
-    .hero .row{
-        padding-top:24px!important;
-        padding-bottom:28px!important;
-        min-height:0!important;
-    }
-    .ai-badge{
-        display:inline-flex!important;align-items:center;gap:6px;
-        font-size:12px!important;padding:8px 13px!important;
-        margin-bottom:16px!important;
-    }
-    .welcome{
-        font-size:14px!important;letter-spacing:2px!important;
-        margin-bottom:9px!important;
-    }
-    .hero-title{
-        font-size:34px!important;line-height:1.08!important;
-        letter-spacing:-.5px!important;margin-bottom:10px!important;
-    }
-    .hero-text{
-        font-size:14px!important;line-height:1.45!important;
-        margin-bottom:0!important;
-    }
-
-    /* Action heading */
-    .plotink-hero-actions{margin-top:22px!important}
-    .plotink-hero-actions h3{
-        font-size:22px!important;line-height:1.2!important;
-        margin-bottom:6px!important;
-    }
-    .plotink-hero-actions>p{
-        font-size:11px!important;line-height:1.4!important;
-        margin-bottom:12px!important;
-    }
-
-    /* Two-column cards instead of cramped 3-card row */
-    .plotink-hero-action-wrap{
-        display:grid!important;
-        grid-template-columns:repeat(2,minmax(0,1fr))!important;
-        gap:10px!important;
-        overflow:visible!important;
-        padding:10px 0 0!important;
-    }
-    .plotink-hero-action{
-        min-width:0!important;
-        width:100%!important;
-        min-height:148px!important;
-        padding:15px 9px 11px!important;
-        border-radius:15px!important;
-        display:flex!important;
-        flex-direction:column!important;
-        align-items:center!important;
-        justify-content:flex-start!important;
-        box-shadow:0 7px 18px rgba(0,0,0,.16)!important;
-    }
-    .plotink-hero-action:nth-child(5){
-        grid-column:1 / -1!important;
-        max-width:calc(50% - 5px)!important;
-        justify-self:center!important;
-    }
-    .plotink-hero-action .action-icon{
-        font-size:29px!important;line-height:1!important;
-        margin:3px 0 8px!important;
-    }
-    .plotink-hero-action h4{
-        font-size:15px!important;line-height:1.2!important;
-        margin:0 0 5px!important;
-    }
-    .plotink-hero-action p{
-        font-size:10px!important;line-height:1.3!important;
-        min-height:27px!important;margin:0 0 9px!important;
-    }
-    .plotink-hero-action .action-button{
-        width:100%!important;margin-top:auto!important;
-        font-size:11px!important;line-height:1.2!important;
-        padding:8px 5px!important;border-radius:8px!important;
-    }
-    .plotink-hero-action .smart-tag{
-        top:-7px!important;font-size:7px!important;
-        padding:3px 7px!important;letter-spacing:.1px!important;
-    }
-
-    /* Floating buttons stay clear of hero cards */
-    .float-call,.float-whatsapp{
-        width:50px!important;height:50px!important;
-        right:14px!important;
-        z-index:1100!important;
-    }
-    .float-call{bottom:76px!important}
-    .float-whatsapp{bottom:18px!important}
-    .float-call i,.float-whatsapp i{font-size:21px!important}
-
-    /* Map section compact on phones */
-    #plotink-location-map-section{padding-top:30px!important;padding-bottom:30px!important}
-    #plotink-location-map-section .container{padding-left:14px!important;padding-right:14px!important}
-    #plotink-location-map-section h2{font-size:25px!important}
-    #plotink-location-map-section p{font-size:12px!important;line-height:1.45!important}
-    .plotink-property-map{height:360px!important;border-radius:14px!important}
-}
-
-@media (max-width:390px){
-    .hero-title{font-size:30px!important}
-    .plotink-hero-actions h3{font-size:20px!important}
-    .plotink-hero-action{min-height:142px!important}
 }
 </style>
 
@@ -873,43 +776,54 @@
 
 
 <!-- =========================================================
-     PLOTINK LIVE PROPERTY MAP START
+     PROPERTY LOCATION MAP START
      ========================================================= -->
-<section class="py-5 bg-light" id="plotink-location-map-section">
+<section class="plotink-map-section">
     <div class="container">
+
         <div class="text-center mb-3">
-            <span class="badge bg-success bg-opacity-10 text-success fw-bold px-3 py-2 rounded-pill mb-2">
-                <i class="bi bi-broadcast-pin"></i> Live Property Locations
-            </span>
-            <h2 class="fw-bold" data-lang-en="Our Location" data-lang-hi="हमारा स्थान">
+            <h2 class="fw-bold"
+                data-lang-en="Our Location"
+                data-lang-hi="हमारा स्थान">
                 Our Location
             </h2>
-            <p class="text-muted mb-1"
-               data-lang-en="Serving Delhi NCR, Uttarakhand, Himachal Pradesh & Uttar Pradesh"
-               data-lang-hi="दिल्ली NCR, उत्तराखंड, हिमाचल प्रदेश और उत्तर प्रदेश में सेवा">
-                Serving Delhi NCR, Uttarakhand, Himachal Pradesh & Uttar Pradesh
-            </p>
-            <small class="text-muted">Admin-listed properties appear automatically on the map.</small>
-        </div>
 
-        <div class="plotink-map-toolbar">
-            <div id="plotinkMapRegionFilters" class="plotink-map-region-list" aria-label="Map location filters"></div>
-            <div class="plotink-map-live-status">
-                <span class="plotink-live-dot"></span>
-                <span id="plotinkMapPropertyCount">Loading locations...</span>
+            <p class="text-muted mb-1"
+               data-lang-en="Serving Delhi NCR, Uttarakhand, Himachal Pradesh & Uttar Pradesh."
+               data-lang-hi="दिल्ली NCR, उत्तराखंड, हिमाचल प्रदेश और उत्तर प्रदेश में सेवाएं।">
+                Serving Delhi NCR, Uttarakhand, Himachal Pradesh &amp; Uttar Pradesh.
+            </p>
+
+            <div class="small text-muted">
+                <i class="bi bi-broadcast-pin"></i>
+                Live property locations from PLOTINK Admin
             </div>
         </div>
 
-        <div id="plotinkPropertyMap" class="plotink-property-map" aria-label="Plotink admin listed properties map"></div>
-
-        <div class="plotink-map-legend mt-2">
-            <span><i class="plotink-legend-pin"></i> Listed property</span>
-            <span><i class="plotink-legend-pulse"></i> Location activity</span>
+        <div class="plotink-map-toolbar">
+            <div id="plotinkMapFilters" class="plotink-map-filters">
+                <button type="button" class="plotink-map-filter active" data-map-location="__all__">
+                    All Properties
+                </button>
+            </div>
+            <div id="plotinkMapStatus" class="plotink-map-status">
+                Loading property locations...
+            </div>
         </div>
+
+        <div class="plotink-map-wrap">
+            <div id="plotinkPropertyMap" aria-label="PLOTINK property locations map"></div>
+
+            <div class="plotink-map-legend">
+                <span class="plotink-radar-pin"></span>
+                <strong>Pulsing marker</strong> = listed property
+            </div>
+        </div>
+
     </div>
 </section>
 <!-- =========================================================
-     PLOTINK LIVE PROPERTY MAP END
+     PROPERTY LOCATION MAP END
      ========================================================= -->
 
 
@@ -1107,6 +1021,8 @@
 
 
 
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 
 <!-- =========================================================
      FIREBASE VISITOR TRACKER
@@ -1696,141 +1612,6 @@
     }
 
 
-    /* =========================================================
-       LIVE ADMIN PROPERTY MAP
-       ========================================================= */
-
-    let plotinkMap = null;
-    let plotinkMapLayer = null;
-    let plotinkMapProperties = [];
-    let plotinkMapRegion = "__all__";
-
-    const plotinkRegionCenters = {
-        "Delhi NCR": [28.6139, 77.2090],
-        "Uttarakhand": [30.0668, 79.0193],
-        "Himachal Pradesh": [31.1048, 77.1734],
-        "Uttar Pradesh": [26.8467, 80.9462]
-    };
-
-    function plotinkDetectRegion(location) {
-        const text = String(location ?? "").toLowerCase();
-        if (text.includes("delhi") || text.includes("gurgaon") || text.includes("gurugram") || text.includes("noida") || text.includes("ghaziabad") || text.includes("faridabad")) return "Delhi NCR";
-        if (text.includes("uttarakhand") || text.includes("dehradun") || text.includes("haridwar") || text.includes("rishikesh") || text.includes("haldwani") || text.includes("nainital") || text.includes("mussoorie")) return "Uttarakhand";
-        if (text.includes("himachal") || text.includes("shimla") || text.includes("manali") || text.includes("solan") || text.includes("dharamshala") || text.includes("kullu")) return "Himachal Pradesh";
-        if (text.includes("uttar pradesh") || text.includes("lucknow") || text.includes("meerut") || text.includes("agra") || text.includes("kanpur") || text.includes("varanasi") || text.includes("bareilly") || text.includes("mathura")) return "Uttar Pradesh";
-        return "Other";
-    }
-
-    function plotinkNumber(value) {
-        const n = Number(value);
-        return Number.isFinite(n) ? n : null;
-    }
-
-    function plotinkCoordinates(property) {
-        const lat = plotinkNumber(property.lat ?? property.latitude ?? property.locationLat);
-        const lng = plotinkNumber(property.lng ?? property.lon ?? property.longitude ?? property.locationLng);
-        if (lat !== null && lng !== null && lat >= 6 && lat <= 38 && lng >= 67 && lng <= 98) return [lat, lng];
-
-        const region = plotinkDetectRegion(property.location);
-        const center = plotinkRegionCenters[region];
-        if (center) {
-            // Deterministic small spread so several properties in the same region remain visible.
-            const key = String(property.id || property.title || property.location || "property");
-            let hash = 0;
-            for (let i = 0; i < key.length; i++) hash = ((hash << 5) - hash) + key.charCodeAt(i) | 0;
-            const angle = Math.abs(hash % 360) * Math.PI / 180;
-            const radius = 0.12 + (Math.abs(hash) % 70) / 1000;
-            return [center[0] + Math.sin(angle) * radius, center[1] + Math.cos(angle) * radius];
-        }
-        return null;
-    }
-
-    function plotinkMapIcon() {
-        return L.divIcon({
-            className: "plotink-map-marker-wrap",
-            html: '<div class="plotink-map-marker"><span class="pin-pulse"></span><span class="pin-pulse two"></span><span class="pin-core"></span></div>',
-            iconSize: [28, 28],
-            iconAnchor: [14, 14],
-            popupAnchor: [0, -14]
-        });
-    }
-
-    function renderMapRegionFilters() {
-        const box = document.getElementById("plotinkMapRegionFilters");
-        if (!box) return;
-        const regions = ["Delhi NCR", "Uttarakhand", "Himachal Pradesh", "Uttar Pradesh"];
-        box.innerHTML = `<button type="button" class="plotink-map-region-btn ${plotinkMapRegion === "__all__" ? "active" : ""}" data-map-region="__all__">All Locations</button>` +
-            regions.map(region => `<button type="button" class="plotink-map-region-btn ${plotinkMapRegion === region ? "active" : ""}" data-map-region="${escapeHtml(region)}">${escapeHtml(region)}</button>`).join("");
-        box.querySelectorAll("button").forEach(btn => btn.addEventListener("click", () => {
-            plotinkMapRegion = btn.dataset.mapRegion;
-            renderMapRegionFilters();
-            renderPlotinkMap();
-        }));
-    }
-
-    function initPlotinkMap() {
-        const el = document.getElementById("plotinkPropertyMap");
-        if (!el || typeof L === "undefined") return;
-        plotinkMap = L.map(el, { scrollWheelZoom: false }).setView([29.2, 78.8], 6);
-        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-            maxZoom: 18,
-            attribution: '&copy; OpenStreetMap contributors'
-        }).addTo(plotinkMap);
-        plotinkMapLayer = L.layerGroup().addTo(plotinkMap);
-        renderMapRegionFilters();
-    }
-
-    function renderPlotinkMap() {
-        if (!plotinkMap || !plotinkMapLayer) return;
-        plotinkMapLayer.clearLayers();
-        const visible = plotinkMapProperties.filter(p => plotinkMapRegion === "__all__" || p.plotinkRegion === plotinkMapRegion);
-        const bounds = [];
-
-        visible.forEach(property => {
-            const coords = plotinkCoordinates(property);
-            if (!coords) return;
-            bounds.push(coords);
-            const title = property.title || "Plotink Property";
-            const location = property.location || property.plotinkRegion || "Location available";
-            const price = property.price || "Price on request";
-            const status = property.status || "Available";
-            const type = property.type || "Property";
-            const marker = L.marker(coords, { icon: plotinkMapIcon(), title }).addTo(plotinkMapLayer);
-            marker.bindPopup(`<div class="plotink-map-popup"><h6>${escapeHtml(title)}</h6><p><i class="bi bi-geo-alt-fill"></i> ${escapeHtml(location)}</p><p>${escapeHtml(type)} · ${escapeHtml(status)}</p><p class="popup-price">${escapeHtml(price)}</p></div>`);
-        });
-
-        const count = document.getElementById("plotinkMapPropertyCount");
-        if (count) count.textContent = `${visible.length} listed propert${visible.length === 1 ? "y" : "ies"}`;
-
-        if (bounds.length) {
-            if (plotinkMapRegion === "__all__") plotinkMap.fitBounds(bounds, { padding: [35, 35], maxZoom: 7 });
-            else plotinkMap.fitBounds(bounds, { padding: [45, 45], maxZoom: 10 });
-        } else {
-            const center = plotinkRegionCenters[plotinkMapRegion];
-            if (center) plotinkMap.setView(center, 8);
-        }
-        setTimeout(() => plotinkMap.invalidateSize(), 100);
-    }
-
-    async function loadAdminPropertyMap() {
-        try {
-            initPlotinkMap();
-            const snapshot = await getDocs(collection(db, "properties"));
-            plotinkMapProperties = [];
-            snapshot.forEach(docSnap => {
-                const property = { id: docSnap.id, ...docSnap.data() };
-                property.plotinkRegion = plotinkDetectRegion(property.location);
-                // Only the four service areas are shown in the live map.
-                if (plotinkRegionCenters[property.plotinkRegion]) plotinkMapProperties.push(property);
-            });
-            renderPlotinkMap();
-        } catch (error) {
-            console.error("Plotink map loading error:", error);
-            const count = document.getElementById("plotinkMapPropertyCount");
-            if (count) count.textContent = "Map locations temporarily unavailable";
-        }
-    }
-
     async function loadFeaturedProperties() {
 
         const container =
@@ -1888,6 +1669,283 @@
 
         }
     }
+
+    /* =========================================================
+       PLOTINK LIVE PROPERTY LOCATION MAP
+       Uses admin-listed Firestore properties.
+       Location can be a city/locality/state string; when
+       latitude/longitude are not supplied, the map attempts
+       a public geocoding lookup and caches the result in memory.
+       ========================================================= */
+
+    let plotinkMap = null;
+    let plotinkMapMarkers = [];
+    let plotinkMapProperties = [];
+    let plotinkSelectedMapLocation = "__all__";
+
+    const PLOTINK_DEFAULT_MAP_CENTER = [29.5, 78.5];
+
+    function createPulseIcon() {
+        return L.divIcon({
+            className: "",
+            html: `
+                <div class="plotink-pulse-marker" aria-label="Listed property">
+                    <span class="pulse-ring"></span>
+                    <span class="pulse-dot"></span>
+                </div>
+            `,
+            iconSize: [18, 18],
+            iconAnchor: [9, 9],
+            popupAnchor: [0, -8]
+        });
+    }
+
+    function initPlotinkMap() {
+        const mapElement = document.getElementById("plotinkPropertyMap");
+        if (!mapElement || typeof L === "undefined") return;
+
+        plotinkMap = L.map(mapElement, {
+            zoomControl: true,
+            scrollWheelZoom: true
+        }).setView(PLOTINK_DEFAULT_MAP_CENTER, 7);
+
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            maxZoom: 19,
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(plotinkMap);
+    }
+
+    function getMapFilteredProperties() {
+        if (plotinkSelectedMapLocation === "__all__") {
+            return [...plotinkMapProperties];
+        }
+
+        return plotinkMapProperties.filter(property =>
+            normaliseLocation(property.location) === plotinkSelectedMapLocation
+        );
+    }
+
+    function renderMapFilters() {
+        const box = document.getElementById("plotinkMapFilters");
+        if (!box) return;
+
+        const locations = [
+            ...new Set(
+                plotinkMapProperties
+                    .map(property => normaliseLocation(property.location))
+                    .filter(Boolean)
+            )
+        ].sort();
+
+        box.innerHTML = `
+            <button type="button"
+                    class="plotink-map-filter ${plotinkSelectedMapLocation === "__all__" ? "active" : ""}"
+                    data-map-location="__all__">
+                All Properties
+            </button>
+        `;
+
+        locations.forEach(location => {
+            const button = document.createElement("button");
+            button.type = "button";
+            button.className =
+                "plotink-map-filter" +
+                (plotinkSelectedMapLocation === location ? " active" : "");
+            button.dataset.mapLocation = location;
+            button.textContent = location;
+            box.appendChild(button);
+        });
+
+        box.querySelectorAll(".plotink-map-filter").forEach(button => {
+            button.addEventListener("click", async () => {
+                plotinkSelectedMapLocation = button.dataset.mapLocation;
+                renderMapFilters();
+                await renderPropertyMap();
+            });
+        });
+    }
+
+    function clearPropertyMarkers() {
+        plotinkMapMarkers.forEach(marker => {
+            if (plotinkMap) plotinkMap.removeLayer(marker);
+        });
+        plotinkMapMarkers = [];
+    }
+
+    function buildPropertyPopup(property) {
+        const title = property.title || "Plotink Property";
+        const location = property.location || "Location available";
+        const price = property.price || "Price on request";
+        const status = property.status || "Available";
+
+        return `
+            <div class="plotink-map-popup">
+                <h6>${escapeHtml(title)}</h6>
+                <p><i class="bi bi-geo-alt-fill"></i> ${escapeHtml(location)}</p>
+                <p class="map-price">${escapeHtml(price)}</p>
+                <p>Status: ${escapeHtml(status)}</p>
+            </div>
+        `;
+    }
+
+    async function geocodeLocation(location) {
+        const query = `${location}, India`;
+        const cacheKey = "plotink_geo_" + query.toLowerCase();
+
+        try {
+            const cached = sessionStorage.getItem(cacheKey);
+            if (cached) {
+                const parsed = JSON.parse(cached);
+                if (Array.isArray(parsed) && parsed.length === 2) return parsed;
+            }
+        } catch (error) {
+            console.warn("PLOTINK map cache read:", error);
+        }
+
+        try {
+            const response = await fetch(
+                "https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&countrycodes=in&q=" +
+                encodeURIComponent(query),
+                {
+                    headers: {
+                        "Accept": "application/json"
+                    }
+                }
+            );
+
+            if (!response.ok) return null;
+
+            const results = await response.json();
+
+            if (!results.length) return null;
+
+            const coords = [
+                Number(results[0].lat),
+                Number(results[0].lon)
+            ];
+
+            if (!Number.isFinite(coords[0]) || !Number.isFinite(coords[1])) {
+                return null;
+            }
+
+            try {
+                sessionStorage.setItem(cacheKey, JSON.stringify(coords));
+            } catch (error) {
+                console.warn("PLOTINK map cache write:", error);
+            }
+
+            return coords;
+
+        } catch (error) {
+            console.warn("PLOTINK geocoding error:", location, error);
+            return null;
+        }
+    }
+
+    async function getPropertyCoordinates(property) {
+        const lat = Number(property.latitude ?? property.lat);
+        const lng = Number(property.longitude ?? property.lng ?? property.lon);
+
+        /* Preferred: exact coordinates entered in admin */
+        if (Number.isFinite(lat) && Number.isFinite(lng)) {
+            return [lat, lng];
+        }
+
+        /* Fallback: geocode the admin Location field */
+        const location = normaliseLocation(property.location);
+        if (!location) return null;
+
+        return await geocodeLocation(location);
+    }
+
+    async function renderPropertyMap() {
+        if (!plotinkMap) return;
+
+        clearPropertyMarkers();
+
+        const properties = getMapFilteredProperties();
+        const status = document.getElementById("plotinkMapStatus");
+
+        if (!properties.length) {
+            if (status) status.textContent = "No listed properties for this location.";
+            plotinkMap.setView(PLOTINK_DEFAULT_MAP_CENTER, 7);
+            return;
+        }
+
+        if (status) {
+            status.textContent =
+                `Locating ${properties.length} listed ${properties.length === 1 ? "property" : "properties"}...`;
+        }
+
+        const bounds = [];
+        const pulseIcon = createPulseIcon();
+
+        /* Sequential geocoding keeps the public geocoder within a modest request rate. */
+        for (const property of properties) {
+            const coords = await getPropertyCoordinates(property);
+            if (!coords) continue;
+
+            const marker = L.marker(coords, {
+                icon: pulseIcon,
+                title: property.title || "PLOTINK Property"
+            }).addTo(plotinkMap);
+
+            marker.bindPopup(buildPropertyPopup(property));
+            plotinkMapMarkers.push(marker);
+            bounds.push(coords);
+        }
+
+        if (bounds.length) {
+            plotinkMap.fitBounds(bounds, {
+                padding: [45, 45],
+                maxZoom: 12
+            });
+
+            if (status) {
+                status.textContent =
+                    `${bounds.length} mapped ${bounds.length === 1 ? "property" : "properties"} • ${properties.length} listed`;
+            }
+        } else {
+            plotinkMap.setView(PLOTINK_DEFAULT_MAP_CENTER, 7);
+            if (status) {
+                status.textContent =
+                    "No map coordinates found. Add a more specific Location or latitude/longitude in Admin.";
+            }
+        }
+    }
+
+    async function loadPropertyMap() {
+        initPlotinkMap();
+        if (!plotinkMap) return;
+
+        try {
+            const snapshot = await getDocs(collection(db, "properties"));
+            plotinkMapProperties = [];
+
+            snapshot.forEach(docSnap => {
+                const property = docSnap.data();
+
+                /* Map all admin-listed properties, regardless of Featured status. */
+                plotinkMapProperties.push({
+                    id: docSnap.id,
+                    ...property
+                });
+            });
+
+            renderMapFilters();
+            await renderPropertyMap();
+
+        } catch (error) {
+            console.error("Plotink property map error:", error);
+
+            const status = document.getElementById("plotinkMapStatus");
+            if (status) {
+                status.textContent =
+                    "Property map is temporarily unavailable.";
+            }
+        }
+    }
+
     /* =========================================================
        START
        ========================================================= */
@@ -1898,7 +1956,7 @@
 
     loadFeaturedProperties();
 
-    loadAdminPropertyMap();
+    loadPropertyMap();
 
 </script>
 

@@ -213,6 +213,756 @@
 }
 </style>
 
+
+<style id="plotink-modern-realestate-v2">
+/* Header */
+.plotink-modern-nav{
+    background:rgba(255,255,255,.96)!important;
+    backdrop-filter:blur(14px);
+    box-shadow:0 4px 22px rgba(15,23,42,.08);
+}
+.plotink-brand .logo{max-height:48px;width:auto}
+.plotink-instagram-head{align-items:center;gap:10px;margin-left:auto;margin-right:18px}
+.plotink-instagram-link{
+    display:flex;align-items:center;gap:8px;text-decoration:none;color:#111827;
+}
+.plotink-instagram-link>i{font-size:25px;color:#d62976}
+.plotink-instagram-link span{display:flex;flex-direction:column;line-height:1}
+.plotink-instagram-link strong{font-size:13px;font-weight:900}
+.plotink-instagram-link small{font-size:9px;color:#667085;margin-top:3px}
+.plotink-follow-btn{
+    text-decoration:none;color:#fff;background:#111827;border-radius:999px;
+    padding:7px 14px;font-size:12px;font-weight:900;
+}
+.plotink-follow-btn:hover{color:#fff;transform:translateY(-1px)}
+.plotink-mobile-follow{
+    margin-left:8px;background:#111827;color:#fff;border-radius:999px;
+    padding:3px 8px;font-size:10px;
+}
+
+/* Search */
+.plotink-main-search-card{
+    max-width:980px;margin:22px auto 12px;padding:12px;
+    border:1px solid rgba(255,255,255,.35);border-radius:22px;
+    background:rgba(255,255,255,.97);
+    box-shadow:0 18px 45px rgba(0,0,0,.18);
+}
+.plotink-search-box{
+    display:flex;align-items:center;gap:10px;
+    min-height:58px;padding:0 16px;border-radius:15px;
+    background:#f5f7fa;border:1px solid #e3e8ef;
+}
+.plotink-search-box>i{font-size:21px;color:#123c69}
+.plotink-search-box input{
+    flex:1;border:0;outline:0;background:transparent;
+    font-size:17px;font-weight:750;color:#111827;
+}
+.plotink-search-box input::placeholder{color:#7a8494}
+.plotink-search-box button{
+    border:0;background:transparent;color:#667085;padding:5px;
+}
+.plotink-search-tabs{
+    display:flex;gap:7px;overflow-x:auto;padding:11px 1px 5px;
+    scrollbar-width:none;
+}
+.plotink-search-tabs::-webkit-scrollbar{display:none}
+.plotink-search-tab{
+    flex:0 0 auto;border:1px solid #dbe3ec;background:#fff;
+    color:#26364a;border-radius:999px;padding:8px 16px;
+    font-size:12px;font-weight:900;cursor:pointer;
+}
+.plotink-search-tab.active{
+    background:#123c69;color:#fff;border-color:#123c69;
+    box-shadow:0 6px 15px rgba(18,60,105,.18);
+}
+.plotink-quick-locations{
+    display:flex;gap:7px;overflow-x:auto;padding:6px 1px 2px;
+    scrollbar-width:none;
+}
+.plotink-quick-locations::-webkit-scrollbar{display:none}
+.plotink-quick-location{
+    flex:0 0 auto;border:1px solid #dbe3ec;background:#f8fafc;
+    color:#344054;border-radius:999px;padding:7px 12px;
+    font-size:11px;font-weight:800;cursor:pointer;
+}
+.plotink-quick-location.active{
+    background:#e8f5ee;border-color:#198754;color:#146c43;
+}
+
+/* Action cards: WhatsApp CTA clarity */
+.plotink-hero-action .action-button{
+    display:flex;align-items:center;justify-content:center;gap:4px;
+    white-space:nowrap;
+}
+.plotink-modern-hero .plotink-hero-actions{margin-top:15px}
+.plotink-modern-hero .plotink-hero-action-wrap{padding-top:13px}
+
+@media(max-width:767.98px){
+    .plotink-modern-nav .container{padding-left:10px;padding-right:10px}
+    .plotink-brand .logo{max-height:40px}
+    .plotink-instagram-head{display:none!important}
+    .plotink-modern-hero .overlay{padding-top:12px}
+    .plotink-main-search-card{margin:16px 0 8px;padding:9px;border-radius:18px}
+    .plotink-search-box{min-height:50px;padding:0 12px}
+    .plotink-search-box input{font-size:14px}
+    .plotink-search-box>i{font-size:18px}
+    .plotink-search-tab{padding:7px 12px;font-size:10px}
+    .plotink-quick-location{padding:6px 10px;font-size:9px}
+    .plotink-hero-action .action-button{font-size:7.5px}
+}
+
+<style id="plotink-choice-layout">
+/* =========================================================
+   PLOTINK — SCREENSHOT-INSPIRED CHOICE LAYOUT
+   Mobile: 2 x 2 + full-width Connect
+   Desktop: 5 cards in one row
+   ========================================================= */
+
+.plotink-mobile-brand-lockup{
+    display:none;
+}
+
+.plotink-hero-intro{
+    text-align:center;
+}
+
+.plotink-choice-grid{
+    width:100%;
+    max-width:900px;
+    margin:22px auto 18px;
+    display:grid;
+    grid-template-columns:repeat(5,minmax(0,1fr));
+    gap:14px;
+}
+
+.plotink-choice-card{
+    position:relative;
+    min-height:205px;
+    padding:24px 18px 20px;
+    border-radius:25px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    text-decoration:none;
+    color:#fff;
+    overflow:hidden;
+    box-shadow:0 13px 28px rgba(0,0,0,.22);
+    transition:transform .22s ease, box-shadow .22s ease, filter .22s ease;
+}
+
+.plotink-choice-card::after{
+    content:"";
+    position:absolute;
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    top:-45px;
+    right:-35px;
+    background:rgba(255,255,255,.16);
+    filter:blur(2px);
+}
+
+.plotink-choice-card:hover{
+    color:#fff;
+    transform:translateY(-6px);
+    box-shadow:0 19px 36px rgba(0,0,0,.28);
+    filter:saturate(1.06);
+}
+
+.plotink-choice-buy{
+    background:linear-gradient(145deg,#16b864 0%,#078b4a 100%);
+}
+.plotink-choice-sell{
+    background:linear-gradient(145deg,#20a0ed 0%,#0878ce 100%);
+}
+.plotink-choice-rent{
+    background:linear-gradient(145deg,#ffd21a 0%,#f3ad00 100%);
+    color:#111!important;
+}
+.plotink-choice-rent:hover{color:#111!important}
+.plotink-choice-stay{
+    background:linear-gradient(145deg,#2fd4df 0%,#14b8c7 100%);
+    color:#062e35!important;
+}
+.plotink-choice-stay:hover{color:#062e35!important}
+.plotink-choice-connect{
+    background:linear-gradient(145deg,#164b80 0%,#0b315a 100%);
+}
+
+.choice-icon{
+    position:relative;
+    z-index:2;
+    width:70px;
+    height:70px;
+    margin-bottom:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:2px solid rgba(255,255,255,.85);
+    border-radius:20px;
+    font-size:37px;
+    color:#fff;
+    background:rgba(255,255,255,.08);
+}
+
+.plotink-choice-rent .choice-icon,
+.plotink-choice-stay .choice-icon{
+    color:inherit;
+    border-color:rgba(0,0,0,.15);
+}
+
+.choice-title{
+    position:relative;
+    z-index:2;
+    display:block;
+    font-size:25px;
+    line-height:1.05;
+    font-weight:950;
+    letter-spacing:-.3px;
+}
+
+.choice-subtitle{
+    position:relative;
+    z-index:2;
+    display:block;
+    margin-top:8px;
+    font-size:12px;
+    line-height:1.25;
+    font-weight:750;
+    opacity:.92;
+}
+
+.choice-arrow{
+    position:relative;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-top:14px;
+    font-size:25px;
+    line-height:1;
+}
+
+.plotink-choice-connect{
+    grid-column:1 / -1;
+    min-height:130px;
+    flex-direction:row;
+    justify-content:flex-start;
+    gap:18px;
+    padding:20px 34px;
+    text-align:left;
+}
+
+.plotink-choice-connect .choice-icon{
+    flex:0 0 auto;
+    margin:0;
+}
+
+.plotink-choice-connect .choice-copy{
+    position:relative;
+    z-index:2;
+    display:block;
+    flex:1;
+}
+
+.plotink-choice-connect .choice-title{
+    font-size:29px;
+}
+
+.plotink-choice-connect .choice-subtitle{
+    margin-top:7px;
+    font-size:14px;
+}
+
+.plotink-choice-connect .choice-arrow{
+    margin:0 4px 0 auto;
+    font-size:34px;
+}
+
+.plotink-main-search-card{
+    position:relative;
+    z-index:3;
+}
+
+/* Mobile = close to the supplied reference image */
+@media(max-width:767.98px){
+    .plotink-modern-hero .overlay{
+        padding-top:10px;
+    }
+
+    .plotink-hero-intro{
+        display:none;
+    }
+
+    .plotink-mobile-brand-lockup{
+        display:block;
+        text-align:center;
+        margin:2px auto 14px;
+    }
+
+    .plotink-mobile-brand-lockup img{
+        display:block;
+        width:auto;
+        max-width:250px;
+        height:auto;
+        max-height:82px;
+        margin:0 auto 5px;
+        object-fit:contain;
+    }
+
+    .plotink-mobile-brand-lockup div{
+        color:#475467;
+        font-size:15px;
+        font-weight:800;
+        letter-spacing:.15px;
+    }
+
+    .plotink-choice-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:10px;
+        margin:12px auto 15px;
+    }
+
+    .plotink-choice-card{
+        min-height:0;
+        aspect-ratio:1 / 1;
+        padding:14px 8px 12px;
+        border-radius:22px;
+        box-shadow:0 9px 21px rgba(0,0,0,.22);
+    }
+
+    .choice-icon{
+        width:55px;
+        height:55px;
+        margin-bottom:9px;
+        border-radius:17px;
+        font-size:29px;
+    }
+
+    .choice-title{
+        font-size:20px;
+        line-height:1.05;
+    }
+
+    .choice-subtitle{
+        margin-top:6px;
+        font-size:10px;
+        line-height:1.2;
+    }
+
+    .choice-arrow{
+        margin-top:10px;
+        font-size:23px;
+    }
+
+    .plotink-choice-connect{
+        grid-column:1 / -1;
+        aspect-ratio:auto;
+        min-height:116px;
+        flex-direction:row;
+        justify-content:flex-start;
+        gap:13px;
+        padding:17px 20px;
+        text-align:left;
+    }
+
+    .plotink-choice-connect .choice-icon{
+        width:58px;
+        height:58px;
+        margin:0;
+        font-size:30px;
+    }
+
+    .plotink-choice-connect .choice-title{
+        font-size:25px;
+    }
+
+    .plotink-choice-connect .choice-subtitle{
+        margin-top:5px;
+        font-size:11px;
+    }
+
+    .plotink-choice-connect .choice-arrow{
+        margin-left:auto;
+        margin-right:0;
+        font-size:29px;
+    }
+
+    .plotink-main-search-card{
+        margin-top:8px;
+    }
+}
+
+/* Small phones */
+@media(max-width:380px){
+    .plotink-mobile-brand-lockup img{
+        max-width:220px;
+        max-height:72px;
+    }
+
+    .plotink-mobile-brand-lockup div{
+        font-size:13px;
+    }
+
+    .plotink-choice-grid{
+        gap:8px;
+    }
+
+    .plotink-choice-card{
+        border-radius:19px;
+        padding-left:6px;
+        padding-right:6px;
+    }
+
+    .choice-icon{
+        width:48px;
+        height:48px;
+        font-size:25px;
+        border-radius:15px;
+    }
+
+    .choice-title{
+        font-size:17px;
+    }
+
+    .choice-subtitle{
+        font-size:8.5px;
+    }
+
+    .choice-arrow{
+        font-size:20px;
+    }
+
+    .plotink-choice-connect{
+        min-height:104px;
+        padding:14px;
+    }
+
+    .plotink-choice-connect .choice-icon{
+        width:50px;
+        height:50px;
+        font-size:26px;
+    }
+
+    .plotink-choice-connect .choice-title{
+        font-size:22px;
+    }
+}
+</style>
+
+
+<style id="plotink-mobile-final-layout">
+/* =========================================================
+   PLOTINK MOBILE FINAL LAYOUT — MATCH THE PROVIDED REFERENCE
+   Desktop remains unchanged. These rules are mobile-only.
+   ========================================================= */
+.plotink-mobile-instagram-follow{display:none}
+.choice-whatsapp{display:none}
+
+@media(max-width:767.98px){
+    body{background:#fff!important;overflow-x:hidden}
+
+    .plotink-modern-hero{
+        background:#fff!important;
+        min-height:0!important;
+        padding:0!important;
+    }
+    .plotink-modern-hero .overlay{
+        background:#fff!important;
+        padding:0 8px 12px!important;
+    }
+    .plotink-modern-hero .container,
+    .plotink-modern-hero .row,
+    .plotink-modern-hero .col-12{
+        width:100%!important;
+        max-width:100%!important;
+        margin:0!important;
+        padding-left:0!important;
+        padding-right:0!important;
+    }
+    .plotink-modern-hero .col-12{
+        display:flex!important;
+        flex-direction:column!important;
+        align-items:stretch!important;
+    }
+
+    /* Logo first */
+    .plotink-mobile-brand-lockup{
+        order:1!important;
+        display:block!important;
+        margin:0 auto 6px!important;
+        padding:0!important;
+        text-align:center!important;
+        background:#fff!important;
+    }
+    .plotink-mobile-brand-lockup img{
+        width:auto!important;
+        max-width:285px!important;
+        height:auto!important;
+        max-height:128px!important;
+        margin:0 auto 2px!important;
+        object-fit:contain!important;
+    }
+    .plotink-mobile-brand-lockup div{
+        margin:0!important;
+        font-size:14px!important;
+        line-height:1.15!important;
+        font-weight:800!important;
+        color:#4b5563!important;
+    }
+
+    /* Hide the extra desktop hero copy on mobile */
+    .plotink-hero-intro{display:none!important}
+
+    /* Search second — exactly under the logo */
+    .plotink-main-search-card{
+        order:2!important;
+        width:calc(100% - 28px)!important;
+        max-width:none!important;
+        margin:4px auto 8px!important;
+        padding:9px!important;
+        background:#fff!important;
+        border:1px solid #e4e9f0!important;
+        border-radius:18px!important;
+        box-shadow:0 8px 25px rgba(15,23,42,.12)!important;
+        position:relative!important;
+        z-index:5!important;
+    }
+    .plotink-search-box{
+        height:41px!important;
+        border-radius:14px!important;
+        background:#f3f6fa!important;
+    }
+    .plotink-search-box input{
+        font-size:11px!important;
+        font-weight:800!important;
+        min-width:0!important;
+    }
+    .plotink-search-box input::placeholder{font-size:10px!important}
+    .plotink-search-tabs{
+        gap:7px!important;
+        margin-top:8px!important;
+        flex-wrap:nowrap!important;
+        overflow:hidden!important;
+    }
+    .plotink-search-tab{
+        flex:0 0 auto!important;
+        min-width:0!important;
+        padding:6px 13px!important;
+        font-size:9px!important;
+        font-weight:900!important;
+        border-radius:999px!important;
+        white-space:nowrap!important;
+    }
+    .plotink-quick-locations{
+        gap:6px!important;
+        margin-top:7px!important;
+        flex-wrap:nowrap!important;
+        overflow:hidden!important;
+    }
+    .plotink-quick-location{
+        flex:0 0 auto!important;
+        padding:5px 9px!important;
+        font-size:7px!important;
+        font-weight:900!important;
+        white-space:nowrap!important;
+    }
+
+    /* Instagram third */
+    .plotink-mobile-instagram-follow{
+        order:3!important;
+        display:flex!important;
+        align-items:center!important;
+        justify-content:flex-end!important;
+        gap:7px!important;
+        width:calc(100% - 44px)!important;
+        margin:4px auto 13px!important;
+        min-height:39px!important;
+    }
+    .plotink-mobile-instagram-profile{
+        display:flex!important;
+        align-items:center!important;
+        gap:5px!important;
+        text-decoration:none!important;
+        color:#d62976!important;
+        font-size:19px!important;
+        font-weight:900!important;
+    }
+    .plotink-mobile-instagram-profile span{display:none!important}
+    .plotink-mobile-instagram-button{
+        text-decoration:none!important;
+        color:#fff!important;
+        background:#0875a9!important;
+        padding:6px 12px!important;
+        border-radius:4px!important;
+        font-size:13px!important;
+        line-height:1.1!important;
+        font-weight:900!important;
+    }
+    .plotink-mobile-instagram-count{
+        display:block!important;
+        min-width:70px!important;
+        padding:5px 8px!important;
+        border:1px solid #d7dce4!important;
+        border-radius:3px!important;
+        background:#fff!important;
+        color:#667085!important;
+        font-size:11px!important;
+        line-height:1.1!important;
+        font-weight:800!important;
+        text-align:center!important;
+    }
+
+    /* Cards fourth — reference-style 2x2 + full width Connect */
+    .plotink-choice-grid{
+        order:4!important;
+        width:calc(100% - 8px)!important;
+        max-width:none!important;
+        margin:0 auto 8px!important;
+        display:grid!important;
+        grid-template-columns:repeat(2,minmax(0,1fr))!important;
+        gap:7px!important;
+        padding:0!important;
+    }
+    .plotink-choice-card{
+        min-height:0!important;
+        aspect-ratio:1 / 1.02!important;
+        padding:12px 7px 10px!important;
+        border-radius:23px!important;
+        border:2px solid #4b8df8!important;
+        background:linear-gradient(145deg,#fff 0%,#edf8ff 55%,#dff4ff 100%)!important;
+        color:#123c69!important;
+        box-shadow:0 7px 17px rgba(18,60,105,.12)!important;
+        overflow:hidden!important;
+    }
+    .plotink-choice-card::after{display:none!important}
+    .plotink-choice-buy{border-color:#55a2ff!important}
+    .plotink-choice-sell{border-color:#55a2ff!important}
+    .plotink-choice-rent{border-color:#55a2ff!important}
+    .plotink-choice-stay{border-color:#55a2ff!important}
+    .plotink-choice-connect{
+        grid-column:1 / -1!important;
+        aspect-ratio:auto!important;
+        min-height:112px!important;
+        flex-direction:row!important;
+        justify-content:flex-start!important;
+        text-align:left!important;
+        padding:13px 17px!important;
+        gap:11px!important;
+        border:none!important;
+        border-radius:22px!important;
+        background:linear-gradient(145deg,#155187,#092f58)!important;
+        color:#fff!important;
+        box-shadow:0 8px 18px rgba(8,47,88,.28)!important;
+    }
+
+    .choice-icon{
+        position:relative!important;
+        z-index:2!important;
+        width:57px!important;
+        height:57px!important;
+        flex:0 0 57px!important;
+        margin:0 0 7px!important;
+        border:0!important;
+        border-radius:17px!important;
+        background:#f4fbff!important;
+        box-shadow:0 7px 17px rgba(18,60,105,.12)!important;
+        color:#123c69!important;
+        font-size:29px!important;
+    }
+    .plotink-choice-connect .choice-icon{
+        width:62px!important;
+        height:62px!important;
+        flex-basis:62px!important;
+        margin:0!important;
+        background:transparent!important;
+        box-shadow:none!important;
+        color:#fff!important;
+        border:0!important;
+    }
+    .choice-title{
+        position:relative!important;
+        z-index:2!important;
+        display:block!important;
+        color:#123c69!important;
+        font-size:18px!important;
+        line-height:1.12!important;
+        font-weight:950!important;
+        white-space:normal!important;
+    }
+    .choice-subtitle{
+        position:relative!important;
+        z-index:2!important;
+        display:block!important;
+        margin-top:4px!important;
+        color:#667085!important;
+        font-size:8.5px!important;
+        line-height:1.25!important;
+        font-weight:800!important;
+    }
+    .choice-whatsapp{
+        position:relative!important;
+        z-index:2!important;
+        display:block!important;
+        width:100%!important;
+        margin-top:9px!important;
+        padding:7px 4px!important;
+        border-radius:10px!important;
+        background:#168c58!important;
+        color:#fff!important;
+        font-size:8px!important;
+        line-height:1.15!important;
+        font-weight:950!important;
+        text-align:center!important;
+        white-space:nowrap!important;
+    }
+    .plotink-choice-sell .choice-whatsapp{background:#1476f3!important}
+    .plotink-choice-rent .choice-whatsapp{background:#ffb800!important;color:#111!important}
+    .plotink-choice-stay .choice-whatsapp{background:#1476f3!important}
+    .plotink-choice-connect .choice-whatsapp{display:none!important}
+    .choice-arrow{
+        display:none!important;
+    }
+    .plotink-choice-connect .choice-copy{min-width:0!important}
+    .plotink-choice-connect .choice-title{
+        color:#fff!important;
+        font-size:24px!important;
+    }
+    .plotink-choice-connect .choice-subtitle{
+        color:#fff!important;
+        font-size:11px!important;
+        margin-top:3px!important;
+    }
+    .plotink-choice-connect .choice-arrow{
+        display:block!important;
+        color:#fff!important;
+        margin-left:auto!important;
+        font-size:29px!important;
+    }
+
+    /* Keep the rest of the page exactly below this mobile hero */
+    .plotink-featured-section{padding-top:8px!important}
+}
+
+@media(max-width:390px){
+    .plotink-mobile-brand-lockup img{max-width:255px!important;max-height:112px!important}
+    .plotink-mobile-brand-lockup div{font-size:12px!important}
+    .plotink-main-search-card{width:calc(100% - 20px)!important}
+    .plotink-choice-grid{gap:6px!important}
+    .plotink-choice-card{border-radius:20px!important}
+    .choice-icon{width:51px!important;height:51px!important;flex-basis:51px!important;font-size:26px!important}
+    .choice-title{font-size:16px!important}
+    .choice-subtitle{font-size:7.5px!important}
+    .choice-whatsapp{font-size:7px!important;padding:7px 2px!important}
+    .plotink-choice-connect{min-height:100px!important;padding:11px 13px!important}
+    .plotink-choice-connect .choice-icon{width:55px!important;height:55px!important;flex-basis:55px!important}
+    .plotink-choice-connect .choice-title{font-size:21px!important}
+    .plotink-choice-connect .choice-subtitle{font-size:9px!important}
+}
+</style>
+
 </head>
 
 <body>
@@ -234,105 +984,67 @@
 
 
 <!-- =========================================================
-     HEADER START
+     PLOTINK MODERN HEADER
      ========================================================= -->
-<nav class="navbar navbar-expand-lg sticky-top">
-
+<nav class="navbar navbar-expand-lg sticky-top plotink-modern-nav">
     <div class="container">
 
-        <!-- Logo -->
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand plotink-brand" href="index.html" aria-label="Plotink Home">
             <img src="images/logo.png" class="logo" alt="Plotink Logo">
         </a>
 
-        <!-- Mobile Menu -->
-        <button class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#menu"
-            aria-controls="menu"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
+        <div class="plotink-instagram-head d-none d-md-flex">
+            <a href="https://www.instagram.com/plotinkofficial/"
+               target="_blank" rel="noopener noreferrer"
+               class="plotink-instagram-link" aria-label="Plotink Instagram">
+                <i class="bi bi-instagram"></i>
+                <span>
+                    <strong id="plotinkFollowerCount">Follow us</strong>
+                    <small>Instagram</small>
+                </span>
+            </a>
+            <a href="https://www.instagram.com/plotinkofficial/"
+               target="_blank" rel="noopener noreferrer"
+               class="plotink-follow-btn">
+                Follow
+            </a>
+        </div>
 
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menu"
+                aria-controls="menu"
+                aria-expanded="false"
+                aria-label="Open Menu">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Navigation -->
         <div class="collapse navbar-collapse justify-content-end" id="menu">
-
             <ul class="navbar-nav align-items-lg-center">
 
-                <li class="nav-item">
-                    <a class="nav-link active"
-                        href="index.html"
-                        data-lang-en="Home"
-                        data-lang-hi="होम">
-                        Home
-                    </a>
-                </li>
+                <li class="nav-item"><a class="nav-link" href="#plotinkSearch">🏠 Buy</a></li>
+                <li class="nav-item"><a class="nav-link" href="#plotinkSearch">🏷️ Sell</a></li>
+                <li class="nav-item"><a class="nav-link" href="#plotinkSearch">🔑 Rent / Lease</a></li>
+                <li class="nav-item"><a class="nav-link" href="#plotinkSearch">🛏️ Stay</a></li>
+                <li class="nav-item"><a class="nav-link" href="#plotinkSearch">🤝 Connect</a></li>
 
-                <li class="nav-item">
-                    <a class="nav-link"
-                        href="buy.html"
-                        data-lang-en="Buy"
-                        data-lang-hi="खरीदें">
-                        Buy
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link"
-                        href="sell.html"
-                        data-lang-en="Sell"
-                        data-lang-hi="बेचें">
-                        Sell
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link"
-                        href="rent.html"
-                        data-lang-en="Rent"
-                        data-lang-hi="किराया">
-                        Rent
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link"
-                        href="contact.html"
-                        data-lang-en="Contact"
-                        data-lang-hi="संपर्क करें">
-                        Contact
-                    </a>
-                </li>
-
-                <!-- Instagram -->
-                <li class="nav-item">
+                <li class="nav-item d-md-none mt-2">
                     <a class="nav-link instagram-nav"
-                        href="https://www.instagram.com/plotinkofficial/"
-                        target="_blank"
-                        rel="noopener noreferrer">
-
-                        <i class="bi bi-instagram"></i>
-                        Instagram
+                       href="https://www.instagram.com/plotinkofficial/"
+                       target="_blank" rel="noopener noreferrer">
+                        <i class="bi bi-instagram"></i> Instagram
+                        <span class="plotink-mobile-follow">Follow</span>
                     </a>
                 </li>
 
-                <!-- Language Switcher -->
-                <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
-
+                <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
                     <button id="langToggleBtn"
-                        class="btn btn-outline-dark btn-sm rounded-pill px-3">
-
+                            class="btn btn-outline-dark btn-sm rounded-pill px-3">
                         🌐 हिन्दी
-
                     </button>
-
                 </li>
-
             </ul>
-
         </div>
     </div>
 </nav>
@@ -342,110 +1054,151 @@
 
 
 <!-- =========================================================
-     HERO START
+     MODERN REAL ESTATE HERO
      ========================================================= -->
-<!-- =========================================================
-     HERO + WHAT DO YOU WANT TO DO
-     ========================================================= -->
-<section class="hero">
-
+<section class="hero plotink-modern-hero">
     <div class="overlay">
-
         <div class="container">
-
             <div class="row align-items-center">
-
                 <div class="col-12">
 
-                    <div class="ai-badge mb-3">
-                        <i class="bi bi-stars"></i>
-                        Smart Property Matchmaker
+                    <!-- Screenshot-inspired Plotink brand lockup -->
+                    <div class="plotink-mobile-brand-lockup">
+                        <img src="images/logo.png" alt="Plotink Logo">
+                        <div>Smart Property Matchmaker</div>
                     </div>
 
-                    <h5 class="welcome"
-                        data-lang-en="WELCOME TO PLOTINK"
-                        data-lang-hi="प्लॉटइंक में आपका स्वागत है">
-                        WELCOME TO PLOTINK
-                    </h5>
+                    <div class="plotink-hero-intro">
+                        <div class="ai-badge mb-2">
+                            <i class="bi bi-stars"></i>
+                            Smart Property Search
+                        </div>
 
-                    <h1 class="hero-title"
-                        data-lang-en="Your Property Partner"
-                        data-lang-hi="आपका अपना प्रॉपर्टी पार्टनर">
-                        Your Property Partner
-                    </h1>
+                        <h5 class="welcome"
+                            data-lang-en="WELCOME TO PLOTINK"
+                            data-lang-hi="प्लॉटइंक में आपका स्वागत है">
+                            WELCOME TO PLOTINK
+                        </h5>
 
-                    <p class="hero-text"
-                        data-lang-en="Residential • Commercial • Hill Properties"
-                        data-lang-hi="आवासीय • व्यावसायिक • पहाड़ी संपत्तियां">
-                        Residential • Commercial • Hill Properties
-                    </p>
+                        <h1 class="hero-title"
+                            data-lang-en="Find the Right Property"
+                            data-lang-hi="अपनी सही प्रॉपर्टी खोजें">
+                            Find the Right Property
+                        </h1>
 
-                    <!-- WHAT DO YOU WANT TO DO — INSIDE HERO -->
-                    <div class="plotink-hero-actions">
-
-                        <h3 class="text-white fw-bold mb-2"
-                            data-lang-en="What do you want to do?"
-                            data-lang-hi="आप क्या करना चाहते हैं?">
-                            What do you want to do?
-                        </h3>
-
-                        <p class="text-white-50 small mb-2">
+                        <p class="hero-text"
+                           data-lang-en="Buy • Sell • Rent / Lease • Stay • Connect"
+                           data-lang-hi="खरीदें • बेचें • किराये पर लें • Stay • Connect">
                             Buy • Sell • Rent / Lease • Stay • Connect
                         </p>
+                    </div>
 
-                        <div class="plotink-hero-action-wrap">
+                    <!-- VISUAL ACTION GRID -->
+                    <div class="plotink-choice-grid" aria-label="Plotink property services">
 
-                            <a class="plotink-hero-action"
-                               href="https://wa.me/919193339398?text=Hi%20Plotink,%20I%20want%20to%20Buy%20a%20property."
-                               target="_blank" rel="noopener noreferrer">
-                                <span class="smart-tag">VERIFIED</span>
-                                <div class="action-icon">🏡</div>
-                                <h4>Buy</h4>
-                                <p>Find your property</p>
-                                <span class="action-button" style="background:#198754;">Buy Now</span>
-                            </a>
+                        <a class="plotink-choice-card plotink-choice-buy"
+                           href="https://wa.me/919193339398?text=Hi%20Plotink,%20I%20want%20to%20Buy%20a%20property."
+                           target="_blank" rel="noopener noreferrer">
+                            <span class="choice-icon"><i class="bi bi-house-door-fill"></i></span>
+                            <span class="choice-title">Buy / खरीदें</span>
+                            <span class="choice-subtitle">Find your property / अपनी प्रॉपर्टी खोजें</span>
+                            <span class="choice-whatsapp"><i class="bi bi-whatsapp"></i> WhatsApp Enquiry / व्हाट्सऐप</span>
+                            <span class="choice-arrow"><i class="bi bi-arrow-right"></i></span>
+                        </a>
 
-                            <a class="plotink-hero-action"
-                               href="https://wa.me/919193339398?text=Hi%20Plotink,%20I%20want%20to%20Sell%20my%20property."
-                               target="_blank" rel="noopener noreferrer">
-                                <span class="smart-tag">FAST DEAL</span>
-                                <div class="action-icon">🏷️</div>
-                                <h4>Sell</h4>
-                                <p>Find genuine buyers</p>
-                                <span class="action-button" style="background:#0d6efd;">Sell Property</span>
-                            </a>
+                        <a class="plotink-choice-card plotink-choice-sell"
+                           href="https://wa.me/919193339398?text=Hi%20Plotink,%20I%20want%20to%20Sell%20my%20property."
+                           target="_blank" rel="noopener noreferrer">
+                            <span class="choice-icon"><i class="bi bi-tag-fill"></i></span>
+                            <span class="choice-title">Sell / बेचें</span>
+                            <span class="choice-subtitle">List your property / प्रॉपर्टी लिस्ट करें</span>
+                            <span class="choice-whatsapp"><i class="bi bi-whatsapp"></i> WhatsApp Enquiry / व्हाट्सऐप</span>
+                            <span class="choice-arrow"><i class="bi bi-arrow-right"></i></span>
+                        </a>
 
-                            <a class="plotink-hero-action"
-                               href="https://wa.me/919193339398?text=Hi%20Plotink,%20I%20need%20Rent%20or%20Lease%20options."
-                               target="_blank" rel="noopener noreferrer">
-                                <span class="smart-tag">VERIFIED</span>
-                                <div class="action-icon">🔑</div>
-                                <h4>Rent / Lease</h4>
-                                <p>Rent or lease property</p>
-                                <span class="action-button" style="background:#ffb800;color:#111;">Rent Options</span>
-                            </a>
+                        <a class="plotink-choice-card plotink-choice-rent"
+                           href="https://wa.me/919193339398?text=Hi%20Plotink,%20I%20need%20Rent%20or%20Lease%20options."
+                           target="_blank" rel="noopener noreferrer">
+                            <span class="choice-icon"><i class="bi bi-key-fill"></i></span>
+                            <span class="choice-title">Rent / Lease / किराया</span>
+                            <span class="choice-subtitle">Best options / बेहतर विकल्प</span>
+                            <span class="choice-whatsapp"><i class="bi bi-whatsapp"></i> WhatsApp Enquiry / व्हाट्सऐप</span>
+                            <span class="choice-arrow"><i class="bi bi-arrow-right"></i></span>
+                        </a>
 
-                            <a class="plotink-hero-action"
-                               href="https://wa.me/919193339398?text=Hi%20Plotink,%20I%20want%20to%20Book%20a%20Stay."
-                               target="_blank" rel="noopener noreferrer">
-                                <span class="smart-tag">TRENDING</span>
-                                <div class="action-icon">🏕️</div>
-                                <h4>Stay</h4>
-                                <p>Hotel • Homestay • Villa</p>
-                                <span class="action-button" style="background:#12bfe0;">Book Stay</span>
-                            </a>
+                        <a class="plotink-choice-card plotink-choice-stay"
+                           href="https://wa.me/919193339398?text=Hi%20Plotink,%20I%20want%20to%20Book%20a%20Stay."
+                           target="_blank" rel="noopener noreferrer">
+                            <span class="choice-icon"><i class="bi bi-buildings-fill"></i></span>
+                            <span class="choice-title">Stay / ठहरें</span>
+                            <span class="choice-subtitle">Hotels • Homestays / होटल • होमस्टे</span>
+                            <span class="choice-whatsapp"><i class="bi bi-whatsapp"></i> WhatsApp Enquiry / व्हाट्सऐप</span>
+                            <span class="choice-arrow"><i class="bi bi-arrow-right"></i></span>
+                        </a>
 
-                            <a class="plotink-hero-action"
-                               href="https://wa.me/919193339398?text=Hi%20Plotink,%20I%20want%20to%20Connect%20as%20a%20Local%20Partner."
-                               target="_blank" rel="noopener noreferrer">
-                                <span class="smart-tag">PARTNER</span>
-                                <div class="action-icon">🤝</div>
-                                <h4>Connect</h4>
-                                <p>Partner / Owner connection</p>
-                                <span class="action-button" style="background:#212529;">Connect Now</span>
-                            </a>
+                        <a class="plotink-choice-card plotink-choice-connect"
+                           href="https://wa.me/919193339398?text=Hi%20Plotink,%20I%20want%20to%20Connect%20with%20Plotink."
+                           target="_blank" rel="noopener noreferrer">
+                            <span class="choice-icon"><i class="bi bi-people-fill"></i></span>
+                            <span class="choice-copy">
+                                <span class="choice-title">Connect / जुड़ें</span>
+                                <span class="choice-subtitle">Work with Us / हमारे साथ जुड़ें</span>
+                            </span>
+                            <span class="choice-whatsapp"><i class="bi bi-whatsapp"></i> WhatsApp Enquiry / व्हाट्सऐप</span>
+                            <span class="choice-arrow"><i class="bi bi-arrow-right"></i></span>
+                        </a>
 
+                    </div>
+
+                    <!-- SEARCH + FILTERS RETAINED FROM THE MODERN REAL-ESTATE LAYOUT -->
+                    <div id="plotinkSearch" class="plotink-main-search-card">
+                        <div class="plotink-search-box">
+                            <i class="bi bi-search"></i>
+                            <input id="plotinkPropertySearch"
+                                   type="search"
+                                   autocomplete="off"
+                                   placeholder="Search Property, Location, Area... / प्रॉपर्टी, लोकेशन, एरिया खोजें..."
+                                   aria-label="Search Property, Location, Area / प्रॉपर्टी, लोकेशन, एरिया खोजें">
+                            <button id="plotinkClearSearch"
+                                    type="button"
+                                    aria-label="Clear search"
+                                    title="Clear">
+                                <i class="bi bi-x-lg"></i>
+                            </button>
                         </div>
+
+                        <div class="plotink-search-tabs" role="tablist" aria-label="Property category">
+                            <button class="plotink-search-tab active" type="button" data-category="__all__">All</button>
+                            <button class="plotink-search-tab" type="button" data-category="Buy">Buy</button>
+                            <button class="plotink-search-tab" type="button" data-category="Sell">Sell</button>
+                            <button class="plotink-search-tab" type="button" data-category="Rent">Rent</button>
+                            <button class="plotink-search-tab" type="button" data-category="Lease">Lease</button>
+                            <button class="plotink-search-tab" type="button" data-category="Stay">Stay</button>
+                        </div>
+
+                        <div class="plotink-quick-locations" aria-label="Quick location filters">
+                            <button type="button" class="plotink-quick-location" data-location-search="Delhi NCR">Delhi NCR / दिल्ली NCR</button>
+                            <button type="button" class="plotink-quick-location" data-location-search="Uttarakhand">Uttarakhand / उत्तराखंड</button>
+                            <button type="button" class="plotink-quick-location" data-location-search="Himachal Pradesh">Himachal Pradesh / हिमाचल प्रदेश</button>
+                            <button type="button" class="plotink-quick-location" data-location-search="Uttar Pradesh">Uttar Pradesh / उत्तर प्रदेश</button>
+                            <button type="button" class="plotink-quick-location" data-location-search="Other States">Other States / अन्य राज्य</button>
+                        </div>
+                    </div>
+
+                    <!-- MOBILE INSTAGRAM FOLLOW STRIP -->
+                    <div class="plotink-mobile-instagram-follow" aria-label="Plotink Instagram follow">
+                        <a class="plotink-mobile-instagram-profile"
+                           href="https://www.instagram.com/plotinkofficial/"
+                           target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a class="plotink-mobile-instagram-button"
+                           href="https://www.instagram.com/plotinkofficial/"
+                           target="_blank" rel="noopener noreferrer">
+                            Follow / फॉलो
+                        </a>
+                        <span class="plotink-mobile-instagram-count" id="plotinkMobileFollowerCount">Follow us</span>
                     </div>
 
                 </div>
@@ -569,7 +1322,7 @@
 
                     <a id="plotinkDetailWhatsApp" href="#" target="_blank" rel="noopener noreferrer"
                        class="btn btn-success">
-                        <i class="bi bi-whatsapp"></i> WhatsApp Enquire Now
+                        <i class="bi bi-whatsapp"></i> WhatsApp Enquiry — Get This Property
                     </a>
                 </div>
 
@@ -1163,6 +1916,8 @@
     let plotinkFilteredProperties = [];
     let plotinkPageIndex = 0;
     let plotinkSelectedLocation = "__all__";
+    let plotinkSearchTerm = "";
+    let plotinkSearchCategory = "__all__";
     let plotinkAutoTimer = null;
     let plotinkCurrentIndex = 0;
     let plotinkPropertyModal = null;
@@ -1184,14 +1939,62 @@
     }
 
 
-    function getFilteredProperties() {
-        if (plotinkSelectedLocation === "__all__") {
-            return [...plotinkAllFeatured];
-        }
+    function propertyMatchesCategory(property) {
+        if (plotinkSearchCategory === "__all__") return true;
 
-        return plotinkAllFeatured.filter(property =>
-            normaliseLocation(property.location) === plotinkSelectedLocation
-        );
+        const values = [
+            property.category,
+            property.purpose,
+            property.listingType,
+            property.transactionType,
+            property.propertyFor,
+            property.type,
+            property.status,
+            property.title
+        ].map(value => String(value ?? "").toLowerCase());
+
+        const wanted = plotinkSearchCategory.toLowerCase();
+
+        if (wanted === "rent") {
+            return values.some(v => v.includes("rent"));
+        }
+        if (wanted === "lease") {
+            return values.some(v => v.includes("lease"));
+        }
+        return values.some(v => v.includes(wanted));
+    }
+
+    function propertyMatchesSearch(property) {
+        if (!plotinkSearchTerm) return true;
+
+        const haystack = [
+            property.title,
+            property.location,
+            property.type,
+            property.area,
+            property.price,
+            property.description,
+            property.city,
+            property.state,
+            property.category,
+            property.purpose,
+            property.listingType
+        ].map(value => String(value ?? "").toLowerCase()).join(" ");
+
+        return haystack.includes(plotinkSearchTerm);
+    }
+
+    function getFilteredProperties() {
+        return plotinkAllFeatured.filter(property => {
+
+            const locationMatch =
+                plotinkSelectedLocation === "__all__" ||
+                normaliseLocation(property.location) === plotinkSelectedLocation;
+
+            return locationMatch &&
+                   propertyMatchesCategory(property) &&
+                   propertyMatchesSearch(property);
+        });
     }
 
 
@@ -1520,11 +2323,18 @@
             detailLink.classList.add("d-none");
         }
 
+        const whatsappMessage =
+            "Hi Plotink, I am interested in this property." +
+            "\n\nProperty: " + title +
+            "\nType: " + type +
+            "\nLocation: " + location +
+            (area ? "\nArea: " + area : "") +
+            "\nPrice: " + price +
+            "\n\nPlease share full details and availability.";
+
         document.getElementById("plotinkDetailWhatsApp").href =
             "https://wa.me/919193339398?text=" +
-            encodeURIComponent(
-                "Hi Plotink, I am interested in " + title
-            );
+            encodeURIComponent(whatsappMessage);
 
         document.getElementById("plotinkPropertyCounter").textContent =
             `${index + 1} of ${plotinkFilteredProperties.length}`;
@@ -1947,8 +2757,77 @@
     }
 
     /* =========================================================
+       MODERN PLOTINK SEARCH
+       ========================================================= */
+    function setupPlotinkModernSearch() {
+        const input = document.getElementById("plotinkPropertySearch");
+        const clearButton = document.getElementById("plotinkClearSearch");
+        const tabs = document.querySelectorAll(".plotink-search-tab");
+        const locationButtons = document.querySelectorAll(".plotink-quick-location");
+
+        if (input) {
+            input.addEventListener("input", () => {
+                plotinkSearchTerm = input.value.trim().toLowerCase();
+                plotinkPageIndex = 0;
+                renderPropertyPage();
+            });
+        }
+
+        if (clearButton) {
+            clearButton.addEventListener("click", () => {
+                if (input) input.value = "";
+                plotinkSearchTerm = "";
+                plotinkPageIndex = 0;
+                renderPropertyPage();
+                if (input) input.focus();
+            });
+        }
+
+        tabs.forEach(tab => {
+            tab.addEventListener("click", () => {
+                tabs.forEach(item => item.classList.remove("active"));
+                tab.classList.add("active");
+                plotinkSearchCategory = tab.dataset.category || "__all__";
+                plotinkPageIndex = 0;
+                renderPropertyPage();
+                document.getElementById("publicProperties")?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            });
+        });
+
+        locationButtons.forEach(button => {
+            button.addEventListener("click", () => {
+                locationButtons.forEach(item => item.classList.remove("active"));
+                button.classList.add("active");
+
+                const value = button.dataset.locationSearch || "";
+                if (input) input.value = value;
+                plotinkSearchTerm = value.toLowerCase();
+                plotinkSelectedLocation = "__all__";
+                plotinkPageIndex = 0;
+                renderPropertyPage();
+
+                document.getElementById("publicProperties")?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            });
+        });
+    }
+
+
+    /* =========================================================
+       INSTAGRAM FOLLOWER COUNT
+       API deferred for now. Follow button links directly to Instagram.
+       ========================================================= */
+
+    /* =========================================================
        START
        ========================================================= */
+
+    setupPlotinkModernSearch();
 
     updateVisitorCount();
 

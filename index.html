@@ -659,7 +659,7 @@
    Desktop remains unchanged. These rules are mobile-only.
    ========================================================= */
 .plotink-mobile-instagram-follow{display:none}
-.choice-whatsapp{display:none}
+.choice-whatsapp{display:inline-flex;align-items:center;justify-content:center;gap:5px}
 
 @media(max-width:767.98px){
     body{background:#fff!important;overflow-x:hidden}
@@ -963,6 +963,432 @@
 }
 </style>
 
+
+<style id="plotink-final-size-fix">
+/* FINAL SIZE FIX: desktop logo + mobile search readability */
+.plotink-modern-nav .plotink-brand{
+    display:flex!important;
+    align-items:center!important;
+    flex:0 0 auto!important;
+    width:auto!important;
+    max-width:180px!important;
+}
+.plotink-modern-nav .plotink-brand .logo{
+    display:block!important;
+    width:auto!important;
+    height:54px!important;
+    max-width:180px!important;
+    max-height:54px!important;
+    object-fit:contain!important;
+}
+
+/* Desktop: keep header compact and balanced */
+@media(min-width:768px){
+    .plotink-modern-nav{
+        min-height:72px!important;
+    }
+    .plotink-modern-nav .navbar-brand{
+        margin-right:18px!important;
+    }
+}
+
+/* Mobile: make search easy to read and tap */
+@media(max-width:767.98px){
+    .plotink-modern-nav .plotink-brand .logo{
+        height:42px!important;
+        max-width:145px!important;
+        max-height:42px!important;
+    }
+
+    .plotink-main-search-card{
+        width:calc(100% - 20px)!important;
+        margin:8px auto 12px!important;
+        padding:11px!important;
+        border-radius:18px!important;
+    }
+
+    .plotink-search-box{
+        min-height:54px!important;
+        height:54px!important;
+        padding:0 12px!important;
+        gap:9px!important;
+        border-radius:14px!important;
+    }
+
+    .plotink-search-box > i{
+        font-size:20px!important;
+        flex:0 0 auto!important;
+    }
+
+    .plotink-search-box input,
+    .plotink-search-box input[type="search"]{
+        font-size:17px!important;
+        line-height:1.25!important;
+        font-weight:800!important;
+        min-width:0!important;
+        height:100%!important;
+    }
+
+    .plotink-search-box input::placeholder{
+        font-size:15px!important;
+        font-weight:700!important;
+        opacity:.75!important;
+    }
+
+    .plotink-search-box button{
+        width:34px!important;
+        height:34px!important;
+        font-size:14px!important;
+        flex:0 0 34px!important;
+    }
+
+    .plotink-search-tabs{
+        gap:7px!important;
+        margin-top:10px!important;
+        overflow-x:auto!important;
+        padding-bottom:3px!important;
+        scrollbar-width:none!important;
+    }
+    .plotink-search-tabs::-webkit-scrollbar{display:none!important}
+
+    .plotink-search-tab{
+        flex:0 0 auto!important;
+        padding:9px 14px!important;
+        font-size:13px!important;
+        line-height:1.1!important;
+        font-weight:900!important;
+        white-space:nowrap!important;
+    }
+
+    .plotink-quick-locations{
+        gap:7px!important;
+        margin-top:9px!important;
+        overflow-x:auto!important;
+        flex-wrap:nowrap!important;
+        padding-bottom:3px!important;
+        scrollbar-width:none!important;
+    }
+    .plotink-quick-locations::-webkit-scrollbar{display:none!important}
+
+    .plotink-quick-location{
+        flex:0 0 auto!important;
+        padding:8px 12px!important;
+        font-size:12px!important;
+        line-height:1.1!important;
+        font-weight:900!important;
+        white-space:nowrap!important;
+    }
+}
+
+/* Small phones: still readable, never tiny */
+@media(max-width:390px){
+    .plotink-main-search-card{
+        width:calc(100% - 16px)!important;
+        padding:10px!important;
+    }
+    .plotink-search-box{
+        min-height:52px!important;
+        height:52px!important;
+    }
+    .plotink-search-box input,
+    .plotink-search-box input[type="search"]{
+        font-size:16px!important;
+    }
+    .plotink-search-box input::placeholder{
+        font-size:14px!important;
+    }
+    .plotink-search-tab{
+        padding:8px 12px!important;
+        font-size:12px!important;
+    }
+    .plotink-quick-location{
+        padding:7px 10px!important;
+        font-size:11px!important;
+    }
+}
+</style>
+
+
+<style id="plotink-city-location-glitter">
+/* =========================================================
+   PLOTINK CITY / LOCATION HIGHLIGHT
+   Bold + bright + subtle glitter/shimmer effect
+   ========================================================= */
+.plotink-quick-locations{
+    position:relative;
+    gap:9px!important;
+    padding:10px 2px 7px!important;
+}
+
+.plotink-quick-location{
+    position:relative;
+    overflow:hidden;
+    isolation:isolate;
+    border:1.5px solid #b8c7d9!important;
+    border-radius:14px!important;
+    padding:9px 14px!important;
+    background:linear-gradient(135deg,#ffffff 0%,#eef7ff 45%,#ffffff 100%)!important;
+    color:#123c69!important;
+    font-size:12px!important;
+    line-height:1.15!important;
+    font-weight:900!important;
+    letter-spacing:.15px;
+    box-shadow:0 5px 14px rgba(18,60,105,.12), inset 0 1px 0 rgba(255,255,255,.95);
+    transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+}
+
+/* subtle moving glitter */
+.plotink-quick-location::before{
+    content:"";
+    position:absolute;
+    top:-60%;
+    left:-75%;
+    width:45%;
+    height:220%;
+    z-index:-1;
+    transform:rotate(22deg);
+    background:linear-gradient(90deg,
+        transparent 0%,
+        rgba(255,255,255,0) 20%,
+        rgba(255,255,255,.9) 48%,
+        rgba(255,255,255,.25) 60%,
+        transparent 82%);
+    animation:plotinkLocationGlitter 3.8s linear infinite;
+}
+
+.plotink-quick-location:hover,
+.plotink-quick-location:focus-visible{
+    transform:translateY(-2px);
+    border-color:#198754!important;
+    box-shadow:0 8px 20px rgba(25,135,84,.20),0 0 0 3px rgba(25,135,84,.08);
+}
+
+.plotink-quick-location.active{
+    background:linear-gradient(135deg,#123c69 0%,#0d6efd 52%,#198754 100%)!important;
+    color:#fff!important;
+    border-color:#123c69!important;
+    box-shadow:0 8px 20px rgba(18,60,105,.28),0 0 16px rgba(25,135,84,.18);
+}
+
+.plotink-quick-location.active::before{
+    animation-duration:2.7s;
+}
+
+@keyframes plotinkLocationGlitter{
+    0%{left:-75%;opacity:0}
+    12%{opacity:.8}
+    38%{left:135%;opacity:.9}
+    39%,100%{left:135%;opacity:0}
+}
+
+/* Location heading/area becomes more prominent */
+.plotink-quick-locations::after{
+    content:"📍 Select Location";
+    flex:0 0 auto;
+    order:-1;
+    display:inline-flex;
+    align-items:center;
+    align-self:center;
+    margin-right:1px;
+    padding:8px 10px;
+    border-radius:12px;
+    background:#fff4d6;
+    border:1px solid #f0c36a;
+    color:#8a5a00;
+    font-size:11px;
+    font-weight:900;
+    white-space:nowrap;
+    box-shadow:0 4px 12px rgba(138,90,0,.10);
+}
+
+@media(max-width:767.98px){
+    .plotink-quick-locations{
+        gap:8px!important;
+        padding:10px 2px 6px!important;
+    }
+    .plotink-quick-location{
+        padding:10px 13px!important;
+        font-size:12px!important;
+        min-height:40px;
+        border-radius:13px!important;
+    }
+    .plotink-quick-locations::after{
+        padding:9px 10px;
+        font-size:10px;
+        min-height:40px;
+    }
+}
+
+@media(max-width:390px){
+    .plotink-quick-location{
+        padding:9px 12px!important;
+        font-size:11px!important;
+        min-height:38px;
+    }
+    .plotink-quick-locations::after{
+        font-size:9.5px;
+        padding:8px 9px;
+        min-height:38px;
+    }
+}
+
+@media(prefers-reduced-motion:reduce){
+    .plotink-quick-location::before{animation:none}
+    .plotink-quick-location{transition:none}
+}
+</style>
+
+
+<style id="plotink-professional-sections-v3">
+/* ===== PLOTINK PROFESSIONAL VISUAL UPGRADE ===== */
+.plotink-featured-heading h2{
+  font-size:clamp(34px,4vw,52px)!important;
+  font-weight:950!important;
+  letter-spacing:-1.2px;
+  line-height:1.05;
+  background:linear-gradient(90deg,#123c69 0%,#00a86b 48%,#1769aa 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  text-shadow:0 2px 0 rgba(255,255,255,.8);
+}
+.plotink-featured-heading h2::before{content:'✨ ';color:#f5b400;-webkit-text-fill-color:#f5b400}
+.plotink-featured-heading h2::after{content:' ✨';color:#f5b400;-webkit-text-fill-color:#f5b400}
+.plotink-featured-heading p{font-size:15px!important;font-weight:800!important;color:#526174!important}
+
+/* Instagram-style property updates banner */
+.instagram-lead-card{
+  position:relative;overflow:hidden;border:0!important;border-radius:26px!important;
+  background:linear-gradient(115deg,#f58529 0%,#dd2a7b 38%,#8134af 68%,#515bd4 100%)!important;
+  box-shadow:0 18px 40px rgba(129,52,175,.24)!important;color:#fff!important;
+}
+.instagram-lead-card::before,.instagram-lead-card::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+.instagram-lead-card::before{width:220px;height:220px;right:-60px;top:-100px;background:rgba(255,255,255,.13);box-shadow:-140px 170px 0 20px rgba(255,255,255,.06)}
+.instagram-lead-card::after{width:100px;height:100px;left:-35px;bottom:-45px;background:rgba(255,255,255,.10)}
+.instagram-lead-card .instagram-lead-icon{color:#fff!important;font-size:42px!important;position:relative;z-index:1}
+.instagram-lead-card .instagram-lead-label{display:inline-block;padding:7px 14px;border:1px solid rgba(255,255,255,.45);border-radius:999px;background:rgba(255,255,255,.13);font-weight:950;letter-spacing:1.2px;font-size:12px;position:relative;z-index:1}
+.instagram-lead-card h2,.instagram-lead-card p{color:#fff!important;position:relative;z-index:1}
+.instagram-lead-card h2{font-size:clamp(27px,3vw,42px)!important}
+.instagram-lead-card p{font-size:15px;line-height:1.65;font-weight:650}
+.instagram-lead-btn{position:relative;z-index:2;background:#fff!important;color:#b51f69!important;border:0!important;border-radius:14px!important;font-weight:950!important;padding:13px 16px!important;box-shadow:0 10px 22px rgba(0,0,0,.16)}
+.instagram-lead-btn:hover{transform:translateY(-2px);background:#fff!important;color:#8134af!important}
+
+/* WhatsApp enquiry gets its own visual identity */
+.choice-whatsapp{
+  background:linear-gradient(135deg,#087f46,#20b965)!important;
+  color:#fff!important;border:1px solid rgba(255,255,255,.35)!important;
+  box-shadow:0 6px 16px rgba(16,160,86,.25)!important;border-radius:10px!important;
+  font-weight:900!important;
+}
+.plotink-choice-card:hover .choice-whatsapp{box-shadow:0 8px 20px rgba(16,160,86,.38)!important}
+#plotinkDetailWhatsApp{background:linear-gradient(135deg,#087f46,#20b965)!important;border-color:#087f46!important;color:#fff!important;font-weight:900!important}
+
+/* Connect / Join professional opportunity banner */
+.plotink-connect-opportunity{
+  margin:26px 0;border-radius:24px;padding:24px 28px;color:#fff;
+  background:linear-gradient(110deg,#073b73 0%,#1769aa 43%,#00a86b 100%);
+  box-shadow:0 16px 34px rgba(18,60,105,.22);position:relative;overflow:hidden;
+}
+.plotink-connect-opportunity::after{content:"";position:absolute;width:220px;height:220px;right:-70px;top:-100px;border-radius:50%;background:rgba(255,255,255,.12)}
+.plotink-connect-opportunity h2{font-weight:950;font-size:clamp(25px,3vw,39px);margin:0 0 6px;position:relative;z-index:1}
+.plotink-connect-opportunity p{margin:0;color:rgba(255,255,255,.92);font-weight:650;position:relative;z-index:1}
+.plotink-connect-opportunity .connect-points{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;position:relative;z-index:1}
+.plotink-connect-opportunity .connect-point{padding:7px 11px;border-radius:999px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.25);font-size:12px;font-weight:850}
+.plotink-connect-opportunity .connect-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#ffd34d;color:#17345b;text-decoration:none;border-radius:13px;padding:13px 20px;font-weight:950;box-shadow:0 9px 20px rgba(0,0,0,.18);position:relative;z-index:2}
+.plotink-connect-opportunity .connect-btn:hover{background:#fff;color:#17345b;transform:translateY(-2px)}
+
+/* Stay promotion cards */
+.plotink-stay-section{padding:18px 0 30px}
+.plotink-stay-title{font-size:clamp(31px,4vw,48px);font-weight:950;color:#123c69;line-height:1;margin-bottom:5px}
+.plotink-stay-title i{color:#00a86b}
+.plotink-stay-subtitle{font-size:14px;font-weight:750;color:#617084}
+.plotink-stay-card{height:100%;border:0;border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 9px 25px rgba(20,40,60,.12);border:1px solid #e7edf2;transition:.2s ease}
+.plotink-stay-card:hover{transform:translateY(-5px);box-shadow:0 16px 32px rgba(20,40,60,.18)}
+.plotink-stay-icon{height:130px;display:flex;align-items:center;justify-content:center;font-size:58px;background:linear-gradient(135deg,#eaf7ff,#f5fff9)}
+.plotink-stay-body{padding:16px}
+.plotink-stay-body h4{font-weight:950;color:#123c69;margin-bottom:5px}
+.plotink-stay-body p{font-size:13px;line-height:1.55;color:#667085;margin-bottom:12px}
+.plotink-stay-badge{display:inline-block;padding:6px 10px;border-radius:999px;background:#e9f9f0;color:#087f46;font-size:11px;font-weight:900;margin-bottom:12px}
+.plotink-stay-btn{display:block;text-align:center;text-decoration:none;border-radius:11px;padding:10px 12px;background:#0c8f4f;color:#fff;font-size:12px;font-weight:900}
+.plotink-stay-btn:hover{background:#08733f;color:#fff}
+
+/* Social media icons in one horizontal line */
+.footer-social-row{display:flex!important;align-items:center;gap:9px;flex-wrap:nowrap!important;overflow-x:auto;padding:3px 0 8px;scrollbar-width:none}
+.footer-social-row::-webkit-scrollbar{display:none}
+.footer-social-row .footer-social-item{display:inline-flex!important;align-items:center;justify-content:center;flex:0 0 auto;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);text-decoration:none!important}
+.footer-social-row .footer-social-item i{margin:0!important;font-size:20px!important}
+.footer-social-caption{font-size:12px;color:rgba(255,255,255,.7);margin-top:3px}
+
+@media(max-width:767.98px){
+  .plotink-featured-heading h2{font-size:34px!important;letter-spacing:-.8px}
+  .plotink-featured-heading p{font-size:13px!important}
+  .instagram-lead-card{border-radius:20px!important}
+  .instagram-lead-card h2{font-size:28px!important}
+  .instagram-lead-card p{font-size:14px}
+  .plotink-connect-opportunity{padding:20px 16px;border-radius:20px}
+  .plotink-connect-opportunity h2{font-size:27px}
+  .plotink-connect-opportunity .connect-point{font-size:11px}
+  .plotink-stay-title{font-size:34px}
+  .plotink-stay-card{margin-bottom:2px}
+}
+</style>
+
+
+<style id="plotink-cta-social-row-css">
+.plotink-cta-social-row{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+.plotink-cta-social-row::-webkit-scrollbar{display:none}
+.plotink-cta-social-row a{width:38px;height:38px;flex:0 0 38px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.38);color:#fff;text-decoration:none;font-size:18px;box-shadow:0 5px 12px rgba(0,0,0,.12)}
+.plotink-cta-social-row a:hover{background:#fff;color:#b51f69;transform:translateY(-2px)}
+.plotink-cta-social-row span{font-size:11px;font-weight:850;white-space:nowrap;color:#fff;margin-left:4px}
+</style>
+
+<style id="plotink-image-combination-final">
+/* ===== FINAL IMAGE-INSPIRED PLOTINK VISUAL COMBINATION ===== */
+.plotink-featured-heading-pro{position:relative;text-align:center;padding:2px 0 12px;margin-bottom:12px}
+.plotink-featured-heading-pro .plotink-featured-kicker{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;background:linear-gradient(90deg,#eaf7ff,#f2fff6);border:1px solid #d8e9f4;color:#0b5ca8;font-size:12px;font-weight:950;letter-spacing:1.1px;box-shadow:0 5px 14px rgba(18,60,105,.08)}
+.plotink-featured-heading-pro h2{margin:7px 0 0!important;font-size:clamp(40px,5.4vw,68px)!important;line-height:.98!important;font-weight:1000!important;letter-spacing:-2px!important;color:#123c69!important;text-shadow:0 4px 0 rgba(18,60,105,.05)}
+.plotink-featured-heading-pro h2 span:not(.feat-icon):not(.feat-sparkle){background:linear-gradient(90deg,#1d5fa7,#14a95b);-webkit-background-clip:text;background-clip:text;color:transparent}
+.plotink-featured-heading-pro .feat-icon{font-size:.78em;vertical-align:middle;margin-right:6px}
+.plotink-featured-heading-pro .feat-sparkle{color:#f6bf24;font-size:.62em;vertical-align:top;margin-left:5px}
+.plotink-featured-heading-pro .feat-underline{width:min(390px,62%);height:8px;margin:8px auto 5px;border-radius:999px;background:linear-gradient(90deg,transparent,#10a765 15%,#16b86e 50%,#10a765 85%,transparent);box-shadow:0 5px 13px rgba(16,167,101,.2)}
+.plotink-featured-heading-pro p{font-size:15px!important;font-weight:850!important;color:#5d6f82!important;letter-spacing:.3px}
+
+/* Instagram/social block: all icons stay on one horizontal line */
+.instagram-lead-card{border-radius:26px!important;overflow:hidden!important;background:linear-gradient(115deg,#f58529 0%,#f77737 20%,#dd2a7b 43%,#c13584 58%,#833ab4 78%,#405de6 100%)!important}
+.instagram-lead-card .plotink-social-follow-line{display:flex;align-items:center;justify-content:flex-start;gap:10px;flex-wrap:nowrap;white-space:nowrap;overflow-x:auto;scrollbar-width:none;margin-top:17px;padding:4px 0}
+.instagram-lead-card .plotink-social-follow-line::-webkit-scrollbar{display:none}
+.instagram-lead-card .plotink-social-follow-line strong{font-size:14px;color:#fff;flex:0 0 auto;margin-right:3px}
+.instagram-lead-card .plotink-social-follow-line a{width:42px;height:42px;flex:0 0 42px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(255,255,255,.18);border:2px solid rgba(255,255,255,.65);color:#fff;text-decoration:none;font-size:20px;box-shadow:0 6px 14px rgba(0,0,0,.15);transition:.18s ease}
+.instagram-lead-card .plotink-social-follow-line a:hover{background:#fff;color:#c13584;transform:translateY(-3px) scale(1.04)}
+
+/* Property WhatsApp CTA: distinct from ordinary buttons */
+.choice-whatsapp{background:linear-gradient(135deg,#075e54 0%,#0a8f5b 52%,#19b968 100%)!important;border:1px solid rgba(255,255,255,.6)!important;color:#fff!important;box-shadow:0 7px 18px rgba(7,94,84,.28)!important}
+#plotinkDetailWhatsApp{background:linear-gradient(135deg,#075e54,#19b968)!important;border:2px solid #9bf2c1!important;box-shadow:0 10px 24px rgba(7,94,84,.3)!important}
+
+/* Connect banner fills the space with clear professional opportunity messaging */
+.plotink-connect-opportunity{background:linear-gradient(110deg,#092b68 0%,#1768bd 38%,#087f8a 68%,#00a86b 100%)!important;padding:26px 30px!important}
+.plotink-connect-opportunity .connect-points{gap:9px!important}
+.plotink-connect-opportunity .connect-point{background:rgba(255,255,255,.14)!important;border-color:rgba(255,255,255,.3)!important;font-size:12px!important;padding:8px 12px!important}
+.plotink-connect-opportunity .connect-btn{background:linear-gradient(135deg,#ffd447,#ffef88)!important;color:#17345b!important;border-radius:999px!important;padding:14px 24px!important;font-size:16px!important}
+
+/* Stay cards: booking/promotion focused */
+.plotink-stay-card{border:1px solid #dceaf2!important;box-shadow:0 10px 28px rgba(20,40,60,.12)!important}
+.plotink-stay-card:hover{box-shadow:0 18px 36px rgba(20,40,60,.18)!important}
+.plotink-stay-body h4{font-size:20px!important}
+.plotink-stay-body p{font-size:13.5px!important;color:#536579!important}
+.plotink-stay-btn{background:linear-gradient(135deg,#087f46,#16a85f)!important;box-shadow:0 7px 16px rgba(8,127,70,.18)}
+.plotink-stay-btn:hover{background:linear-gradient(135deg,#075e54,#19b968)!important}
+
+@media(max-width:767.98px){
+ .plotink-featured-heading-pro h2{font-size:38px!important;letter-spacing:-1.2px!important}
+ .plotink-featured-heading-pro .plotink-featured-kicker{font-size:10px}
+ .plotink-featured-heading-pro p{font-size:12px!important}
+ .instagram-lead-card .plotink-social-follow-line{gap:7px}
+ .instagram-lead-card .plotink-social-follow-line a{width:38px;height:38px;flex-basis:38px;font-size:18px}
+ .instagram-lead-card .plotink-social-follow-line strong{font-size:12px}
+ .plotink-connect-opportunity{padding:20px 16px!important}
+ .plotink-connect-opportunity .connect-btn{width:100%}
+}
+</style>
+
 </head>
 
 <body>
@@ -1131,7 +1557,7 @@
                            target="_blank" rel="noopener noreferrer">
                             <span class="choice-icon"><i class="bi bi-buildings-fill"></i></span>
                             <span class="choice-title">Stay / ठहरें</span>
-                            <span class="choice-subtitle">Hotels • Homestays / होटल • होमस्टे</span>
+                            <span class="choice-subtitle">Hotels • Farm Homes • Homestays / Stay Leads & Bookings पाएं</span>
                             <span class="choice-whatsapp"><i class="bi bi-whatsapp"></i> WhatsApp Enquiry / व्हाट्सऐप</span>
                             <span class="choice-arrow"><i class="bi bi-arrow-right"></i></span>
                         </a>
@@ -1142,7 +1568,7 @@
                             <span class="choice-icon"><i class="bi bi-people-fill"></i></span>
                             <span class="choice-copy">
                                 <span class="choice-title">Connect / जुड़ें</span>
-                                <span class="choice-subtitle">Work with Us / हमारे साथ जुड़ें</span>
+                                <span class="choice-subtitle">Aapki Location par Work Kariye • Earn Commission / आपकी Location पर काम करें • Commission कमाएँ</span>
                             </span>
                             <span class="choice-whatsapp"><i class="bi bi-whatsapp"></i> WhatsApp Enquiry / व्हाट्सऐप</span>
                             <span class="choice-arrow"><i class="bi bi-arrow-right"></i></span>
@@ -1217,19 +1643,11 @@
 
     <div class="container">
 
-        <div class="text-center plotink-featured-heading">
-
-            <span class="badge bg-success bg-opacity-10 text-success fw-bold px-3 py-2 rounded-pill mb-2">
-                <i class="bi bi-stars"></i>
-                Curated Selection
-            </span>
-
-            <h2 class="fw-bold">Featured Properties</h2>
-
-            <p class="text-muted mb-2">
-                Buy • Sell • Rent/Lease • Stay • Connect
-            </p>
-
+        <div class="plotink-featured-heading plotink-featured-heading-pro">
+            <div class="plotink-featured-kicker"><i class="bi bi-stars"></i> CURATED PROPERTY PICKS <i class="bi bi-stars"></i></div>
+            <h2><span class="feat-icon">🏠</span> Featured <span>Properties</span> <span class="feat-sparkle">✦</span></h2>
+            <div class="feat-underline"></div>
+            <p>Buy • Sell • Rent/Lease • Stay • Connect</p>
         </div>
 
         <div class="plotink-featured-toolbar">
@@ -1267,6 +1685,79 @@
         </div>
 
     </div>
+</section>
+
+
+<!-- =========================================================
+     STAY OPPORTUNITIES + CONNECT OPPORTUNITY
+     ========================================================= -->
+<section class="plotink-stay-section">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-end justify-content-between gap-2 mb-3">
+      <div>
+        <div class="plotink-stay-title"><i class="bi bi-buildings-fill"></i> Stay / ठहरें</div>
+        <div class="plotink-stay-subtitle">Hotels • Farm Homes • Villas • Homestays — genuine stay enquiries ko priority ke saath handle kijiye aur faster response se booking opportunities badhaiye.</div>
+      </div>
+    </div>
+
+    <div class="row g-3">
+      <div class="col-12 col-md-4">
+        <div class="plotink-stay-card">
+          <div class="plotink-stay-icon">🏨</div>
+          <div class="plotink-stay-body">
+            <span class="plotink-stay-badge">HOTELS • HOTEL OWNERS</span>
+            <h4>More Hotel Enquiries</h4>
+            <p>Apne hotel ko Plotink network par highlight karein. Relevant guest requirements par <strong>fast response + priority handling</strong> rakhein aur available rooms/offers share karke booking opportunities badhayein.</p>
+            <a class="plotink-stay-btn" target="_blank" rel="noopener noreferrer" href="https://wa.me/919193339398?text=Hi%20Plotink,%20I%20want%20to%20list%20my%20Hotel%20for%20Stay%20enquiries.">💬 List Hotel / Get Enquiries</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="plotink-stay-card">
+          <div class="plotink-stay-icon">🏡</div>
+          <div class="plotink-stay-body">
+            <span class="plotink-stay-badge">FARM HOMES • VILLAS</span>
+            <h4>Promote Farm Homes & Villas</h4>
+            <p>Farm home, villa ya weekend property hai? Nature stays, family trips aur group requirements ke liye apni property ko professionally present karein aur <strong>priority enquiries</strong> par quick response dein.</p>
+            <a class="plotink-stay-btn" target="_blank" rel="noopener noreferrer" href="https://wa.me/919193339398?text=Hi%20Plotink,%20I%20want%20to%20promote%20my%20Farm%20Home%20or%20Villa%20for%20Stay%20leads.">💬 Promote Farm Home / Villa</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="plotink-stay-card">
+          <div class="plotink-stay-icon">🛏️</div>
+          <div class="plotink-stay-body">
+            <span class="plotink-stay-badge">HOMESTAYS • LOCAL HOSTS</span>
+            <h4>Get More Homestay Enquiries</h4>
+            <p>Local experience, comfort aur hospitality ko highlight karein. Plotink ki relevant stay enquiries ko <strong>priority</strong> dein, availability jaldi confirm karein aur guests ko smooth booking experience dein.</p>
+            <a class="plotink-stay-btn" target="_blank" rel="noopener noreferrer" href="https://wa.me/919193339398?text=Hi%20Plotink,%20I%20want%20to%20list%20my%20Homestay%20for%20Stay%20enquiries.">💬 List Homestay / Get Leads</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <div class="plotink-connect-opportunity">
+    <div class="row align-items-center g-3">
+      <div class="col-lg-8">
+        <h2>🤝 Connect / जुड़ें — Aapki Location Par Work Kariye</h2>
+        <p>Apne area mein Plotink ke saath property opportunities par kaam kijiye. Relevant leads ko connect kijiye, clients ko local assistance dijiye aur applicable deals/services par <strong>commission, incentives ya profit-sharing opportunities</strong> earn kijiye.</p>
+        <div class="connect-points">
+          <span class="connect-point">📍 Aapki Location • Aapka Network</span>
+          <span class="connect-point">💼 Flexible / Work From Home</span>
+          <span class="connect-point">💰 Commission & Incentive Opportunities</span>
+          <span class="connect-point">🚀 Property Leads & Local Enquiries</span>
+          <span class="connect-point">📈 Grow Your Network • Build Your Business</span>
+          <span class="connect-point">🤝 Support for Property Connect</span>
+        </div>
+      </div>
+      <div class="col-lg-4 text-lg-end text-center">
+        <a class="connect-btn" target="_blank" rel="noopener noreferrer" href="https://wa.me/919193339398?text=Hi%20Plotink,%20I%20want%20to%20Connect%20and%20work%20in%20my%20location.%20Please%20share%20commission%20and%20opportunity%20details.">🚀 Join / जुड़ें</a>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- PROPERTY DETAILS -->
@@ -1376,6 +1867,15 @@
                         Send us a DM.
 
                     </p>
+
+                    <div class="plotink-social-follow-line" aria-label="Plotink social media links">
+                        <strong>Follow us:</strong>
+                        <a href="https://www.instagram.com/plotinkofficial/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.facebook.com/plotinkofficial" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://wa.me/919193339398" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    </div>
 
                 </div>
 
@@ -1648,61 +2148,13 @@
                 </h5>
 
 
-                <!-- Instagram -->
-                <p class="mb-2">
-
-                    <a href="https://www.instagram.com/plotinkofficial/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="text-white text-decoration-none footer-social-link">
-
-                        <i class="bi bi-instagram me-2 fs-5"
-                            style="color:#E1306C;">
-                        </i>
-
-                        Instagram: @plotinkofficial
-
-                    </a>
-
-                </p>
-
-
-                <!-- Facebook -->
-                <p class="mb-2">
-
-                    <a href="https://www.facebook.com/plotinkofficial"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="text-white text-decoration-none">
-
-                        <i class="bi bi-facebook me-2 fs-5"
-                            style="color:#1877F2;">
-                        </i>
-
-                        Facebook: @plotinkofficial
-
-                    </a>
-
-                </p>
-
-
-                <!-- WhatsApp -->
-                <p class="mb-2">
-
-                    <a href="https://wa.me/919193339398"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="text-white text-decoration-none">
-
-                        <i class="bi bi-whatsapp me-2 fs-5"
-                            style="color:#25D366;">
-                        </i>
-
-                        WhatsApp: 9191933398
-
-                    </a>
-
-                </p>
+                <div class="footer-social-row" aria-label="Plotink social media">
+                    <a class="footer-social-item" href="https://www.instagram.com/plotinkofficial/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram" style="color:#E1306C;"></i></a>
+                    <a class="footer-social-item" href="https://www.facebook.com/plotinkofficial" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook" style="color:#1877F2;"></i></a>
+                    <a class="footer-social-item" href="https://wa.me/919193339398" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="bi bi-whatsapp" style="color:#25D366;"></i></a>
+                    <a class="footer-social-item" href="https://www.instagram.com/plotinkofficial/" target="_blank" rel="noopener noreferrer" aria-label="Follow Plotink"><i class="bi bi-person-plus-fill" style="color:#fff;"></i></a>
+                </div>
+                <div class="footer-social-caption">Follow Plotink for Property Updates • Deals • Stay • Local Opportunities</div>
 
 
                 <!-- Instagram CTA -->

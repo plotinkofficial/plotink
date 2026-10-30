@@ -13,103 +13,67 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Plus Jakarta Sans',sans-serif}
 body{background:var(--bg-main);padding-bottom:78px;color:var(--text-main);-webkit-font-smoothing:antialiased}
 button,input,textarea{font:inherit}
-.top-header{background:var(--white);padding:10px 16px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 1px 3px #0000000d}
+.top-header{background:#fff;padding:10px 16px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 1px 3px #0000000d}
 .logo-img{height:38px;max-width:150px;object-fit:contain}
 .location-selector{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;background:#F1F5F9;padding:8px 10px;border-radius:20px;cursor:pointer;position:relative}
 .location-selector>i:first-child{color:var(--primary-accent)}
-.dropdown-menu{display:none;position:absolute;top:110%;right:0;background:var(--white);min-width:180px;max-width:75vw;max-height:260px;overflow:auto;box-shadow:0 4px 15px #0000001a;border-radius:8px;z-index:101;border:1px solid var(--border-light)}
-.dropdown-menu.show{display:block}
-.dropdown-item{padding:10px 16px;font-size:13px;font-weight:600;border-bottom:1px solid var(--border-light);cursor:pointer}
-.dropdown-item:hover{background:var(--bg-main);color:var(--primary-accent)}
-.bottom-nav{position:fixed;bottom:0;left:0;width:100%;background:var(--white);display:flex;justify-content:space-around;padding:10px 0 max(12px,env(safe-area-inset-bottom));border-top:1px solid var(--border-light);z-index:100}
-.nav-item{text-align:center;font-size:10px;color:var(--text-muted);text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:4px;font-weight:600;min-width:54px}
-.nav-item i{font-size:20px;margin-bottom:2px}
-.nav-item.active,.nav-item.active i{color:var(--primary-dark)}
+.dropdown-menu{display:none;position:absolute;top:110%;right:0;background:#fff;min-width:180px;max-width:75vw;max-height:260px;overflow:auto;box-shadow:0 4px 15px #0000001a;border-radius:8px;z-index:101;border:1px solid var(--border-light)}
+.dropdown-menu.show{display:block}.dropdown-item{padding:10px 16px;font-size:13px;font-weight:600;border-bottom:1px solid var(--border-light);cursor:pointer}.dropdown-item:hover{background:var(--bg-main);color:var(--primary-accent)}
+.bottom-nav{position:fixed;bottom:0;left:0;width:100%;background:#fff;display:flex;justify-content:space-around;padding:10px 0 max(12px,env(safe-area-inset-bottom));border-top:1px solid var(--border-light);z-index:100}
+.nav-item{text-align:center;font-size:10px;color:var(--text-muted);text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:4px;font-weight:600;min-width:54px}.nav-item i{font-size:20px;margin-bottom:2px}.nav-item.active,.nav-item.active i{color:var(--primary-dark)}
 .hero-slider{width:calc(100% - 32px);margin:16px;height:160px;border-radius:16px;overflow:hidden;position:relative;box-shadow:0 10px 20px -5px #1e293b4d}
-.hero-slide{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity .8s;background-size:cover;background-position:center}
-.hero-slide.active{opacity:1}
+.hero-slide{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity .8s;background-size:cover;background-position:center}.hero-slide.active{opacity:1}
 .section-title{padding:0 16px;font-size:18px;font-weight:800;margin:0 0 12px;color:var(--primary-dark)}
 .category-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0 16px;margin-bottom:24px}
-.category-card{border-radius:16px;padding:20px 12px;text-align:center;background:var(--white);border:1px solid var(--border-light);box-shadow:0 4px 15px #00000008;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-decoration:none;position:relative;overflow:hidden;cursor:pointer;min-height:112px;transition:transform .2s,box-shadow .2s}
-.category-card:active{transform:scale(.98)}
-.category-card:hover{box-shadow:0 8px 20px #00000010}
-.category-card i{font-size:32px;background:linear-gradient(45deg,#F97316,#EA580C);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.category-card span{font-size:16px;font-weight:800;color:var(--primary-dark)}
-.property-list{padding:0 16px;display:flex;flex-direction:column;gap:16px}
-.property-card{background:var(--white);border-radius:16px;overflow:hidden;box-shadow:0 4px 15px #0000000a;border:1px solid var(--border-light);position:relative;cursor:pointer}
-.card-body{display:flex;padding:12px;gap:12px;position:relative;min-height:132px}
-.card-img{width:110px;height:110px;border-radius:10px;object-fit:cover;background:#e2e8f0;flex-shrink:0}
-.card-details{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;padding-right:45px}
-.card-price{font-size:18px;font-weight:800;color:var(--primary-dark);margin-bottom:4px;overflow-wrap:anywhere}
-.card-title{font-size:14px;font-weight:700;margin-bottom:4px;overflow-wrap:anywhere}
-.card-info{font-size:11px;color:var(--text-muted);line-height:1.5}
-.card-vertical-actions{position:absolute;right:12px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px}
-.action-btn-vert{width:38px;height:38px;border-radius:50%;display:flex;justify-content:center;align-items:center;font-size:16px;color:white;text-decoration:none;box-shadow:0 4px 10px #00000026;transition:.2s}
-.action-btn-vert:active{transform:scale(.9)}
-.btn-vert-chat{background:#25D366}.btn-vert-call{background:#3B82F6}
-.subpage-overlay{position:fixed;inset:0;background:var(--bg-main);z-index:500;display:none;flex-direction:column;overflow-y:auto}
-.subpage-overlay.show{display:flex}
-.subpage-header{background:var(--white);padding:15px;display:flex;align-items:center;gap:15px;border-bottom:1px solid var(--border-light);position:sticky;top:0;z-index:10}
-.back-btn{font-size:20px;color:var(--primary-dark);border:0;background:none;cursor:pointer}
-.advertise-section{padding:0 16px 24px}
-.advertise-slider-container{display:flex;overflow-x:auto;gap:12px;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:5px}
-.advertise-slider-container::-webkit-scrollbar{display:none}
-.ad-card{min-width:calc(50% - 6px);background:linear-gradient(135deg,#4F46E5,#7C3AED);border-radius:12px;padding:15px;color:white;text-decoration:none;display:flex;flex-direction:column;justify-content:center;scroll-snap-align:start;box-shadow:0 4px 15px #4f46e14d;position:relative;overflow:hidden}
-.ad-card:nth-child(2){background:linear-gradient(135deg,#EA580C,#F97316);box-shadow:0 4px 15px #ea580c4d}
+.category-card{border-radius:16px;padding:20px 12px;text-align:center;background:#fff;border:1px solid var(--border-light);box-shadow:0 4px 15px #00000008;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-decoration:none;position:relative;overflow:hidden;cursor:pointer;min-height:112px;transition:transform .2s,box-shadow .2s}
+.category-card:active{transform:scale(.98)}.category-card:hover{box-shadow:0 8px 20px #00000010}.category-card i{font-size:32px;background:linear-gradient(45deg,#F97316,#EA580C);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}.category-card span{font-size:16px;font-weight:800;color:var(--primary-dark)}
+.property-list{padding:0 16px;display:flex;flex-direction:column;gap:16px}.property-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 15px #0000000a;border:1px solid var(--border-light);position:relative;cursor:pointer}
+.card-body{display:flex;padding:12px;gap:12px;position:relative;min-height:132px}.card-img{width:110px;height:110px;border-radius:10px;object-fit:cover;background:#e2e8f0;flex-shrink:0}
+.card-details{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;padding-right:45px}.card-price{font-size:18px;font-weight:800;color:var(--primary-dark);margin-bottom:4px;overflow-wrap:anywhere}.card-title{font-size:14px;font-weight:700;margin-bottom:4px;overflow-wrap:anywhere}.card-info{font-size:11px;color:var(--text-muted);line-height:1.5}
+.card-vertical-actions{position:absolute;right:12px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px}.action-btn-vert{width:38px;height:38px;border-radius:50%;display:flex;justify-content:center;align-items:center;font-size:16px;color:white;text-decoration:none;box-shadow:0 4px 10px #00000026;transition:.2s}.action-btn-vert:active{transform:scale(.9)}.btn-vert-chat{background:#25D366}.btn-vert-call{background:#3B82F6}
+.subpage-overlay{position:fixed;inset:0;background:var(--bg-main);z-index:500;display:none;flex-direction:column;overflow-y:auto}.subpage-overlay.show{display:flex}
+.subpage-header{background:#fff;padding:15px;display:flex;align-items:center;gap:15px;border-bottom:1px solid var(--border-light);position:sticky;top:0;z-index:10}.back-btn{font-size:20px;color:var(--primary-dark);border:0;background:none;cursor:pointer}
+.advertise-section{padding:0 16px 24px}.advertise-slider-container{display:flex;overflow-x:auto;gap:12px;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:5px}.advertise-slider-container::-webkit-scrollbar{display:none}
+.ad-card{min-width:calc(50% - 6px);background:linear-gradient(135deg,#4F46E5,#7C3AED);border-radius:12px;padding:15px;color:white;text-decoration:none;display:flex;flex-direction:column;justify-content:center;scroll-snap-align:start;box-shadow:0 4px 15px #4f46e14d;position:relative;overflow:hidden}.ad-card:nth-child(2){background:linear-gradient(135deg,#EA580C,#F97316);box-shadow:0 4px 15px #ea580c4d}
 .ad-icon{font-size:24px;margin-bottom:8px;opacity:.9}.ad-title{font-size:14px;font-weight:800;margin-bottom:4px}.ad-desc{font-size:11px;opacity:.9;line-height:1.4}.ad-btn{margin-top:10px;font-size:11px;font-weight:700;background:#ffffff33;padding:6px 10px;border-radius:20px;display:inline-block;width:max-content}
-.modal-overlay{position:fixed;inset:0;background:#0009;z-index:1000;display:none;justify-content:center;align-items:flex-end}
-.modal-overlay.show{display:flex}
-.modal-content{background:var(--white);width:100%;max-height:90vh;border-radius:20px 20px 0 0;overflow-y:auto;padding:20px;position:relative}
+.modal-overlay{position:fixed;inset:0;background:#0009;z-index:1000;display:none;justify-content:center;align-items:flex-end}.modal-overlay.show{display:flex}.modal-content{background:#fff;width:100%;max-height:90vh;border-radius:20px 20px 0 0;overflow-y:auto;padding:20px;position:relative}
 .close-modal{position:absolute;top:15px;right:15px;background:#F1F5F9;border:0;width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:16px;z-index:2}
-.modal-gallery{display:flex;overflow-x:auto;gap:10px;scroll-snap-type:x mandatory;margin-bottom:15px;scrollbar-width:none;padding-top:28px}
-.modal-gallery::-webkit-scrollbar{display:none}
-.modal-gallery img{width:100%;height:200px;object-fit:cover;border-radius:12px;flex-shrink:0;scroll-snap-align:start;background:#e2e8f0}
-.modal-title{font-size:22px;font-weight:800;color:var(--primary-dark);margin-bottom:5px}
-.modal-price{font-size:24px;font-weight:800;color:var(--primary-accent);margin-bottom:15px}
-.modal-details-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;background:#F8FAFC;padding:15px;border-radius:10px;margin-bottom:15px}
-.detail-item{font-size:13px;font-weight:600;color:var(--text-main);overflow-wrap:anywhere}.detail-item span{font-weight:400;color:var(--text-muted)}
+.modal-gallery{display:flex;overflow-x:auto;gap:10px;scroll-snap-type:x mandatory;margin-bottom:15px;scrollbar-width:none;padding-top:28px}.modal-gallery::-webkit-scrollbar{display:none}.modal-gallery img{width:100%;height:200px;object-fit:cover;border-radius:12px;flex-shrink:0;scroll-snap-align:start;background:#e2e8f0}
+.modal-title{font-size:22px;font-weight:800;color:var(--primary-dark);margin-bottom:5px}.modal-price{font-size:24px;font-weight:800;color:var(--primary-accent);margin-bottom:15px}
+.modal-details-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;background:#F8FAFC;padding:15px;border-radius:10px;margin-bottom:15px}.detail-item{font-size:13px;font-weight:600;color:var(--text-main);overflow-wrap:anywhere}.detail-item span{font-weight:400;color:var(--text-muted)}
 .modal-desc{font-size:14px;color:var(--text-muted);line-height:1.6;margin-bottom:20px;white-space:pre-line}
-.footer{background:var(--primary-dark);color:var(--white);padding:30px 16px;margin-top:20px;border-top:4px solid var(--primary-accent)}
-.footer h3{font-size:16px;font-weight:700;margin-bottom:12px}.footer p{font-size:13px;color:#CBD5E1;margin-bottom:8px;display:flex;gap:10px;align-items:flex-start;line-height:1.5}.footer p i{margin-top:3px;color:var(--primary-accent)}
-.google-review-section{background:#1E293B;padding:15px;border-radius:12px;margin:20px 0;border:1px solid #334155}
-.gr-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;gap:8px}.gr-header h4{font-size:15px}.gr-stars{display:flex;gap:4px;color:#FBBF24;font-size:12px}
+.footer{background:var(--primary-dark);color:#fff;padding:30px 16px;margin-top:20px;border-top:4px solid var(--primary-accent)}.footer h3{font-size:16px;font-weight:700;margin-bottom:12px}.footer p{font-size:13px;color:#CBD5E1;margin-bottom:8px;display:flex;gap:10px;align-items:flex-start;line-height:1.5}.footer p i{margin-top:3px;color:var(--primary-accent)}
+.google-review-section{background:#1E293B;padding:15px;border-radius:12px;margin:20px 0;border:1px solid #334155}.gr-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;gap:8px}.gr-header h4{font-size:15px}.gr-stars{display:flex;gap:4px;color:#FBBF24;font-size:12px}
 .gr-bars{display:flex;flex-direction:column;gap:6px}.gr-bar-row{display:flex;align-items:center;gap:8px;font-size:11px;color:#CBD5E1}.gr-bar-bg{flex:1;height:6px;background:#334155;border-radius:3px;overflow:hidden}.gr-bar-fill{height:100%;background:#FBBF24;border-radius:3px}
 .footer-links{display:flex;flex-wrap:wrap;gap:15px;margin:20px 0;font-size:13px;font-weight:700}.blink-partner{color:#38BDF8;text-decoration:none;animation:blinkBlue 1.5s infinite}.blink-career{color:#FBBF24;text-decoration:none;animation:blinkYellow 1.5s infinite .5s}
 @keyframes blinkBlue{0%,100%{opacity:1;text-shadow:0 0 8px #38bdf8cc}50%{opacity:.5;text-shadow:none}}@keyframes blinkYellow{0%,100%{opacity:1;text-shadow:0 0 8px #fbbf24cc}50%{opacity:.5;text-shadow:none}}
-.footer-social{display:flex;gap:15px;margin:20px 0}.footer-social a{color:var(--white);font-size:22px;text-decoration:none;background:#ffffff1a;width:40px;height:40px;display:flex;justify-content:center;align-items:center;border-radius:50%;transition:.2s}.footer-social a:hover{background:var(--primary-accent)}
+.footer-social{display:flex;gap:15px;margin:20px 0}.footer-social a{color:#fff;font-size:22px;text-decoration:none;background:#ffffff1a;width:40px;height:40px;display:flex;justify-content:center;align-items:center;border-radius:50%;transition:.2s}.footer-social a:hover{background:var(--primary-accent)}
 .copyright{text-align:center;font-size:12px;color:#94A3B8;margin-top:20px;padding-top:20px;border-top:1px solid #334155}
-.sparkle-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;padding:20px 16px}
-.sparkle-btn{padding:16px 8px;border-radius:12px;text-align:center;font-weight:800;font-size:15px;background:transparent;border:2px solid;cursor:pointer;transition:.3s;animation:pulseBlink 1.5s infinite;text-decoration:none;display:block}
+.sparkle-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;padding:20px 16px}.sparkle-btn{padding:16px 8px;border-radius:12px;text-align:center;font-weight:800;font-size:15px;background:transparent;border:2px solid;cursor:pointer;transition:.3s;animation:pulseBlink 1.5s infinite;text-decoration:none;display:block}
 .sparkle-btn:hover{transform:scale(1.03)}.sb-1{border-color:#4F46E5;color:#4F46E5}.sb-2{border-color:#EA580C;color:#EA580C;animation-delay:.2s}.sb-3{border-color:#059669;color:#059669;animation-delay:.4s}.sb-4{border-color:#DB2777;color:#DB2777;animation-delay:.6s}.sb-5{border-color:#0284C7;color:#0284C7;animation-delay:.8s}.sb-6{border-color:#D97706;color:#D97706;animation-delay:1s}.sb-7{border-color:#7C2D12;color:#7C2D12;animation-delay:1.2s}
 @keyframes pulseBlink{0%,100%{opacity:1;text-shadow:0 0 5px currentColor}50%{opacity:.7;text-shadow:none}}
-.form-group input,.form-group textarea{font-size:14px;max-width:100%}.form-group input:focus,.form-group textarea:focus{outline:2px solid #F9731644;border-color:var(--primary-accent)}
-button:disabled{opacity:.65;cursor:wait}
+.form-group input,.form-group textarea{font-size:14px;max-width:100%}.form-group input:focus,.form-group textarea:focus{outline:2px solid #F9731644;border-color:var(--primary-accent)}button:disabled{opacity:.65;cursor:wait}
 @media(min-width:700px){.hero-slider{height:260px;max-width:1100px;margin:20px auto}.section-title{max-width:1100px;margin-left:auto;margin-right:auto}.category-grid{max-width:1100px;margin-left:auto;margin-right:auto;grid-template-columns:repeat(4,1fr)}.property-list{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.advertise-section{max-width:1100px;margin:auto}.footer{padding-left:max(24px,calc((100% - 1068px)/2));padding-right:max(24px,calc((100% - 1068px)/2))}.modal-overlay{align-items:center}.modal-content{max-width:600px;border-radius:20px}.subpage-overlay{left:50%;transform:translateX(-50%);width:min(100%,900px);box-shadow:0 0 0 100vmax #0005}.subpage-header{flex-shrink:0}}
 @media(max-width:360px){.card-img{width:88px;height:100px}.card-details{padding-right:40px}.card-price{font-size:16px}.category-card{padding:16px 8px}.category-card span{font-size:15px}}
 </style>
 </head>
 <body>
 <header class="top-header">
-  <a href="index.html" aria-label="PLOTINK home"><img src="logo.png" alt="PLOTINK" class="logo-img" onerror="this.outerHTML='<span style=&quot;font-weight:800;font-size:20px&quot;>PLO<span style=&quot;color:#F97316&quot;>TINK</span></span>'"></a>
-  <div class="location-selector" onclick="toggleDropdown()" role="button" tabindex="0" aria-label="Choose property city">
-    <i class="fa-solid fa-location-dot"></i><span id="currentLocation">Select City</span><i class="fa-solid fa-chevron-down" style="font-size:10px"></i>
-    <div class="dropdown-menu" id="locationDropdown" onclick="event.stopPropagation()"></div>
-  </div>
+<a href="index.html" aria-label="PLOTINK home"><img src="images/logo.png" alt="PLOTINK" class="logo-img" onerror="this.outerHTML='<span style=&quot;font-weight:800;font-size:20px&quot;>PLO<span style=&quot;color:#F97316&quot;>TINK</span></span>'"></a>
+<div class="location-selector" onclick="toggleDropdown()" role="button" tabindex="0" aria-label="Choose property city"><i class="fa-solid fa-location-dot"></i><span id="currentLocation">Select City</span><i class="fa-solid fa-chevron-down" style="font-size:10px"></i><div class="dropdown-menu" id="locationDropdown" onclick="event.stopPropagation()"></div></div>
 </header>
 
 <div class="hero-slider" aria-label="Featured property images">
-  <div class="hero-slide active" style="background-image:url('images/banner1.jpg')"></div>
-  <div class="hero-slide" style="background-image:url('images/banner2.jpg')"></div>
-  <div class="hero-slide" style="background-image:url('images/banner3.jpg')"></div>
+<div class="hero-slide active" style="background-image:url('images/banner1.jpg')"></div>
+<div class="hero-slide" style="background-image:url('images/hero-bg.jpg')"></div>
 </div>
 
 <h2 class="section-title">Explore Properties</h2>
 <div class="category-grid">
-  <div class="category-card" onclick="openSubPage('buy')" role="button" tabindex="0"><i class="fa-solid fa-house-chimney"></i><span>Buy</span></div>
-  <div class="category-card" onclick="openSubPage('sell')" role="button" tabindex="0"><i class="fa-solid fa-tags"></i><span>Sell</span></div>
-  <div class="category-card" onclick="openSubPage('rent')" role="button" tabindex="0"><i class="fa-solid fa-key"></i><span>Rent</span></div>
-  <!-- Stay now opens the separate stay.html page -->
-  <a class="category-card" href="stay.html"><i class="fa-solid fa-hotel"></i><span>Stay</span></a>
+<div class="category-card" onclick="openSubPage('buy')" role="button" tabindex="0"><i class="fa-solid fa-house-chimney"></i><span>Buy</span></div>
+<div class="category-card" onclick="openSubPage('sell')" role="button" tabindex="0"><i class="fa-solid fa-tags"></i><span>Sell</span></div>
+<div class="category-card" onclick="openSubPage('rent')" role="button" tabindex="0"><i class="fa-solid fa-key"></i><span>Rent</span></div>
+<a class="category-card" href="stay.html"><i class="fa-solid fa-hotel"></i><span>Stay</span></a>
 </div>
 
 <h2 class="section-title" id="listingTitle">Latest Properties</h2>
@@ -117,144 +81,78 @@ button:disabled{opacity:.65;cursor:wait}
 
 <h2 class="section-title" style="margin-top:20px">Promote Your Property 🚀</h2>
 <div class="advertise-section"><div class="advertise-slider-container">
-  <a href="https://wa.me/918586854328?text=Hi%2C%20I%20want%20to%20advertise%20my%20property%20on%20Plotink" target="_blank" rel="noopener noreferrer" class="ad-card"><i class="fa-solid fa-bullhorn ad-icon"></i><div class="ad-title">Post Your Ad</div><div class="ad-desc">Sell or rent your property faster.</div><div class="ad-btn">Click Here</div></a>
-  <a href="https://wa.me/918586854328?text=Hi%2C%20I%20want%20to%20promote%20my%20project%20on%20Plotink" target="_blank" rel="noopener noreferrer" class="ad-card"><i class="fa-solid fa-star ad-icon"></i><div class="ad-title">Featured Listing</div><div class="ad-desc">Get top spot on our homepage.</div><div class="ad-btn">Contact Us</div></a>
+<a href="https://wa.me/918586854328?text=Hi%2C%20I%20want%20to%20advertise%20my%20property%20on%20Plotink" target="_blank" rel="noopener noreferrer" class="ad-card"><i class="fa-solid fa-bullhorn ad-icon"></i><div class="ad-title">Post Your Ad</div><div class="ad-desc">Sell or rent your property faster.</div><div class="ad-btn">Click Here</div></a>
+<a href="https://wa.me/918586854328?text=Hi%2C%20I%20want%20to%20promote%20my%20project%20on%20Plotink" target="_blank" rel="noopener noreferrer" class="ad-card"><i class="fa-solid fa-star ad-icon"></i><div class="ad-title">Featured Listing</div><div class="ad-desc">Get top spot on our homepage.</div><div class="ad-btn">Contact Us</div></a>
 </div></div>
 
 <div class="subpage-overlay" id="categorySubPage">
-  <div class="subpage-header"><button class="back-btn" onclick="closeSubPage()" aria-label="Go back"><i class="fa-solid fa-arrow-left"></i></button><div style="font-size:18px;font-weight:800" id="subpageTitle">Select Option</div></div>
-  <div class="sparkle-grid" id="subpageGrid"></div>
-  <div style="margin:0 16px 20px;background:white;border-radius:12px;padding:15px;box-shadow:0 4px 15px #0000000d">
-    <h4 style="margin-bottom:10px;font-size:15px;font-weight:800">Fill Your Requirement</h4>
-    <form id="subpageRequirementForm">
-      <input type="hidden" name="category" value="General">
-      <div class="form-group" style="margin-bottom:10px"><input type="text" name="name" placeholder="Your Name *" required autocomplete="name" style="width:100%;padding:10px;border:1px solid #ccc;border-radius:6px"></div>
-      <div class="form-group" style="margin-bottom:10px"><input type="tel" name="mobile" placeholder="Mobile Number *" required inputmode="tel" pattern="[0-9+() -]{8,18}" style="width:100%;padding:10px;border:1px solid #ccc;border-radius:6px"></div>
-      <div class="form-group" style="margin-bottom:10px"><input type="text" name="location" placeholder="Preferred Location *" required style="width:100%;padding:10px;border:1px solid #ccc;border-radius:6px"></div>
-      <div class="form-group" style="margin-bottom:10px"><input type="text" name="budget" placeholder="Your Budget *" required style="width:100%;padding:10px;border:1px solid #ccc;border-radius:6px"></div>
-      <div class="form-group" style="margin-bottom:10px"><textarea name="details" rows="2" placeholder="Extra Details (Size, Rooms, etc.)" style="width:100%;padding:10px;border:1px solid #ccc;border-radius:6px"></textarea></div>
-      <button type="submit" style="width:100%;background:var(--primary-dark);color:white;padding:12px;border:0;border-radius:8px;font-weight:bold;font-size:14px;cursor:pointer">Submit to Admin</button>
-    </form>
-  </div>
-</div>
+<div class="subpage-header"><button class="back-btn" onclick="closeSubPage()" aria-label="Go back"><i class="fa-solid fa-arrow-left"></i></button><div style="font-size:18px;font-weight:800" id="subpageTitle">Select Option</div></div>
+<div class="sparkle-grid" id="subpageGrid"></div>
+<div style="margin:0 16px 20px;background:white;border-radius:12px;padding:15px;box-shadow:0 4px 15px #0000000d">
+<h4 style="margin-bottom:10px;font-size:15px;font-weight:800">Fill Your Requirement</h4>
+<form id="subpageRequirementForm">
+<input type="hidden" name="category" value="General">
+<div class="form-group" style="margin-bottom:10px"><input type="text" name="name" placeholder="Your Name *" required autocomplete="name" style="width:100%;padding:10px;border:1px solid #ccc;border-radius:6px"></div>
+<div class="form-group" style="margin-bottom:10px"><input type="tel" name="mobile" placeholder="Mobile Number *" required inputmode="tel" pattern="[0-9+() -]{8,18}" style="width:100%;padding:10px;border:1px solid #ccc;border-radius:6px"></div>
+<div class="form-group" style="margin-bottom:10px"><input type="text" name="location" placeholder="Preferred Location *" required style="width:100%;padding:10px;border:1px solid #ccc;border-radius:6px"></div>
+<div class="form-group" style="margin-bottom:10px"><input type="text" name="budget" placeholder="Your Budget *" required style="width:100%;padding:10px;border:1px solid #ccc;border-radius:6px"></div>
+<div class="form-group" style="margin-bottom:10px"><textarea name="details" rows="2" placeholder="Extra Details (Size, Rooms, etc.)" style="width:100%;padding:10px;border:1px solid #ccc;border-radius:6px"></textarea></div>
+<button type="submit" style="width:100%;background:var(--primary-dark);color:white;padding:12px;border:0;border-radius:8px;font-weight:bold;font-size:14px;cursor:pointer">Submit to Admin</button>
+</form></div></div>
 
 <div class="modal-overlay" id="propertyModal" onclick="if(event.target===this)closeModal()">
-  <div class="modal-content">
-    <button class="close-modal" onclick="closeModal()" aria-label="Close property details"><i class="fa-solid fa-xmark"></i></button>
-    <div class="modal-gallery" id="modalGallery"></div><div class="modal-title" id="modalTitle"></div><div class="modal-price" id="modalPrice"></div><div class="modal-details-grid" id="modalDetailsGrid"></div><div class="modal-desc" id="modalDesc"></div>
-    <div style="display:flex;flex-direction:column;gap:10px">
-      <a href="https://forms.gle/YBSVUM6QVHoERWBH7" target="_blank" rel="noopener noreferrer" style="background:var(--primary-dark);color:white;padding:12px;border-radius:8px;text-align:center;font-weight:bold;text-decoration:none"><i class="fa-solid fa-file-pen"></i> Submit Property Enquiry</a>
-      <button onclick="openRequirementForm()" style="background:var(--primary-dark);color:white;padding:12px;border-radius:8px;border:0;font-weight:bold;font-size:14px;cursor:pointer"><i class="fa-solid fa-file-pen"></i> Fill Your Requirement</button>
-    </div>
-  </div>
-</div>
+<div class="modal-content"><button class="close-modal" onclick="closeModal()" aria-label="Close property details"><i class="fa-solid fa-xmark"></i></button>
+<div class="modal-gallery" id="modalGallery"></div><div class="modal-title" id="modalTitle"></div><div class="modal-price" id="modalPrice"></div><div class="modal-details-grid" id="modalDetailsGrid"></div><div class="modal-desc" id="modalDesc"></div>
+<div style="display:flex;flex-direction:column;gap:10px">
+<a href="https://forms.gle/YBSVUM6QVHoERWBH7" target="_blank" rel="noopener noreferrer" style="background:var(--primary-dark);color:white;padding:12px;border-radius:8px;text-align:center;font-weight:bold;text-decoration:none"><i class="fa-solid fa-file-pen"></i> Submit Property Enquiry</a>
+<button onclick="openRequirementForm()" style="background:var(--primary-dark);color:white;padding:12px;border-radius:8px;border:0;font-weight:bold;font-size:14px;cursor:pointer"><i class="fa-solid fa-file-pen"></i> Fill Your Requirement</button>
+</div></div></div>
 
 <div class="modal-overlay" id="requirementModal" onclick="if(event.target===this)closeRequirementForm()">
-  <div class="modal-content" style="padding:25px 20px">
-    <button class="close-modal" onclick="closeRequirementForm()" aria-label="Close form"><i class="fa-solid fa-xmark"></i></button>
-    <h3 style="margin-bottom:15px;color:var(--primary-dark)">Tell Us Your Requirement</h3>
-    <form id="requirementForm">
-      <input type="hidden" name="category" value="General">
-      <div class="form-group" style="margin-bottom:10px"><input type="text" name="name" placeholder="Your Name *" required autocomplete="name" style="width:100%;padding:10px;border:1px solid #ccc;border-radius:6px"></div>
-      <div class="form-group" style="margin-bottom:10px"><input type="tel" name="mobile" placeholder="Mobile Number *" required inputmode="tel" pattern="[0-9+() -]{8,18}" style="width:100%;padding:10px;border:1px solid #ccc;border-radius:6px"></div>
-      <div class="form-group" style="margin-bottom:10px"><input type="text" name="location" placeholder="Preferred Location *" required style="width:100%;padding:10px;border:1px solid #ccc;border-radius:6px"></div>
-      <div class="form-group" style="margin-bottom:10px"><input type="text" name="budget" placeholder="Your Budget *" required style="width:100%;padding:10px;border:1px solid #ccc;border-radius:6px"></div>
-      <div class="form-group" style="margin-bottom:15px"><textarea name="details" rows="3" placeholder="Extra Details (Size, Rooms, etc.)" style="width:100%;padding:10px;border:1px solid #ccc;border-radius:6px"></textarea></div>
-      <button type="submit" style="width:100%;background:var(--primary-accent);color:white;padding:12px;border:0;border-radius:8px;font-weight:bold;font-size:15px;cursor:pointer">Submit to Admin</button>
-    </form>
-  </div>
-</div>
+<div class="modal-content" style="padding:25px 20px"><button class="close-modal" onclick="closeRequirementForm()" aria-label="Close form"><i class="fa-solid fa-xmark"></i></button>
+<h3 style="margin-bottom:15px;color:var(--primary-dark)">Tell Us Your Requirement</h3>
+<form id="requirementForm">
+<input type="hidden" name="category" value="General">
+<div class="form-group" style="margin-bottom:10px"><input type="text" name="name" placeholder="Your Name *" required autocomplete="name" style="width:100%;padding:10px;border:1px solid #ccc;border-radius:6px"></div>
+<div class="form-group" style="margin-bottom:10px"><input type="tel" name="mobile" placeholder="Mobile Number *" required inputmode="tel" pattern="[0-9+() -]{8,18}" style="width:100%;padding:10px;border:1px solid #ccc;border-radius:6px"></div>
+<div class="form-group" style="margin-bottom:10px"><input type="text" name="location" placeholder="Preferred Location *" required style="width:100%;padding:10px;border:1px solid #ccc;border-radius:6px"></div>
+<div class="form-group" style="margin-bottom:10px"><input type="text" name="budget" placeholder="Your Budget *" required style="width:100%;padding:10px;border:1px solid #ccc;border-radius:6px"></div>
+<div class="form-group" style="margin-bottom:15px"><textarea name="details" rows="3" placeholder="Extra Details (Size, Rooms, etc.)" style="width:100%;padding:10px;border:1px solid #ccc;border-radius:6px"></textarea></div>
+<button type="submit" style="width:100%;background:var(--primary-accent);color:white;padding:12px;border:0;border-radius:8px;font-weight:bold;font-size:15px;cursor:pointer">Submit to Admin</button>
+</form></div></div>
 
 <footer class="footer">
-  <div class="google-review-section">
-    <div class="gr-header"><h4>Google Reviews</h4><div class="gr-stars">4.8 <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div></div>
-    <div class="gr-bars">
-      <div class="gr-bar-row">5 <i class="fa-solid fa-star" style="color:#FBBF24;font-size:10px"></i><div class="gr-bar-bg"><div class="gr-bar-fill" style="width:85%"></div></div>85%</div>
-      <div class="gr-bar-row">4 <i class="fa-solid fa-star" style="color:#FBBF24;font-size:10px"></i><div class="gr-bar-bg"><div class="gr-bar-fill" style="width:10%"></div></div>10%</div>
-      <div class="gr-bar-row">3 <i class="fa-solid fa-star" style="color:#FBBF24;font-size:10px"></i><div class="gr-bar-bg"><div class="gr-bar-fill" style="width:3%"></div></div>3%</div>
-    </div>
-  </div>
-
+<div class="google-review-section">
+<div class="gr-header"><h4>Google Reviews</h4><div class="gr-stars">4.8 <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div></div>
+<div class="gr-bars">
+<div class="gr-bar-row">5 <i class="fa-solid fa-star" style="color:#FBBF24;font-size:10px"></i><div class="gr-bar-bg"><div class="gr-bar-fill" style="width:85%"></div></div>85%</div>
+<div class="gr-bar-row">4 <i class="fa-solid fa-star" style="color:#FBBF24;font-size:10px"></i><div class="gr-bar-bg"><div class="gr-bar-fill" style="width:10%"></div></div>10%</div>
+<div class="gr-bar-row">3 <i class="fa-solid fa-star" style="color:#FBBF24;font-size:10px"></i><div class="gr-bar-bg"><div class="gr-bar-fill" style="width:3%"></div></div>3%</div>
+</div></div>
 <div class="footer-contact">
-  <h3>Contact Us</h3>
-
-  <p>
-    <i class="fa-solid fa-location-dot"></i>
-    <span>ShreeKanth Properties, Street No: 3, Suman Nagar, New Haridwar, Uttarakhand</span>
-  </p>
-
-  <p>
-    <i class="fa-solid fa-phone"></i>
-    <span>
-      <a href="tel:+918586854328" style="color:inherit;text-decoration:none">8586854328</a>
-      |
-      <a href="tel:+917088144062" style="color:inherit;text-decoration:none">07088144062</a>
-    </span>
-  </p>
-
-  <p>
-    <i class="fa-solid fa-envelope"></i>
-    <span>
-      <a href="mailto:plotinkofficial@gmail.com" style="color:inherit;text-decoration:none">plotinkofficial@gmail.com</a>
-    </span>
-  </p>
-
-  <div class="footer-links">
-    <a href="#" class="blink-partner"
-       onclick="alert('Please contact PLOTINK on WhatsApp for channel partner enquiries.');return false">
-      <i class="fa-solid fa-handshake"></i> Channel Partners
-    </a>
-
-    <a href="#" class="blink-career"
-       onclick="alert('Please contact PLOTINK for career opportunities.');return false">
-      <i class="fa-solid fa-briefcase"></i> Career
-    </a>
-  </div>
-
-  <div class="footer-social">
-    <a href="https://instagram.com/plotinkofficial"
-       target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-      <i class="fa-brands fa-instagram"></i>
-    </a>
-
-    <a href="https://facebook.com/"
-       target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-      <i class="fa-brands fa-facebook-f"></i>
-    </a>
-
-    <a href="https://wa.me/918586854328"
-       target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-      <i class="fa-brands fa-whatsapp"></i>
-    </a>
-  </div>
-
-  <div class="copyright">© 2026 Plotink. All Rights Reserved.</div>
-
-  <div class="footer-links">
-    <a href="privacy-policy.html">Privacy Policy</a>
-  </div>
+<h3>Contact Us</h3>
+<p><i class="fa-solid fa-location-dot"></i><span>ShreeKanth Properties, Street No: 3, Suman Nagar, New Haridwar, Uttarakhand</span></p>
+<p><i class="fa-solid fa-phone"></i><span><a href="tel:+918586854328" style="color:inherit;text-decoration:none">8586854328</a> | <a href="tel:+917088144062" style="color:inherit;text-decoration:none">07088144062</a></span></p>
+<p><i class="fa-solid fa-envelope"></i><span><a href="mailto:plotinkofficial@gmail.com" style="color:inherit;text-decoration:none">plotinkofficial@gmail.com</a></span></p>
+<div class="footer-links">
+<a href="#" class="blink-partner" onclick="alert('Please contact PLOTINK on WhatsApp for channel partner enquiries.');return false"><i class="fa-solid fa-handshake"></i> Channel Partners</a>
+<a href="#" class="blink-career" onclick="alert('Please contact PLOTINK for career opportunities.');return false"><i class="fa-solid fa-briefcase"></i> Career</a>
 </div>
-</footer>
+<div class="footer-social">
+<a href="https://instagram.com/plotinkofficial" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+<a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+<a href="https://wa.me/918586854328" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+</div>
+<div class="copyright">© 2026 Plotink. All Rights Reserved.</div>
+<div class="footer-links"><a href="privacy-policy.html">Privacy Policy</a></div>
+</div></footer>
 
 <nav class="bottom-nav" aria-label="Main navigation">
-  <a href="index.html" class="nav-item active">
-    <i class="fa-solid fa-house"></i>Home
-  </a>
-
-  <a href="#" class="nav-item" onclick="openSubPage('buy');return false">
-    <i class="fa-solid fa-list"></i>Categories
-  </a>
-
-  <a href="#" class="nav-item"
-     onclick="alert('Saved properties feature is not enabled yet.');return false">
-    <i class="fa-regular fa-heart"></i>Saved
-  </a>
-
-  <a href="#" class="nav-item" onclick="openRequirementForm();return false">
-    <i class="fa-regular fa-user"></i>Account
-  </a>
+<a href="index.html" class="nav-item active"><i class="fa-solid fa-house"></i>Home</a>
+<a href="#" class="nav-item" onclick="openSubPage('buy');return false"><i class="fa-solid fa-list"></i>Categories</a>
+<a href="#" class="nav-item" onclick="alert('Saved properties feature is not enabled yet.');return false"><i class="fa-regular fa-heart"></i>Saved</a>
+<a href="#" class="nav-item" onclick="openRequirementForm();return false"><i class="fa-regular fa-user"></i>Account</a>
 </nav>
-
 
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
@@ -279,22 +177,18 @@ if (slides.length > 1) {
     slides[curSlide].classList.remove('active');
     curSlide = (curSlide + 1) % slides.length;
     slides[curSlide].classList.add('active');
-  }, 3000);
+  }, 2000);
 }
 
 window.toggleDropdown = function () {
   document.getElementById('locationDropdown').classList.toggle('show');
 };
 window.addEventListener('click', function (event) {
-  if (!event.target.closest('.location-selector')) {
-    document.getElementById('locationDropdown').classList.remove('show');
-  }
+  if (!event.target.closest('.location-selector')) document.getElementById('locationDropdown').classList.remove('show');
 });
 
 function escapeHtml(value) {
-  return String(value ?? '').replace(/[&<>"']/g, c => ({
-    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
-  }[c]));
+  return String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
 
 async function loadProperties() {
@@ -314,20 +208,16 @@ async function loadProperties() {
 function generateCityDropdown() {
   const dropdown = document.getElementById('locationDropdown');
   const cities = new Set();
-  allProperties.forEach(p => {
-    if (p.location) cities.add(String(p.location).trim());
-  });
+  allProperties.forEach(p => { if (p.location) cities.add(String(p.location).trim()); });
   let html = '<div class="dropdown-item" data-city="All">All Cities</div>';
   [...cities].sort((a,b) => a.localeCompare(b)).forEach(city => {
     html += `<div class="dropdown-item" data-city="${escapeHtml(city)}">${escapeHtml(city)}</div>`;
   });
   dropdown.innerHTML = html;
-  dropdown.querySelectorAll('[data-city]').forEach(item => {
-    item.addEventListener('click', event => {
-      event.stopPropagation();
-      window.filterByCity(item.dataset.city);
-    });
-  });
+  dropdown.querySelectorAll('[data-city]').forEach(item => item.addEventListener('click', event => {
+    event.stopPropagation();
+    window.filterByCity(item.dataset.city);
+  }));
 }
 
 window.filterByCity = function (city) {
@@ -360,12 +250,10 @@ function renderCards(properties) {
     </div>`;
   }).join('');
 
-  container.querySelectorAll('.property-card').forEach(card => {
-    card.addEventListener('click', event => {
-      if (event.target.closest('a')) return;
-      window.openModal(card.dataset.propertyId);
-    });
-  });
+  container.querySelectorAll('.property-card').forEach(card => card.addEventListener('click', event => {
+    if (event.target.closest('a')) return;
+    window.openModal(card.dataset.propertyId);
+  }));
 }
 
 window.openModal = function (id) {
@@ -460,14 +348,12 @@ window.closeSubPage = function () {
   document.getElementById('categorySubPage').classList.remove('show');
   document.body.style.overflow = '';
 };
-document.querySelectorAll('.category-card[role="button"]').forEach(card => {
-  card.addEventListener('keydown', event => {
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-      card.click();
-    }
-  });
-});
+document.querySelectorAll('.category-card[role="button"]').forEach(card => card.addEventListener('keydown', event => {
+  if (event.key === 'Enter' || event.key === ' ') {
+    event.preventDefault();
+    card.click();
+  }
+}));
 loadProperties();
 </script>
 </body>
